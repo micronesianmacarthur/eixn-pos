@@ -40,7 +40,7 @@ class Ui_CustomersListWindow(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.widget = QWidget(CustomersListWindow)
         self.widget.setObjectName(u"widget")
-        self.widget.setMinimumSize(QSize(0, 40))
+        self.widget.setMinimumSize(QSize(0, 45))
         self.widget.setMaximumSize(QSize(16777215, 45))
         self.horizontalLayout_3 = QHBoxLayout(self.widget)
         self.horizontalLayout_3.setSpacing(5)
@@ -63,17 +63,7 @@ class Ui_CustomersListWindow(object):
         self.pb_customer_close.setObjectName(u"pb_customer_close")
         self.pb_customer_close.setMinimumSize(QSize(120, 35))
         self.pb_customer_close.setMaximumSize(QSize(120, 35))
-        self.pb_customer_close.setStyleSheet(u"#pb_customer_close {\n"
-"	background-color: #bf0000;\n"
-"	border: None;\n"
-"	border-radius: 5px;\n"
-"	color: white;\n"
-"}\n"
-"\n"
-"#pb_customer_close:hover {\n"
-"	background-color: #ff0000;\n"
-"	color: white;\n"
-"}")
+        self.pb_customer_close.setStyleSheet(u"")
         icon = QIcon()
         icon.addFile(u":/Icons/close_white.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_customer_close.setIcon(icon)

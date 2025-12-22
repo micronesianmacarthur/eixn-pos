@@ -12,6 +12,8 @@ from compiled.new_customer_dialog_ui import Ui_NewCustomerDialog
 from compiled.new_vendor_dialog_ui import Ui_NewVendorDialog
 from compiled.vendors_list_window_ui import Ui_VendorsListWindow
 
+from assets.stylesheets.output_css import get_style
+
 # from compiled.sale_screen_ui import Ui_SaleScreen
 
 
@@ -71,6 +73,8 @@ class CustomersListWindow(qtw.QWidget, Ui_CustomersListWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
+        self.pb_customer_close.setProperty("class", "close-button")
         
 
 class MainApp(qtw.QMainWindow, Ui_MainAppWindow):
@@ -151,19 +155,12 @@ class MainApp(qtw.QMainWindow, Ui_MainAppWindow):
 
         
     def open_window(self, window: qtw.QWidget):
-        """Closes current window and opens the specified window."""
-        # find index of window
-        index = self.wd_stacked.indexOf(window)
-
-        # hide current window
-        if self.current_window:
-            self.current_window.hide()
-
-        # show new window
-        window.show()
-        self.current_window = window
-
+        """Switches the stacked widget to the specified window."""
+        # Hide the old widget and show the new one
         self.wd_stacked.setCurrentWidget(window)
+        
+        # Keep track of it if you need the reference elsewhere
+        self.current_window = window
 
     def close_current_window(self, window_to_close: qtw.QWidget):
         """Closes the given window by switching back to home screen."""
@@ -177,7 +174,7 @@ class MainApp(qtw.QMainWindow, Ui_MainAppWindow):
         
 
 if __name__ == '__main__':
-     app = qtw.QApplication(sys.argv)
-     window = MainApp()
-     window.show()
-     sys.exit(app.exec())
+    app = qtw.QApplication(sys.argv)
+    window = MainApp()
+    window.show()
+    sys.exit(app.exec())

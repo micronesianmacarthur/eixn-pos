@@ -1,0 +1,144 @@
+/*============= WIDGETS =============== */
+
+/* global widgets */
+QWidget {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: None;
+}
+
+/* .top-widget {
+    height: 50px;
+} */
+QLabel {
+    font-family: "Lexend";
+    font-size: 12px;
+    color: #fff;
+}
+
+#lb_app_name {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#line {
+    background-color: #fff;
+}
+
+/*============= HEADER WIDGETS =============== */
+
+/* title label */
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/*============= BUTTONS =============== */
+
+/* general buttons */
+QPushButton {
+    background-color: #3f3f3f;
+    color: #fff;
+    border: None;
+    border-radius: 10px;
+    font-family: "Lexend";
+    font-size: 12px;
+}
+QPushButton:hover {
+    background-color: #6f6f6f;
+}
+
+/* close buttons */
+.close-button {
+    background-color: #bf0000;
+    color: #fff;
+}
+.close-button:hover {
+    background-color: #ff0000;
+}
+
+/* create buttons */
+.create-button {
+    background: #0392cf;
+    color: #fff;
+}
+.create-button:hover {
+    background-color: #23a2ff;
+}
+
+/* menu buttons */
+QToolButton {
+    font-family: "Lexend";
+    font-size: 12px;
+    background-color: #2b2b2b;
+    color: #fff;
+    border: None;
+    border-radius: 2px;
+    padding-top: 10px;
+}
+QToolButton:hover {
+    background-color: #9f9f9f;
+    color: #1a1a1a;
+}
+QToolButton:pressed {
+    background-color: #f5f5f5;
+    color: #1a1a1a;}
+
+/* search button with line edit */
+.line-search-button {
+    background-color: #9f9f9f;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/*============= INPUT STYLES ============= */
+.line-search-input {
+    background-color: #9f9f9f;
+    color: #1a1a1a;
+    border: None;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 10px;
+}
+
+/*============= MENUBAR ============= */
+QMenuBar, QMenu {
+    background-color: #2b2b2b;
+    font-family: "Lexend";
+    font-size: 14px;
+}
+QMenu::item:selected {
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+}
+QMenu::item:hover {
+    background-color: #9f9f9f;
+    color: #1a1a1a;
+}
+QMenuBar::item:selected {
+    background-color: #f1f1f1;
+    color: #1a1a1a;
+}
+QMenuBar::item:hover {
+    background-color: #9f9f9f;
+    color: #1a1a1a;
+}
+
+/*=========== WELCOME TEXT =========== */
+.welcome-text {
+    font-family: "Lexend";
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
+/*=============== FRAMES =============== */
+/* detail view */
+.wd_detail_view {
+    border: None;
+    border-radius: 18px;
+    background-color: #9f9f9f;
+    color: #1a1a1a;
+}
