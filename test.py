@@ -87,6 +87,7 @@ class MainAppWindow(qtw.QMainWindow, main_app_window_ui.Ui_MainAppWindow):
         self.user_manager.pb_close_page.clicked.connect(
             lambda checked: self.close_current_window(self.user_manager)
         )
+        #------------ End user window ------------------------
 
 
     def open_window(self, window: qtw.QWidget):
