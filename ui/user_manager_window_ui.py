@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'customer_manager_window.ui'
+## Form generated from reading UI file 'user_manager_window.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.10.1
 ##
@@ -21,21 +21,21 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
     QWidget)
 import icons_rc
 
-class Ui_CustomerManagerWindow(object):
-    def setupUi(self, CustomerManagerWindow):
-        if not CustomerManagerWindow.objectName():
-            CustomerManagerWindow.setObjectName(u"CustomerManagerWindow")
-        CustomerManagerWindow.resize(980, 980)
-        CustomerManagerWindow.setMinimumSize(QSize(980, 980))
+class Ui_UserManagerWindow(object):
+    def setupUi(self, UserManagerWindow):
+        if not UserManagerWindow.objectName():
+            UserManagerWindow.setObjectName(u"UserManagerWindow")
+        UserManagerWindow.resize(980, 980)
+        UserManagerWindow.setMinimumSize(QSize(980, 980))
         icon = QIcon()
-        icon.addFile(u":/Icons/customers.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        CustomerManagerWindow.setWindowIcon(icon)
-        CustomerManagerWindow.setStyleSheet(u"")
-        self.verticalLayout_10 = QVBoxLayout(CustomerManagerWindow)
+        icon.addFile(u":/Icons/user.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        UserManagerWindow.setWindowIcon(icon)
+        UserManagerWindow.setStyleSheet(u"")
+        self.verticalLayout_10 = QVBoxLayout(UserManagerWindow)
         self.verticalLayout_10.setSpacing(10)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.wd_page_header = QWidget(CustomerManagerWindow)
+        self.wd_page_header = QWidget(UserManagerWindow)
         self.wd_page_header.setObjectName(u"wd_page_header")
         self.wd_page_header.setMinimumSize(QSize(0, 45))
         self.horizontalLayout = QHBoxLayout(self.wd_page_header)
@@ -62,7 +62,7 @@ class Ui_CustomerManagerWindow(object):
 
         self.verticalLayout_10.addWidget(self.wd_page_header)
 
-        self.wd_page_content = QWidget(CustomerManagerWindow)
+        self.wd_page_content = QWidget(UserManagerWindow)
         self.wd_page_content.setObjectName(u"wd_page_content")
         self.horizontalLayout_7 = QHBoxLayout(self.wd_page_content)
         self.horizontalLayout_7.setSpacing(10)
@@ -82,27 +82,27 @@ class Ui_CustomerManagerWindow(object):
         self.horizontalLayout_3.setSpacing(10)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.pb_create_customer = QPushButton(self.wd_search_section)
-        self.pb_create_customer.setObjectName(u"pb_create_customer")
-        self.pb_create_customer.setMinimumSize(QSize(180, 35))
-        self.pb_create_customer.setMaximumSize(QSize(180, 35))
+        self.pb_create_user = QPushButton(self.wd_search_section)
+        self.pb_create_user.setObjectName(u"pb_create_user")
+        self.pb_create_user.setMinimumSize(QSize(180, 35))
+        self.pb_create_user.setMaximumSize(QSize(180, 35))
         icon2 = QIcon()
         icon2.addFile(u":/Icons/add_white.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pb_create_customer.setIcon(icon2)
-        self.pb_create_customer.setIconSize(QSize(18, 18))
+        self.pb_create_user.setIcon(icon2)
+        self.pb_create_user.setIconSize(QSize(18, 18))
 
-        self.horizontalLayout_3.addWidget(self.pb_create_customer)
+        self.horizontalLayout_3.addWidget(self.pb_create_user)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_3.addItem(self.horizontalSpacer)
 
-        self.le_search_customer = QLineEdit(self.wd_search_section)
-        self.le_search_customer.setObjectName(u"le_search_customer")
-        self.le_search_customer.setMinimumSize(QSize(140, 35))
-        self.le_search_customer.setMaximumSize(QSize(240, 35))
+        self.le_search_user = QLineEdit(self.wd_search_section)
+        self.le_search_user.setObjectName(u"le_search_user")
+        self.le_search_user.setMinimumSize(QSize(140, 35))
+        self.le_search_user.setMaximumSize(QSize(240, 35))
 
-        self.horizontalLayout_3.addWidget(self.le_search_customer)
+        self.horizontalLayout_3.addWidget(self.le_search_user)
 
 
         self.verticalLayout_9.addWidget(self.wd_search_section)
@@ -113,17 +113,17 @@ class Ui_CustomerManagerWindow(object):
         self.verticalLayout.setSpacing(10)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.lb_customer_table = QLabel(self.wd_table_section)
-        self.lb_customer_table.setObjectName(u"lb_customer_table")
-        self.lb_customer_table.setMinimumSize(QSize(0, 18))
-        self.lb_customer_table.setMaximumSize(QSize(16777215, 18))
+        self.lb_user_table = QLabel(self.wd_table_section)
+        self.lb_user_table.setObjectName(u"lb_user_table")
+        self.lb_user_table.setMinimumSize(QSize(0, 18))
+        self.lb_user_table.setMaximumSize(QSize(16777215, 18))
 
-        self.verticalLayout.addWidget(self.lb_customer_table)
+        self.verticalLayout.addWidget(self.lb_user_table)
 
-        self.tbl_customers = QTableView(self.wd_table_section)
-        self.tbl_customers.setObjectName(u"tbl_customers")
+        self.tbl_users = QTableView(self.wd_table_section)
+        self.tbl_users.setObjectName(u"tbl_users")
 
-        self.verticalLayout.addWidget(self.tbl_customers)
+        self.verticalLayout.addWidget(self.tbl_users)
 
 
         self.verticalLayout_9.addWidget(self.wd_table_section)
@@ -149,12 +149,10 @@ class Ui_CustomerManagerWindow(object):
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.wd_detail_labels = QWidget(self.wd_detail_view)
         self.wd_detail_labels.setObjectName(u"wd_detail_labels")
-        self.wd_detail_labels.setMinimumSize(QSize(0, 200))
+        self.wd_detail_labels.setMinimumSize(QSize(0, 0))
         self.wd_detail_labels.setMaximumSize(QSize(16777215, 16777215))
         self.verticalLayout_2 = QVBoxLayout(self.wd_detail_labels)
-        self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(10, 0, 10, 0)
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.lb_first_name = QLabel(self.wd_detail_labels)
@@ -201,6 +199,47 @@ class Ui_CustomerManagerWindow(object):
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
 
+        self.horizontalLayout_10 = QHBoxLayout()
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.lb_role = QLabel(self.wd_detail_labels)
+        self.lb_role.setObjectName(u"lb_role")
+        self.lb_role.setMinimumSize(QSize(120, 0))
+        self.lb_role.setMaximumSize(QSize(120, 16777215))
+
+        self.horizontalLayout_10.addWidget(self.lb_role)
+
+        self.lb_role_val = QLabel(self.wd_detail_labels)
+        self.lb_role_val.setObjectName(u"lb_role_val")
+        font1 = QFont()
+        font1.setFamilies([u"Lexend"])
+        font1.setBold(True)
+        self.lb_role_val.setFont(font1)
+        self.lb_role_val.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_10.addWidget(self.lb_role_val)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_10)
+
+        self.horizontalLayout_11 = QHBoxLayout()
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.lb_status = QLabel(self.wd_detail_labels)
+        self.lb_status.setObjectName(u"lb_status")
+        self.lb_status.setMinimumSize(QSize(120, 0))
+        self.lb_status.setMaximumSize(QSize(120, 16777215))
+
+        self.horizontalLayout_11.addWidget(self.lb_status)
+
+        self.lb_status_val = QLabel(self.wd_detail_labels)
+        self.lb_status_val.setObjectName(u"lb_status_val")
+        self.lb_status_val.setFont(font1)
+        self.lb_status_val.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_11.addWidget(self.lb_status_val)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_11)
+
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.lb_phone = QLabel(self.wd_detail_labels)
@@ -243,6 +282,25 @@ class Ui_CustomerManagerWindow(object):
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_8)
 
+        self.horizontalLayout_12 = QHBoxLayout()
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.lb_created = QLabel(self.wd_detail_labels)
+        self.lb_created.setObjectName(u"lb_created")
+        self.lb_created.setMinimumSize(QSize(120, 0))
+        self.lb_created.setMaximumSize(QSize(120, 16777215))
+
+        self.horizontalLayout_12.addWidget(self.lb_created)
+
+        self.lb_created_val = QLabel(self.wd_detail_labels)
+        self.lb_created_val.setObjectName(u"lb_created_val")
+        self.lb_created_val.setFont(font1)
+        self.lb_created_val.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_12.addWidget(self.lb_created_val)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_12)
+
         self.horizontalLayout_9 = QHBoxLayout()
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.lb_address = QLabel(self.wd_detail_labels)
@@ -269,15 +327,15 @@ class Ui_CustomerManagerWindow(object):
 
         self.verticalLayout_6.addWidget(self.wd_detail_labels)
 
-        self.pb_edit_customer = QPushButton(self.wd_detail_view)
-        self.pb_edit_customer.setObjectName(u"pb_edit_customer")
-        self.pb_edit_customer.setMinimumSize(QSize(0, 35))
+        self.pb_edit_user = QPushButton(self.wd_detail_view)
+        self.pb_edit_user.setObjectName(u"pb_edit_user")
+        self.pb_edit_user.setMinimumSize(QSize(0, 35))
         icon3 = QIcon()
         icon3.addFile(u":/Icons/edit_white.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pb_edit_customer.setIcon(icon3)
-        self.pb_edit_customer.setIconSize(QSize(18, 18))
+        self.pb_edit_user.setIcon(icon3)
+        self.pb_edit_user.setIconSize(QSize(18, 18))
 
-        self.verticalLayout_6.addWidget(self.pb_edit_customer)
+        self.verticalLayout_6.addWidget(self.pb_edit_user)
 
 
         self.verticalLayout_8.addWidget(self.wd_detail_view)
@@ -390,34 +448,40 @@ class Ui_CustomerManagerWindow(object):
         self.verticalLayout_10.addWidget(self.wd_page_content)
 
 
-        self.retranslateUi(CustomerManagerWindow)
+        self.retranslateUi(UserManagerWindow)
 
-        QMetaObject.connectSlotsByName(CustomerManagerWindow)
+        QMetaObject.connectSlotsByName(UserManagerWindow)
     # setupUi
 
-    def retranslateUi(self, CustomerManagerWindow):
-        CustomerManagerWindow.setWindowTitle(QCoreApplication.translate("CustomerManagerWindow", u"Customer Manager", None))
-        self.lb_page_title.setText(QCoreApplication.translate("CustomerManagerWindow", u"Customer Manager", None))
-        self.pb_close_page.setText(QCoreApplication.translate("CustomerManagerWindow", u"Close", None))
-        self.pb_create_customer.setText(QCoreApplication.translate("CustomerManagerWindow", u"Create New Customer", None))
-        self.le_search_customer.setPlaceholderText(QCoreApplication.translate("CustomerManagerWindow", u"\U0001f50d Quick Search", None))
-        self.lb_customer_table.setText(QCoreApplication.translate("CustomerManagerWindow", u"Customers", None))
-        self.lb_first_name.setText(QCoreApplication.translate("CustomerManagerWindow", u"First Name:", None))
-        self.lb_first_name_val.setText(QCoreApplication.translate("CustomerManagerWindow", u"MacArthur", None))
-        self.lb_last_name.setText(QCoreApplication.translate("CustomerManagerWindow", u"Last Name:", None))
-        self.lb_last_name_val.setText(QCoreApplication.translate("CustomerManagerWindow", u"James", None))
-        self.lb_phone.setText(QCoreApplication.translate("CustomerManagerWindow", u"Phone:", None))
-        self.lb_phone_val.setText(QCoreApplication.translate("CustomerManagerWindow", u"926-2404", None))
-        self.lb_email.setText(QCoreApplication.translate("CustomerManagerWindow", u"Email:", None))
-        self.lb_email_val.setText(QCoreApplication.translate("CustomerManagerWindow", u"jmacarthur92@gmail.com", None))
-        self.lb_address.setText(QCoreApplication.translate("CustomerManagerWindow", u"Shipping Address:", None))
-        self.lb_address_val.setText(QCoreApplication.translate("CustomerManagerWindow", u"PO Box 388, Kolonia Pohnpei FM 96941", None))
-        self.pb_edit_customer.setText(QCoreApplication.translate("CustomerManagerWindow", u"Edit Customer", None))
-        self.lb_transaction_list.setText(QCoreApplication.translate("CustomerManagerWindow", u"Transactions", None))
-        self.pb_open_transaction.setText(QCoreApplication.translate("CustomerManagerWindow", u"Open Transaction", None))
-        self.lb_charge_balance.setText(QCoreApplication.translate("CustomerManagerWindow", u"Charge Balance", None))
-        self.lb_dollar_sign.setText(QCoreApplication.translate("CustomerManagerWindow", u"$", None))
-        self.lb_charge_amount.setText(QCoreApplication.translate("CustomerManagerWindow", u"0.00", None))
-        self.pb_make_payment.setText(QCoreApplication.translate("CustomerManagerWindow", u"Pay Now", None))
+    def retranslateUi(self, UserManagerWindow):
+        UserManagerWindow.setWindowTitle(QCoreApplication.translate("UserManagerWindow", u"User Manager", None))
+        self.lb_page_title.setText(QCoreApplication.translate("UserManagerWindow", u"User Manager", None))
+        self.pb_close_page.setText(QCoreApplication.translate("UserManagerWindow", u"Close", None))
+        self.pb_create_user.setText(QCoreApplication.translate("UserManagerWindow", u"Create New User", None))
+        self.le_search_user.setPlaceholderText(QCoreApplication.translate("UserManagerWindow", u"\U0001f50d Quick Search", None))
+        self.lb_user_table.setText(QCoreApplication.translate("UserManagerWindow", u"Users", None))
+        self.lb_first_name.setText(QCoreApplication.translate("UserManagerWindow", u"First Name:", None))
+        self.lb_first_name_val.setText(QCoreApplication.translate("UserManagerWindow", u"MacArthur", None))
+        self.lb_last_name.setText(QCoreApplication.translate("UserManagerWindow", u"Last Name:", None))
+        self.lb_last_name_val.setText(QCoreApplication.translate("UserManagerWindow", u"James", None))
+        self.lb_role.setText(QCoreApplication.translate("UserManagerWindow", u"Role:", None))
+        self.lb_role_val.setText(QCoreApplication.translate("UserManagerWindow", u"Admin", None))
+        self.lb_status.setText(QCoreApplication.translate("UserManagerWindow", u"Status:", None))
+        self.lb_status_val.setText(QCoreApplication.translate("UserManagerWindow", u"Active", None))
+        self.lb_phone.setText(QCoreApplication.translate("UserManagerWindow", u"Phone:", None))
+        self.lb_phone_val.setText(QCoreApplication.translate("UserManagerWindow", u"926-2404", None))
+        self.lb_email.setText(QCoreApplication.translate("UserManagerWindow", u"Email:", None))
+        self.lb_email_val.setText(QCoreApplication.translate("UserManagerWindow", u"jmacarthur92@gmail.com", None))
+        self.lb_created.setText(QCoreApplication.translate("UserManagerWindow", u"Created:", None))
+        self.lb_created_val.setText(QCoreApplication.translate("UserManagerWindow", u"2025-12-22", None))
+        self.lb_address.setText(QCoreApplication.translate("UserManagerWindow", u"Shipping Address:", None))
+        self.lb_address_val.setText(QCoreApplication.translate("UserManagerWindow", u"PO Box 388, Kolonia Pohnpei FM 96941", None))
+        self.pb_edit_user.setText(QCoreApplication.translate("UserManagerWindow", u"Edit User", None))
+        self.lb_transaction_list.setText(QCoreApplication.translate("UserManagerWindow", u"Transactions", None))
+        self.pb_open_transaction.setText(QCoreApplication.translate("UserManagerWindow", u"Open Transaction", None))
+        self.lb_charge_balance.setText(QCoreApplication.translate("UserManagerWindow", u"Charge Balance", None))
+        self.lb_dollar_sign.setText(QCoreApplication.translate("UserManagerWindow", u"$", None))
+        self.lb_charge_amount.setText(QCoreApplication.translate("UserManagerWindow", u"0.00", None))
+        self.pb_make_payment.setText(QCoreApplication.translate("UserManagerWindow", u"Pay Now", None))
     # retranslateUi
 

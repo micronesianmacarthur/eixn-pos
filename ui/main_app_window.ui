@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Eixn Point of Sale</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../assets/images/icons.qrc">
+    <normaloff>:/Icons/register.svg</normaloff>:/Icons/register.svg</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true"/>
   </property>

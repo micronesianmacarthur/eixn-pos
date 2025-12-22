@@ -5,15 +5,8 @@ QWidget {
     background-color: #1a1a1a;
     color: #fff;
     border: None;
-}
-
-/* .top-widget {
-    height: 50px;
-} */
-QLabel {
     font-family: "Lexend";
     font-size: 12px;
-    color: #fff;
 }
 
 #lb_app_name {
@@ -32,6 +25,11 @@ QLabel {
     font-size: 24px;
     font-weight: bold;
 }
+/* section titles */
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+}
 
 /*============= BUTTONS =============== */
 
@@ -48,6 +46,15 @@ QPushButton:hover {
     background-color: #6f6f6f;
 }
 
+/* search button with line edit */
+.line-search-button {
+    background-color: #9f9f9f;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 /* close buttons */
 .close-button {
     background-color: #bf0000;
@@ -59,11 +66,11 @@ QPushButton:hover {
 
 /* create buttons */
 .create-button {
-    background: #0392cf;
+    background: #23a2ff;
     color: #fff;
 }
 .create-button:hover {
-    background-color: #23a2ff;
+    background-color: #0392cf;
 }
 
 /* menu buttons */
@@ -84,13 +91,15 @@ QToolButton:pressed {
     background-color: #f5f5f5;
     color: #1a1a1a;}
 
-/* search button with line edit */
-.line-search-button {
-    background-color: #9f9f9f;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+/* make payment button */
+#pb_make_payment {
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 20px;
+}
+#pb_make_payment:hover {
+    background-color: #c9c9c9;
 }
 
 /*============= INPUT STYLES ============= */
@@ -98,8 +107,7 @@ QToolButton:pressed {
     background-color: #9f9f9f;
     color: #1a1a1a;
     border: None;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px;
     padding-left: 10px;
 }
 
@@ -139,6 +147,20 @@ QMenuBar::item:hover {
 .wd_detail_view {
     border: None;
     border-radius: 18px;
-    background-color: #9f9f9f;
+    background-color: #f0f0f0;
     color: #1a1a1a;
 }
+
+/* labels inside frame widget */
+.wd_detail_view QLabel {
+    background: None;
+    color: #1a1a1a;
+}
+
+/* tables & lists */
+.table, .list {
+    background-color: #222;
+    border-radius: 18px;
+}
+
+
