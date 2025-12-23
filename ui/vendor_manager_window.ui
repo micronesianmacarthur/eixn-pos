@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>UserManagerWindow</class>
- <widget class="QWidget" name="UserManagerWindow">
+ <class>VendorManagerWindow</class>
+ <widget class="QWidget" name="VendorManagerWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,11 +17,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>User Manager</string>
+   <string>Vendor Manager</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../assets/images/icons.qrc">
-    <normaloff>:/Icons/user.svg</normaloff>:/Icons/user.svg</iconset>
+    <normaloff>:/Icons/vendor.svg</normaloff>:/Icons/vendor.svg</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -69,7 +69,7 @@
       <item>
        <widget class="QLabel" name="lb_page_title">
         <property name="text">
-         <string>User Manager</string>
+         <string>Vendor Manager</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -175,7 +175,7 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QPushButton" name="pb_create_user">
+             <widget class="QPushButton" name="pb_create_vendor">
               <property name="minimumSize">
                <size>
                 <width>180</width>
@@ -189,7 +189,7 @@
                </size>
               </property>
               <property name="text">
-               <string>Create New User</string>
+               <string>Create New Vendor</string>
               </property>
               <property name="icon">
                <iconset resource="../assets/images/icons.qrc">
@@ -217,7 +217,7 @@
              </spacer>
             </item>
             <item>
-             <widget class="QLineEdit" name="le_search_user">
+             <widget class="QLineEdit" name="le_search_vendor">
               <property name="minimumSize">
                <size>
                 <width>140</width>
@@ -257,7 +257,7 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="lb_user_table">
+             <widget class="QLabel" name="lb_vendor_table">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -271,12 +271,12 @@
                </size>
               </property>
               <property name="text">
-               <string>Users</string>
+               <string>Vendors</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QTableView" name="tbl_users"/>
+             <widget class="QTableView" name="tbl_vendors"/>
             </item>
            </layout>
           </widget>
@@ -349,7 +349,7 @@
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>0</height>
+                <height>200</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -359,10 +359,25 @@
                </size>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_2">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_2">
                  <item>
-                  <widget class="QLabel" name="lb_first_name">
+                  <widget class="QLabel" name="lb_name">
                    <property name="minimumSize">
                     <size>
                      <width>120</width>
@@ -376,64 +391,12 @@
                     </size>
                    </property>
                    <property name="text">
-                    <string>First Name:</string>
+                    <string>Name:</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="lb_first_name_val">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>Lexend</family>
-                     <pointsize>9</pointsize>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>MacArthur</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_4">
-                 <item>
-                  <widget class="QLabel" name="lb_last_name">
-                   <property name="minimumSize">
-                    <size>
-                     <width>120</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>120</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>Last Name:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="lb_last_name_val">
+                  <widget class="QLabel" name="lb_name_val">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -454,85 +417,7 @@
                     </font>
                    </property>
                    <property name="text">
-                    <string>James</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_10">
-                 <item>
-                  <widget class="QLabel" name="lb_role">
-                   <property name="minimumSize">
-                    <size>
-                     <width>120</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>120</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>Role:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="lb_role_val">
-                   <property name="font">
-                    <font>
-                     <family>Lexend</family>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Admin</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_11">
-                 <item>
-                  <widget class="QLabel" name="lb_status">
-                   <property name="minimumSize">
-                    <size>
-                     <width>120</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>120</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>Status:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="lb_status_val">
-                   <property name="font">
-                    <font>
-                     <family>Lexend</family>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Active</string>
+                    <string>Ray &amp; Dors</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -584,7 +469,7 @@
                     </font>
                    </property>
                    <property name="text">
-                    <string>926-2404</string>
+                    <string/>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -636,7 +521,7 @@
                     </font>
                    </property>
                    <property name="text">
-                    <string>jmacarthur92@gmail.com</string>
+                    <string/>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -662,7 +547,7 @@
                     </size>
                    </property>
                    <property name="text">
-                    <string>Shipping Address:</string>
+                    <string>Address:</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
@@ -691,7 +576,7 @@
                     </font>
                    </property>
                    <property name="text">
-                    <string>PO Box 388, Kolonia Pohnpei FM 96941</string>
+                    <string/>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
@@ -703,50 +588,11 @@
                  </item>
                 </layout>
                </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_12">
-                 <item>
-                  <widget class="QLabel" name="lb_created">
-                   <property name="minimumSize">
-                    <size>
-                     <width>120</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>120</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>Created:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="lb_created_val">
-                   <property name="font">
-                    <font>
-                     <family>Lexend</family>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>2025-12-22</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
               </layout>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pb_edit_user">
+             <widget class="QPushButton" name="pb_edit_vendor">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -754,7 +600,7 @@
                </size>
               </property>
               <property name="text">
-               <string>Edit User</string>
+               <string>Edit Vendor</string>
               </property>
               <property name="icon">
                <iconset resource="../assets/images/icons.qrc">
@@ -886,9 +732,9 @@
              <widget class="QWidget" name="widget_10" native="true">
               <layout class="QVBoxLayout" name="verticalLayout_4">
                <item>
-                <widget class="QLabel" name="lb_charge_balance">
+                <widget class="QLabel" name="lb_invoice_label">
                  <property name="text">
-                  <string>Charge Balance</string>
+                  <string>Invoiced Balance</string>
                  </property>
                 </widget>
                </item>
@@ -980,7 +826,7 @@
                </size>
               </property>
               <property name="text">
-               <string>Pay Now</string>
+               <string>Pay Up</string>
               </property>
              </widget>
             </item>

@@ -9,7 +9,9 @@ from assets.stylesheets.output_css import get_style
 from main import MainApp
 # from ui.main_app_window_ui import Ui_MainAppWindow
 # from ui.home_window_ui import Ui_HomeWindow
-from ui import main_app_window_ui, home_window_ui, customer_manager_window_ui, user_manager_window_ui
+from ui import (main_app_window_ui, home_window_ui, customer_manager_window_ui, user_manager_window_ui,
+    vendor_manager_window_ui)
+from ui.user_form_dialog_ui import Ui_CreateUserDialog
 
 class HomeWindow(qtw.QWidget, home_window_ui.Ui_HomeWindow):
     def __init__(self):
@@ -51,6 +53,23 @@ class UserManagerWindow(qtw.QWidget, user_manager_window_ui.Ui_UserManagerWindow
         self.lb_user_table.setProperty("class", "section-title")
         self.lb_transaction_list.setProperty("class", "section-title")
 
+
+class VendorManagerWindow(qtw.QWidget, vendor_manager_window_ui.Ui_VendorManagerWindow):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+        
+        self.lb_page_title.setProperty("class", "page-title")
+        self.pb_close_page.setProperty("class", "close-button")
+        self.le_search_vendor.setProperty("class", "line-search-input")
+        self.pb_create_vendor.setProperty("class", "create-button")
+        self.tbl_vendors.setProperty("class", "table")
+        self.lb_vendor_table.setProperty("class", "section-title")
+        self.ls_transactions.setProperty("class", "list")
+        self.lb_transaction_list.setProperty("class", "section-title")
+        self.wd_detail_labels.setProperty("class", "wd_detail_view")
+
+
 class MainAppWindow(qtw.QMainWindow, main_app_window_ui.Ui_MainAppWindow):
     def __init__(self):
         super().__init__()
@@ -62,11 +81,13 @@ class MainAppWindow(qtw.QMainWindow, main_app_window_ui.Ui_MainAppWindow):
         self.home = HomeWindow()
         self.customer_manager = CustomerManager()
         self.user_manager = UserManagerWindow()
+        self.vendor_manager = VendorManagerWindow()
         self.current_window = self.home
 
         self.wd_stacked.addWidget(self.home)
         self.wd_stacked.addWidget(self.customer_manager)
         self.wd_stacked.addWidget(self.user_manager)
+        self.wd_stacked.addWidget(self.vendor_manager)
 
         self.wd_stacked.setCurrentWidget(self.home)
         
@@ -88,6 +109,15 @@ class MainAppWindow(qtw.QMainWindow, main_app_window_ui.Ui_MainAppWindow):
             lambda checked: self.close_current_window(self.user_manager)
         )
         #------------ End user window ------------------------
+
+        #------------ Vendor manager window --------------------
+        self.tb_vendors.clicked.connect(
+            lambda checked: self.open_window(self.vendor_manager)
+        )
+        self.vendor_manager.pb_close_page.clicked.connect(
+            lambda checked: self.close_current_window(self.vendor_manager)
+        )
+        #------------ End vendor window ------------------------
 
 
     def open_window(self, window: qtw.QWidget):
