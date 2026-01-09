@@ -12,6 +12,7 @@ from main import MainApp
 from ui import (main_app_window_ui, home_window_ui, customer_manager_window_ui, user_manager_window_ui,
     vendor_manager_window_ui)
 from ui.user_form_dialog_ui import Ui_CreateUserDialog
+from ui.customer_form_dialog_ui import Ui_CreateCustomerDialog
 
 class HomeWindow(qtw.QWidget, home_window_ui.Ui_HomeWindow):
     def __init__(self):
@@ -19,6 +20,69 @@ class HomeWindow(qtw.QWidget, home_window_ui.Ui_HomeWindow):
         self.setupUi(self)
 
         self.lb_welcome.setProperty("class", "welcome-text")
+
+
+class UserFormDialog(qtw.QDialog, Ui_CreateUserDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = Ui_CreateUserDialog()
+        self.ui.setupUi(self)
+
+        self.ui.pb_save_user.setProperty("class", "create-button")
+        self.ui.pb_close_form.setProperty("class", "close-button")
+        self.ui.cb_role.setProperty("class", "inline-combobox")
+        self.ui.cb_status.setProperty("class", "inline-combobox")
+        self.ui.cb_charge_account.setProperty("class", "inline-combobox")
+        self.ui.lb_username.setProperty("class", "inline-label")
+        self.ui.lb_first_name.setProperty("class", "inline-label")
+        self.ui.lb_last_name.setProperty("class", "inline-label")
+        self.ui.lb_phone.setProperty("class", "inline-label")
+        self.ui.lb_email.setProperty("class", "inline-label")
+        self.ui.lb_address.setProperty("class", "inline-label")
+        self.ui.lb_role.setProperty("class", "inline-label")
+        self.ui.lb_status.setProperty("class", "inline-label")
+        self.ui.lb_charge_account.setProperty("class", "inline-label")
+        self.ui.lb_pin.setProperty("class", "inline-label")
+        self.ui.lb_password.setProperty("class", "inline-label")
+        self.ui.lb_password_2.setProperty("class", "inline-label")
+
+        self.ui.le_pin.setEchoMode(qtw.QLineEdit.Password)
+        self.ui.le_password.setEchoMode(qtw.QLineEdit.Password)
+        self.ui.le_password_2.setEchoMode(qtw.QLineEdit.Password)
+    
+        self.ui.pb_close_form.clicked.connect(self.close)
+
+
+class CustomerFormDialog(qtw.QDialog,Ui_CreateCustomerDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = Ui_CreateCustomerDialog()
+        self.ui.setupUi(self)
+
+        # assign class property
+        self.ui.pb_save_customer.setProperty("class", "create-button")
+        self.ui.pb_close_form.setProperty("class", "close-button")
+        self.ui.lb_first_name.setProperty("class", "inline-label")
+        self.ui.le_first_name.setProperty("class", "inline-lineEdit")
+        self.ui.lb_last_name.setProperty("class", "inline-label")
+        self.ui.le_last_name.setProperty("class", "inline-lineEdit")
+        self.ui.lb_phone.setProperty("class", "inline-label")
+        self.ui.le_phone.setProperty("class", "inline-lineEdit")
+        self.ui.lb_email.setProperty("class", "inline-label")
+        self.ui.le_email.setProperty("class", "inline-lineEdit")
+        self.ui.lb_address.setProperty("class", "inline-label")
+        self.ui.le_address.setProperty("class", "inline-lineEdit")
+        self.ui.lb_charge_account.setProperty("class", "inline-label")
+        self.ui.cb_charge_account.setProperty("class", "inline-combobox")
+        self.ui.lb_system_limit.setProperty("class", "inline-label")
+        self.ui.chk_system_limit.setProperty("class", "inline-checkbox")
+        self.ui.lb_custom_limit.setProperty("class", "inline-label")
+        self.ui.le_custom_limit.setProperty("class", "inline-lineEdit")
+        self.ui.lb_disable_limit.setProperty("class", "inline-label")
+        self.ui.chk_disable_limit.setProperty("class", "inline-checkbox")
+
+        # connect signal
+        self.ui.pb_close_form.clicked.connect(self.close)
 
 
 class CustomerManager(qtw.QWidget, customer_manager_window_ui.Ui_CustomerManagerWindow):
@@ -99,6 +163,10 @@ class MainAppWindow(qtw.QMainWindow, main_app_window_ui.Ui_MainAppWindow):
         self.customer_manager.pb_close_page.clicked.connect(
             lambda checked: self.close_current_window(self.customer_manager)
         )
+        # create customer dialog
+        self.customer_manager.pb_create_customer.clicked.connect(
+            lambda checked: self.show_dialog(CustomerFormDialog())
+        )
         #------------ End customer window -------------------
 
         #------------ User manager window --------------------
@@ -107,6 +175,10 @@ class MainAppWindow(qtw.QMainWindow, main_app_window_ui.Ui_MainAppWindow):
         )
         self.user_manager.pb_close_page.clicked.connect(
             lambda checked: self.close_current_window(self.user_manager)
+        )
+        # create user dialog
+        self.user_manager.pb_create_user.clicked.connect(
+            lambda checked: self.show_dialog(UserFormDialog())
         )
         #------------ End user window ------------------------
 
@@ -127,6 +199,11 @@ class MainAppWindow(qtw.QMainWindow, main_app_window_ui.Ui_MainAppWindow):
     def close_current_window(self, window: qtw.QWidget):
         if self.current_window == window:
             self.wd_stacked.setCurrentWidget(self.home)
+
+    def show_dialog(self, dialog):
+        """Opens given dialog window"""
+        self.custom_dialog = dialog
+        self.custom_dialog.exec()
 
 if __name__ == '__main__':
     app = qtw.QApplication(sys.argv)

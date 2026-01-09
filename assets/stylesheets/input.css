@@ -1,4 +1,4 @@
-/*============= WIDGETS =============== */
+/*======================================== WIDGETS ================================= */
 
 /* global widgets */
 QWidget {
@@ -18,7 +18,7 @@ QWidget {
     background-color: #fff;
 }
 
-/*============= HEADER WIDGETS =============== */
+/*======================================== HEADER WIDGETS ================================= */
 
 /* title label */
 .page-title {
@@ -31,7 +31,16 @@ QWidget {
     font-weight: bold;
 }
 
-/*============= BUTTONS =============== */
+/* dialog title */
+#lb_title_label {
+    background-color: #2b2b2b;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/*========================================= BUTTONS ================================== */
 
 /* general buttons */
 QPushButton {
@@ -102,7 +111,7 @@ QToolButton:pressed {
     background-color: #c9c9c9;
 }
 
-/*============= INPUT STYLES ============= */
+/*======================================== INPUT STYLES ================================= */
 .line-search-input {
     background-color: #9f9f9f;
     color: #1a1a1a;
@@ -111,7 +120,55 @@ QToolButton:pressed {
     padding-left: 10px;
 }
 
-/*============= MENUBAR ============= */
+/* combobox */
+.inline-combobox {
+    border: none;
+    background-color: #9f9f9f;
+    color: #1a1a1a;
+    padding-left: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.inline-combobox::down-arrow {
+    image: url(:/Icons/drop_arrow_white.svg);
+    width: 20px;
+    height: 20px;
+}
+
+.inline-combobox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #9f9f9f;
+}
+
+.inline-combobox QAbstractItemView {
+    background-color: #f0f0f0;
+    color: #fff;
+}
+
+.inline-combobox QAbstractItemView::item {
+    padding: 5px;
+}
+
+.inline-combobox QAbstractItemView::item:hover {
+    background-color: #ADD8E6; /* LightBlue */
+}
+
+.inline-combobox QAbstractItemView::item:selected {
+    background-color: #4682B4; /* SteelBlue */
+    color: #fff;
+}
+
+.inline-label {
+    background-color: #9f9f9f;
+    color: #1a1a1a;
+}
+
+/*======================================== MENUBAR ================================= */
 QMenuBar, QMenu {
     background-color: #2b2b2b;
     font-family: "Lexend";
@@ -134,7 +191,7 @@ QMenuBar::item:hover {
     color: #1a1a1a;
 }
 
-/*=========== WELCOME TEXT =========== */
+/*======================================== WELCOME TEXT ================================= */
 .welcome-text {
     font-family: "Lexend";
     font-size: 36px;
@@ -142,7 +199,7 @@ QMenuBar::item:hover {
 }
 
 
-/*=============== FRAMES =============== */
+/*======================================== FRAMES ================================= */
 /* detail view */
 .wd_detail_view {
     border: None;
@@ -163,4 +220,15 @@ QMenuBar::item:hover {
     border-radius: 18px;
 }
 
+/* groupbox */
+QGroupBox {
+    padding: 20px;
+}
 
+QDialog {
+    background-color: #2b2b2b;
+}
+
+QDialog QWidget {
+    background-color: #2b2b2b;
+}

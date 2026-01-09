@@ -18,6 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QGroupBox,
     QHBoxLayout, QLabel, QLineEdit, QPushButton,
     QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
+import icons_rc
 
 class Ui_CreateUserDialog(object):
     def setupUi(self, CreateUserDialog):
@@ -27,27 +28,16 @@ class Ui_CreateUserDialog(object):
         CreateUserDialog.setMaximumSize(QSize(800, 16777215))
         CreateUserDialog.setStyleSheet(u"QWidget {\n"
 "	font-family: \"Lexend\";\n"
-"	font-size: 12px;\n"
 "/*	border: 1px solid white;*/\n"
 "}\n"
 "\n"
 "QLabel {\n"
-"	background-color: #9f9f9f;\n"
 "	border: None;\n"
 "	border-top-left-radius: 10px;\n"
 "	border-bottom-left-radius: 10px;\n"
 "	padding-right: 1px;\n"
-"	color: #1a1a1a;\n"
 "}\n"
 "QLineEdit {\n"
-"	background-color: #9f9f9f;\n"
-"	border: None;\n"
-"	border-top-right-radius: 10px;\n"
-"	border-bottom-right-radius: 10px;\n"
-"	padding-left: 10px;\n"
-"	color: #1a1a1a;\n"
-"}\n"
-"QComboBox {\n"
 "	background-color: #9f9f9f;\n"
 "	border: None;\n"
 "	border-top-right-radius: 10px;\n"
@@ -92,6 +82,7 @@ class Ui_CreateUserDialog(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.grp_personal_info = QGroupBox(self.widget_4)
         self.grp_personal_info.setObjectName(u"grp_personal_info")
+        self.grp_personal_info.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.grp_personal_info.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.grp_personal_info.setFlat(False)
         self.verticalLayout_2 = QVBoxLayout(self.grp_personal_info)
@@ -241,6 +232,8 @@ class Ui_CreateUserDialog(object):
 
         self.grp_auth_security = QGroupBox(self.widget_4)
         self.grp_auth_security.setObjectName(u"grp_auth_security")
+        self.grp_auth_security.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.grp_auth_security.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.grp_auth_security.setFlat(False)
         self.grp_auth_security.setCheckable(False)
         self.verticalLayout = QVBoxLayout(self.grp_auth_security)
@@ -282,9 +275,15 @@ class Ui_CreateUserDialog(object):
         self.horizontalLayout_12.addWidget(self.lb_status)
 
         self.cb_status = QComboBox(self.grp_auth_security)
+        self.cb_status.addItem("")
+        self.cb_status.addItem("")
+        self.cb_status.addItem("")
+        self.cb_status.addItem("")
+        self.cb_status.addItem("")
         self.cb_status.setObjectName(u"cb_status")
         self.cb_status.setMinimumSize(QSize(0, 35))
         self.cb_status.setMaximumSize(QSize(16777215, 35))
+        self.cb_status.setStyleSheet(u"")
 
         self.horizontalLayout_12.addWidget(self.cb_status)
 
@@ -409,19 +408,19 @@ class Ui_CreateUserDialog(object):
 
         self.horizontalLayout_15.addItem(self.horizontalSpacer)
 
-        self.pushButton = QPushButton(self.widget_2)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(160, 35))
-        self.pushButton.setMaximumSize(QSize(160, 35))
+        self.pb_save_user = QPushButton(self.widget_2)
+        self.pb_save_user.setObjectName(u"pb_save_user")
+        self.pb_save_user.setMinimumSize(QSize(160, 35))
+        self.pb_save_user.setMaximumSize(QSize(160, 35))
 
-        self.horizontalLayout_15.addWidget(self.pushButton)
+        self.horizontalLayout_15.addWidget(self.pb_save_user)
 
-        self.pushButton_2 = QPushButton(self.widget_2)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setMinimumSize(QSize(160, 35))
-        self.pushButton_2.setMaximumSize(QSize(160, 35))
+        self.pb_close_form = QPushButton(self.widget_2)
+        self.pb_close_form.setObjectName(u"pb_close_form")
+        self.pb_close_form.setMinimumSize(QSize(160, 35))
+        self.pb_close_form.setMaximumSize(QSize(160, 35))
 
-        self.horizontalLayout_15.addWidget(self.pushButton_2)
+        self.horizontalLayout_15.addWidget(self.pb_close_form)
 
 
         self.verticalLayout_5.addWidget(self.widget_2)
@@ -452,12 +451,18 @@ class Ui_CreateUserDialog(object):
         self.lb_role.setText(QCoreApplication.translate("CreateUserDialog", u"Role:", None))
         self.cb_role.setPlaceholderText(QCoreApplication.translate("CreateUserDialog", u"Select Role...", None))
         self.lb_status.setText(QCoreApplication.translate("CreateUserDialog", u"Status:", None))
+        self.cb_status.setItemText(0, QCoreApplication.translate("CreateUserDialog", u"New Item", None))
+        self.cb_status.setItemText(1, QCoreApplication.translate("CreateUserDialog", u"New Item", None))
+        self.cb_status.setItemText(2, QCoreApplication.translate("CreateUserDialog", u"New Item", None))
+        self.cb_status.setItemText(3, QCoreApplication.translate("CreateUserDialog", u"New Item", None))
+        self.cb_status.setItemText(4, QCoreApplication.translate("CreateUserDialog", u"New Item", None))
+
         self.cb_status.setPlaceholderText(QCoreApplication.translate("CreateUserDialog", u"Select Status...", None))
         self.lb_charge_account.setText(QCoreApplication.translate("CreateUserDialog", u"Charge to Account:", None))
         self.lb_pin.setText(QCoreApplication.translate("CreateUserDialog", u"PIN:", None))
         self.lb_password.setText(QCoreApplication.translate("CreateUserDialog", u"Password:", None))
         self.lb_password_2.setText(QCoreApplication.translate("CreateUserDialog", u"Confirm Password:", None))
-        self.pushButton.setText(QCoreApplication.translate("CreateUserDialog", u"PushButton", None))
-        self.pushButton_2.setText(QCoreApplication.translate("CreateUserDialog", u"PushButton", None))
+        self.pb_save_user.setText(QCoreApplication.translate("CreateUserDialog", u"Save User", None))
+        self.pb_close_form.setText(QCoreApplication.translate("CreateUserDialog", u"Close", None))
     # retranslateUi
 
