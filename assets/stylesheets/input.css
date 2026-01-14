@@ -39,6 +39,13 @@ QWidget {
     font-weight: bold;
 }
 
+.dialog-title {
+    background-color: #2b2b2b;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 
 /*========================================= BUTTONS ================================== */
 
@@ -166,6 +173,33 @@ QToolButton:pressed {
 .inline-label {
     background-color: #9f9f9f;
     color: #1a1a1a;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.inline-lineEdit {
+    border: none;
+    background-color: #9f9f9f;
+    color: #1a1a1a;
+    padding-left: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.inline-checkbox {
+    padding-left: 10px;
+}
+
+.inline-checkbox::indicator {
+    image: url(:/Icons/checkbox_unchecked.svg);
+    width: 20px;
+    height: 20px;
+}
+
+.inline-checkbox::indicator:checked {
+    image: url(:/Icons/check_white.svg);
+    width: 20px;
+    height: 20px;
 }
 
 /*======================================== MENUBAR ================================= */
@@ -220,10 +254,6 @@ QMenuBar::item:hover {
     border-radius: 18px;
 }
 
-/* groupbox */
-QGroupBox {
-    padding: 20px;
-}
 
 QDialog {
     background-color: #2b2b2b;

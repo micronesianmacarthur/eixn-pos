@@ -11,8 +11,8 @@ from main import MainApp
 # from ui.home_window_ui import Ui_HomeWindow
 from ui import (main_app_window_ui, home_window_ui, customer_manager_window_ui, user_manager_window_ui,
     vendor_manager_window_ui)
-from ui.user_form_dialog_ui import Ui_CreateUserDialog
-from ui.customer_form_dialog_ui import Ui_CreateCustomerDialog
+from ui.user_form_dialog_ui import Ui_UserFormDialog
+from ui.customer_form_dialog_ui import Ui_CustomerFormDialog
 
 class HomeWindow(qtw.QWidget, home_window_ui.Ui_HomeWindow):
     def __init__(self):
@@ -22,29 +22,46 @@ class HomeWindow(qtw.QWidget, home_window_ui.Ui_HomeWindow):
         self.lb_welcome.setProperty("class", "welcome-text")
 
 
-class UserFormDialog(qtw.QDialog, Ui_CreateUserDialog):
+class UserFormDialog(qtw.QDialog, Ui_UserFormDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.ui = Ui_CreateUserDialog()
+        self.ui = Ui_UserFormDialog()
         self.ui.setupUi(self)
+        
+        self.ui.lb_form_title.setProperty("class", "dialog-title")
+        self.ui.lb_username.setProperty("class", "inline-label")
+        self.ui.le_username.setProperty("class", "inline-lineEdit")
+        self.ui.lb_first_name.setProperty("class", "inline-label")
+        self.ui.le_first_name.setProperty("class", "inline-lineEdit")
+        self.ui.lb_last_name.setProperty("class", "inline-label")
+        self.ui.le_last_name.setProperty("class", "inline-lineEdit")
+        self.ui.lb_phone.setProperty("class", "inline-label")
+        self.ui.le_phone.setProperty("class", "inline-lineEdit")
+        self.ui.lb_email.setProperty("class", "inline-label")
+        self.ui.le_email.setProperty("class", "inline-lineEdit")
+        self.ui.lb_address.setProperty("class", "inline-label")
+        self.ui.le_address.setProperty("class", "inline-lineEdit")
+
+        self.ui.lb_role.setProperty("class", "inline-label")
+        self.ui.cb_role.setProperty("class", "inline-combobox")
+        self.ui.lb_status.setProperty("class", "inline-label")
+        self.ui.cb_status.setProperty("class", "inline-combobox")
+        self.ui.lb_charge_account.setProperty("class", "inline-label")
+        self.ui.cb_charge_account.setProperty("class", "inline-combobox")
+        self.ui.chk_system_limit.setProperty("class", "inline-checkbox")
+        self.ui.lb_custom_limit.setProperty("class", "inline-label")
+        self.ui.le_custom_limit.setProperty("class", "inline-lineEdit")
+        self.ui.chk_disable_limit.setProperty("class", "inline-checkbox")
+        self.ui.lb_pin.setProperty("class", "inline-label")
+        self.ui.le_pin.setProperty("class", "inline-lineEdit")
+        self.ui.lb_password.setProperty("class", "inline-label")
+        self.ui.le_password.setProperty("class", "inline-lineEdit")
+        self.ui.lb_password_2.setProperty("class", "inline-label")
+        self.ui.le_password_2.setProperty("class", "inline-lineEdit")
 
         self.ui.pb_save_user.setProperty("class", "create-button")
         self.ui.pb_close_form.setProperty("class", "close-button")
-        self.ui.cb_role.setProperty("class", "inline-combobox")
-        self.ui.cb_status.setProperty("class", "inline-combobox")
-        self.ui.cb_charge_account.setProperty("class", "inline-combobox")
-        self.ui.lb_username.setProperty("class", "inline-label")
-        self.ui.lb_first_name.setProperty("class", "inline-label")
-        self.ui.lb_last_name.setProperty("class", "inline-label")
-        self.ui.lb_phone.setProperty("class", "inline-label")
-        self.ui.lb_email.setProperty("class", "inline-label")
-        self.ui.lb_address.setProperty("class", "inline-label")
-        self.ui.lb_role.setProperty("class", "inline-label")
-        self.ui.lb_status.setProperty("class", "inline-label")
-        self.ui.lb_charge_account.setProperty("class", "inline-label")
-        self.ui.lb_pin.setProperty("class", "inline-label")
-        self.ui.lb_password.setProperty("class", "inline-label")
-        self.ui.lb_password_2.setProperty("class", "inline-label")
+
 
         self.ui.le_pin.setEchoMode(qtw.QLineEdit.Password)
         self.ui.le_password.setEchoMode(qtw.QLineEdit.Password)
@@ -53,13 +70,14 @@ class UserFormDialog(qtw.QDialog, Ui_CreateUserDialog):
         self.ui.pb_close_form.clicked.connect(self.close)
 
 
-class CustomerFormDialog(qtw.QDialog,Ui_CreateCustomerDialog):
+class CustomerFormDialog(qtw.QDialog,Ui_CustomerFormDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.ui = Ui_CreateCustomerDialog()
+        self.ui = Ui_CustomerFormDialog()
         self.ui.setupUi(self)
 
         # assign class property
+        self.ui.lb_form_title.setProperty("class", "dialog-title")
         self.ui.pb_save_customer.setProperty("class", "create-button")
         self.ui.pb_close_form.setProperty("class", "close-button")
         self.ui.lb_first_name.setProperty("class", "inline-label")
@@ -74,15 +92,27 @@ class CustomerFormDialog(qtw.QDialog,Ui_CreateCustomerDialog):
         self.ui.le_address.setProperty("class", "inline-lineEdit")
         self.ui.lb_charge_account.setProperty("class", "inline-label")
         self.ui.cb_charge_account.setProperty("class", "inline-combobox")
-        self.ui.lb_system_limit.setProperty("class", "inline-label")
+        # self.ui.lb_system_limit.setProperty("class", "inline-label")
         self.ui.chk_system_limit.setProperty("class", "inline-checkbox")
         self.ui.lb_custom_limit.setProperty("class", "inline-label")
         self.ui.le_custom_limit.setProperty("class", "inline-lineEdit")
-        self.ui.lb_disable_limit.setProperty("class", "inline-label")
+        # self.ui.lb_disable_limit.setProperty("class", "inline-label")
         self.ui.chk_disable_limit.setProperty("class", "inline-checkbox")
 
         # connect signal
         self.ui.pb_close_form.clicked.connect(self.close)
+        # disable custom limit when system limit is checked
+        self.ui.chk_system_limit.stateChanged.connect(self.disable_other_limits)
+
+
+    def disable_other_limits(self):
+        if self.ui.chk_system_limit.isChecked():
+            self.ui.lb_custom_limit.setDisabled(True)
+            self.ui.le_custom_limit.setDisabled(True)
+            self.ui.chk_disable_limit.setDisabled(True)
+        else:
+            self.ui.le_custom_limit.setDisabled(False)
+            self.ui.chk_disable_limit.setDisabled(False)
 
 
 class CustomerManager(qtw.QWidget, customer_manager_window_ui.Ui_CustomerManagerWindow):
