@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog,
     QGridLayout, QGroupBox, QHBoxLayout, QLabel,
     QLineEdit, QPushButton, QSizePolicy, QSpacerItem,
     QVBoxLayout, QWidget)
+import icons_rc
 
 class Ui_CustomerFormDialog(object):
     def setupUi(self, CustomerFormDialog):
@@ -109,6 +110,27 @@ class Ui_CustomerFormDialog(object):
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_11)
+
+        self.horizontalLayout_14 = QHBoxLayout()
+        self.horizontalLayout_14.setSpacing(0)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.lb_company = QLabel(self.grp_personal_info)
+        self.lb_company.setObjectName(u"lb_company")
+        self.lb_company.setMinimumSize(QSize(80, 35))
+        self.lb_company.setMaximumSize(QSize(80, 35))
+        self.lb_company.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_14.addWidget(self.lb_company)
+
+        self.le_company = QLineEdit(self.grp_personal_info)
+        self.le_company.setObjectName(u"le_company")
+        self.le_company.setMinimumSize(QSize(0, 35))
+        self.le_company.setMaximumSize(QSize(16777215, 35))
+
+        self.horizontalLayout_14.addWidget(self.le_company)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_14)
 
         self.horizontalLayout_12 = QHBoxLayout()
         self.horizontalLayout_12.setSpacing(10)
@@ -328,6 +350,8 @@ class Ui_CustomerFormDialog(object):
         self.le_first_name.setPlaceholderText(QCoreApplication.translate("CustomerFormDialog", u"e.g. John", None))
         self.lb_last_name.setText(QCoreApplication.translate("CustomerFormDialog", u"Last Name:", None))
         self.le_last_name.setPlaceholderText(QCoreApplication.translate("CustomerFormDialog", u"Doe", None))
+        self.lb_company.setText(QCoreApplication.translate("CustomerFormDialog", u"Company:", None))
+        self.le_company.setPlaceholderText(QCoreApplication.translate("CustomerFormDialog", u"Name of Company (if applicable)", None))
         self.lb_phone.setText(QCoreApplication.translate("CustomerFormDialog", u"Phone:", None))
         self.le_phone.setPlaceholderText(QCoreApplication.translate("CustomerFormDialog", u"320-1234", None))
         self.lb_email.setText(QCoreApplication.translate("CustomerFormDialog", u"Email:", None))

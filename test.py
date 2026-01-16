@@ -84,6 +84,8 @@ class CustomerFormDialog(qtw.QDialog,Ui_CustomerFormDialog):
         self.ui.le_first_name.setProperty("class", "inline-lineEdit")
         self.ui.lb_last_name.setProperty("class", "inline-label")
         self.ui.le_last_name.setProperty("class", "inline-lineEdit")
+        self.ui.lb_company.setProperty("class", "inline-label")
+        self.ui.le_company.setProperty("class", "inline-lineEdit")
         self.ui.lb_phone.setProperty("class", "inline-label")
         self.ui.le_phone.setProperty("class", "inline-lineEdit")
         self.ui.lb_email.setProperty("class", "inline-label")
@@ -109,8 +111,10 @@ class CustomerFormDialog(qtw.QDialog,Ui_CustomerFormDialog):
         if self.ui.chk_system_limit.isChecked():
             self.ui.lb_custom_limit.setDisabled(True)
             self.ui.le_custom_limit.setDisabled(True)
+            self.ui.chk_disable_limit.setChecked(False)
             self.ui.chk_disable_limit.setDisabled(True)
         else:
+            self.ui.lb_custom_limit.setDisabled(False)
             self.ui.le_custom_limit.setDisabled(False)
             self.ui.chk_disable_limit.setDisabled(False)
 
