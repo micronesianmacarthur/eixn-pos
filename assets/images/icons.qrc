@@ -1,9 +1,9 @@
 <RCC>
   <qresource prefix="Icons">
-    <file>checkbox_disabled.svg</file>
-    <file>receive.svg</file>
     <file>checkbox_checked.svg</file>
+    <file>checkbox_disabled.svg</file>
     <file>checkbox_unchecked.svg</file>
+    <file>receive.svg</file>
     <file>drop_arrow_white.svg</file>
     <file>delete_white.svg</file>
     <file>check_white.svg</file>

@@ -206,7 +206,7 @@ QToolButton:pressed {
 }
 
 .inline-checkbox::indicator:checked {
-    image: url(:/Icons/check_white.svg);
+    image: url(:/Icons/checkbox_checked.svg);
     width: 20px;
     height: 20px;
 }
@@ -218,6 +218,14 @@ QToolButton:pressed {
 }
 
 .inline-checkbox:disabled {
+    color: #797979;
+}
+
+.checkbox-label {
+    color: #fff;
+}
+
+.checkbox-label:disabled {
     color: #797979;
 }
 

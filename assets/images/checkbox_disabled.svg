@@ -1,42 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-
-<svg
-   width="800"
-   height="800"
-   viewBox="0 0 24 24"
-   version="1.1"
-   fill="#000000"
-   id="svg12"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs16" />
-  <g
-     id="SVGRepo_iconCarrier"
-     style="fill:#797979;fill-opacity:1;stroke:none;stroke-opacity:1">
-    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-    <title
-       id="title4">ic_fluent_checkbox_unchecked_24_regular</title>
-    <desc
-       id="desc6">Created with Sketch.</desc>
-    <g
-       id="🔍-Product-Icons"
-       stroke="none"
-       stroke-width="1"
-       fill="none"
-       fill-rule="evenodd"
-       style="fill:#797979;fill-opacity:1;stroke:none;stroke-opacity:1">
-      <g
-         id="ic_fluent_checkbox_unchecked_24_regular"
-         fill="#ffffff"
-         fill-rule="nonzero"
-         style="fill:#797979;fill-opacity:1;stroke:none;stroke-opacity:1">
-        <path
-           d="m 5.75,3 h 12.5 C 19.768783,3 21,4.2312169 21,5.75 v 12.5 C 21,19.768783 19.768783,21 18.25,21 H 5.75 C 4.2312169,21 3,19.768783 3,18.25 V 5.75 C 3,4.2312169 4.2312169,3 5.75,3 Z m 0,1.5 C 5.0596441,4.5 4.5,5.0596441 4.5,5.75 v 12.5 c 0,0.690356 0.5596441,1.25 1.25,1.25 h 12.5 c 0.690356,0 1.25,-0.559644 1.25,-1.25 V 5.75 C 19.5,5.0596441 18.940356,4.5 18.25,4.5 Z"
-           id="🎨Color"
-           style="fill:#797979;fill-opacity:1;stroke:none;stroke-opacity:1" />
-      </g>
-    </g>
-  </g>
-</svg>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier"> <g id="Interface / Checkbox_Unchecked"> <path id="Vector" d="M4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H16.8031C17.921 20 18.48 20 18.9074 19.7822C19.2837 19.5905 19.5905 19.2842 19.7822 18.9079C20 18.4805 20 17.9215 20 16.8036V7.19691C20 6.07899 20 5.5192 19.7822 5.0918C19.5905 4.71547 19.2837 4.40973 18.9074 4.21799C18.4796 4 17.9203 4 16.8002 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002Z" stroke="#797979" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g> </g>
+</svg>

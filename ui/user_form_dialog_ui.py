@@ -257,101 +257,6 @@ class Ui_UserFormDialog(object):
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_14)
 
-        self.horizontalLayout_22 = QHBoxLayout()
-        self.horizontalLayout_22.setSpacing(10)
-        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.horizontalLayout_9 = QHBoxLayout()
-        self.horizontalLayout_9.setSpacing(0)
-        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.lb_charge_account = QLabel(self.grp_security_auth)
-        self.lb_charge_account.setObjectName(u"lb_charge_account")
-        self.lb_charge_account.setMinimumSize(QSize(120, 35))
-        self.lb_charge_account.setMaximumSize(QSize(120, 35))
-        self.lb_charge_account.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
-
-        self.horizontalLayout_9.addWidget(self.lb_charge_account)
-
-        self.cb_charge_account = QComboBox(self.grp_security_auth)
-        self.cb_charge_account.addItem("")
-        self.cb_charge_account.addItem("")
-        self.cb_charge_account.setObjectName(u"cb_charge_account")
-        self.cb_charge_account.setMinimumSize(QSize(0, 35))
-        self.cb_charge_account.setMaximumSize(QSize(16777215, 35))
-
-        self.horizontalLayout_9.addWidget(self.cb_charge_account)
-
-
-        self.horizontalLayout_22.addLayout(self.horizontalLayout_9)
-
-        self.horizontalLayout_18 = QHBoxLayout()
-        self.horizontalLayout_18.setSpacing(0)
-        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
-        self.lb_system_limit = QLabel(self.grp_security_auth)
-        self.lb_system_limit.setObjectName(u"lb_system_limit")
-        self.lb_system_limit.setMinimumSize(QSize(0, 35))
-        self.lb_system_limit.setMaximumSize(QSize(120, 16777215))
-        self.lb_system_limit.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
-
-        self.horizontalLayout_18.addWidget(self.lb_system_limit)
-
-        self.chk_system_limit = QCheckBox(self.grp_security_auth)
-        self.chk_system_limit.setObjectName(u"chk_system_limit")
-        self.chk_system_limit.setMinimumSize(QSize(0, 35))
-
-        self.horizontalLayout_18.addWidget(self.chk_system_limit)
-
-
-        self.horizontalLayout_22.addLayout(self.horizontalLayout_18)
-
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout_22)
-
-        self.horizontalLayout_21 = QHBoxLayout()
-        self.horizontalLayout_21.setSpacing(10)
-        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.horizontalLayout_19 = QHBoxLayout()
-        self.horizontalLayout_19.setSpacing(0)
-        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.lb_custom_limit = QLabel(self.grp_security_auth)
-        self.lb_custom_limit.setObjectName(u"lb_custom_limit")
-        self.lb_custom_limit.setMinimumSize(QSize(120, 35))
-        self.lb_custom_limit.setMaximumSize(QSize(120, 16777215))
-        self.lb_custom_limit.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
-
-        self.horizontalLayout_19.addWidget(self.lb_custom_limit)
-
-        self.le_custom_limit = QLineEdit(self.grp_security_auth)
-        self.le_custom_limit.setObjectName(u"le_custom_limit")
-        self.le_custom_limit.setMinimumSize(QSize(155, 35))
-        self.le_custom_limit.setMaximumSize(QSize(155, 16777215))
-
-        self.horizontalLayout_19.addWidget(self.le_custom_limit)
-
-
-        self.horizontalLayout_21.addLayout(self.horizontalLayout_19)
-
-        self.horizontalLayout_20 = QHBoxLayout()
-        self.horizontalLayout_20.setSpacing(0)
-        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
-        self.lb_disable_limit = QLabel(self.grp_security_auth)
-        self.lb_disable_limit.setObjectName(u"lb_disable_limit")
-        self.lb_disable_limit.setMinimumSize(QSize(120, 35))
-        self.lb_disable_limit.setMaximumSize(QSize(120, 16777215))
-
-        self.horizontalLayout_20.addWidget(self.lb_disable_limit)
-
-        self.chk_disable_limit = QCheckBox(self.grp_security_auth)
-        self.chk_disable_limit.setObjectName(u"chk_disable_limit")
-        self.chk_disable_limit.setMinimumSize(QSize(140, 35))
-
-        self.horizontalLayout_20.addWidget(self.chk_disable_limit)
-
-
-        self.horizontalLayout_21.addLayout(self.horizontalLayout_20)
-
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout_21)
-
         self.horizontalLayout_10 = QHBoxLayout()
         self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
@@ -424,6 +329,105 @@ class Ui_UserFormDialog(object):
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_13)
 
+        self.horizontalLayout_9 = QHBoxLayout()
+        self.horizontalLayout_9.setSpacing(0)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.lb_charge_account = QLabel(self.grp_security_auth)
+        self.lb_charge_account.setObjectName(u"lb_charge_account")
+        self.lb_charge_account.setMinimumSize(QSize(120, 35))
+        self.lb_charge_account.setMaximumSize(QSize(120, 35))
+        self.lb_charge_account.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_9.addWidget(self.lb_charge_account)
+
+        self.cb_charge_account = QComboBox(self.grp_security_auth)
+        self.cb_charge_account.addItem("")
+        self.cb_charge_account.addItem("")
+        self.cb_charge_account.setObjectName(u"cb_charge_account")
+        self.cb_charge_account.setMinimumSize(QSize(0, 35))
+        self.cb_charge_account.setMaximumSize(QSize(16777215, 35))
+
+        self.horizontalLayout_9.addWidget(self.cb_charge_account)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_9)
+
+        self.horizontalLayout_21 = QHBoxLayout()
+        self.horizontalLayout_21.setSpacing(10)
+        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
+        self.horizontalLayout_18 = QHBoxLayout()
+        self.horizontalLayout_18.setSpacing(0)
+        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
+        self.lb_system_limit = QLabel(self.grp_security_auth)
+        self.lb_system_limit.setObjectName(u"lb_system_limit")
+        self.lb_system_limit.setMinimumSize(QSize(120, 35))
+        self.lb_system_limit.setMaximumSize(QSize(16777215, 16777215))
+        self.lb_system_limit.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_18.addWidget(self.lb_system_limit)
+
+        self.chk_system_limit = QCheckBox(self.grp_security_auth)
+        self.chk_system_limit.setObjectName(u"chk_system_limit")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.chk_system_limit.sizePolicy().hasHeightForWidth())
+        self.chk_system_limit.setSizePolicy(sizePolicy)
+        self.chk_system_limit.setMinimumSize(QSize(0, 35))
+
+        self.horizontalLayout_18.addWidget(self.chk_system_limit)
+
+
+        self.horizontalLayout_21.addLayout(self.horizontalLayout_18)
+
+        self.horizontalLayout_19 = QHBoxLayout()
+        self.horizontalLayout_19.setSpacing(0)
+        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
+        self.lb_custom_limit = QLabel(self.grp_security_auth)
+        self.lb_custom_limit.setObjectName(u"lb_custom_limit")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.lb_custom_limit.sizePolicy().hasHeightForWidth())
+        self.lb_custom_limit.setSizePolicy(sizePolicy1)
+        self.lb_custom_limit.setMinimumSize(QSize(120, 35))
+        self.lb_custom_limit.setMaximumSize(QSize(120, 16777215))
+        self.lb_custom_limit.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_19.addWidget(self.lb_custom_limit)
+
+        self.le_custom_limit = QLineEdit(self.grp_security_auth)
+        self.le_custom_limit.setObjectName(u"le_custom_limit")
+        self.le_custom_limit.setMinimumSize(QSize(0, 35))
+        self.le_custom_limit.setMaximumSize(QSize(16777215, 16777215))
+
+        self.horizontalLayout_19.addWidget(self.le_custom_limit)
+
+
+        self.horizontalLayout_21.addLayout(self.horizontalLayout_19)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_21)
+
+        self.horizontalLayout_20 = QHBoxLayout()
+        self.horizontalLayout_20.setSpacing(0)
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.lb_disable_limit = QLabel(self.grp_security_auth)
+        self.lb_disable_limit.setObjectName(u"lb_disable_limit")
+        self.lb_disable_limit.setMinimumSize(QSize(120, 35))
+        self.lb_disable_limit.setMaximumSize(QSize(120, 16777215))
+
+        self.horizontalLayout_20.addWidget(self.lb_disable_limit)
+
+        self.chk_disable_limit = QCheckBox(self.grp_security_auth)
+        self.chk_disable_limit.setObjectName(u"chk_disable_limit")
+        self.chk_disable_limit.setMinimumSize(QSize(140, 35))
+
+        self.horizontalLayout_20.addWidget(self.chk_disable_limit)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_20)
+
 
         self.verticalLayout_4.addWidget(self.grp_security_auth)
 
@@ -485,6 +489,12 @@ class Ui_UserFormDialog(object):
         self.cb_status.setItemText(0, QCoreApplication.translate("UserFormDialog", u"Active", None))
         self.cb_status.setItemText(1, QCoreApplication.translate("UserFormDialog", u"Inactive", None))
 
+        self.lb_pin.setText(QCoreApplication.translate("UserFormDialog", u"PIN:", None))
+        self.le_pin.setPlaceholderText(QCoreApplication.translate("UserFormDialog", u"Enter PIN here...", None))
+        self.lb_password.setText(QCoreApplication.translate("UserFormDialog", u"Password:", None))
+        self.le_password.setPlaceholderText(QCoreApplication.translate("UserFormDialog", u"Enter Password here...", None))
+        self.lb_password_2.setText(QCoreApplication.translate("UserFormDialog", u"Confirm Password:", None))
+        self.le_password_2.setPlaceholderText(QCoreApplication.translate("UserFormDialog", u"Confirm Password here...", None))
         self.lb_charge_account.setText(QCoreApplication.translate("UserFormDialog", u"Charge to Account:", None))
         self.cb_charge_account.setItemText(0, QCoreApplication.translate("UserFormDialog", u"Disabled", None))
         self.cb_charge_account.setItemText(1, QCoreApplication.translate("UserFormDialog", u"Enabled", None))
@@ -492,14 +502,9 @@ class Ui_UserFormDialog(object):
         self.lb_system_limit.setText(QCoreApplication.translate("UserFormDialog", u"Use System Limit:", None))
         self.chk_system_limit.setText(QCoreApplication.translate("UserFormDialog", u"CheckBox", None))
         self.lb_custom_limit.setText(QCoreApplication.translate("UserFormDialog", u"Custom Limit:", None))
+        self.le_custom_limit.setPlaceholderText(QCoreApplication.translate("UserFormDialog", u"0.00", None))
         self.lb_disable_limit.setText("")
         self.chk_disable_limit.setText(QCoreApplication.translate("UserFormDialog", u"No Charge Limit", None))
-        self.lb_pin.setText(QCoreApplication.translate("UserFormDialog", u"PIN:", None))
-        self.le_pin.setPlaceholderText(QCoreApplication.translate("UserFormDialog", u"Enter PIN here...", None))
-        self.lb_password.setText(QCoreApplication.translate("UserFormDialog", u"Password:", None))
-        self.le_password.setPlaceholderText(QCoreApplication.translate("UserFormDialog", u"Enter Password here...", None))
-        self.lb_password_2.setText(QCoreApplication.translate("UserFormDialog", u"Confirm Password:", None))
-        self.le_password_2.setPlaceholderText(QCoreApplication.translate("UserFormDialog", u"Confirm Password here...", None))
         self.pb_save_user.setText(QCoreApplication.translate("UserFormDialog", u"Save User", None))
         self.pb_close_form.setText(QCoreApplication.translate("UserFormDialog", u"Close", None))
     # retranslateUi

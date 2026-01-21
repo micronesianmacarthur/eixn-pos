@@ -27,6 +27,18 @@ class UserFormDialog(qtw.QDialog, Ui_UserFormDialog):
         super().__init__(parent)
         self.ui = Ui_UserFormDialog()
         self.ui.setupUi(self)
+
+        self.charge_options = {
+            0: [self.ui.lb_system_limit, self.ui.chk_system_limit],
+            1: [self.ui.lb_custom_limit, self.ui.le_custom_limit],
+            2: [self.ui.lb_disable_limit, self.ui.chk_disable_limit],
+        }
+
+        # set default value
+        self.ui.cb_charge_account.setCurrentText("Disabled")
+        self.ui.cb_status.setCurrentText("Active")
+        self.ui.chk_system_limit.setText("$50.00")
+        self.disable_charge_options()
         
         self.ui.lb_form_title.setProperty("class", "dialog-title")
         self.ui.lb_username.setProperty("class", "inline-label")
@@ -48,6 +60,7 @@ class UserFormDialog(qtw.QDialog, Ui_UserFormDialog):
         self.ui.cb_status.setProperty("class", "inline-combobox")
         self.ui.lb_charge_account.setProperty("class", "inline-label")
         self.ui.cb_charge_account.setProperty("class", "inline-combobox")
+        self.ui.lb_system_limit.setProperty("class", "checkbox-label")
         self.ui.chk_system_limit.setProperty("class", "inline-checkbox")
         self.ui.lb_custom_limit.setProperty("class", "inline-label")
         self.ui.le_custom_limit.setProperty("class", "inline-lineEdit")
@@ -67,7 +80,40 @@ class UserFormDialog(qtw.QDialog, Ui_UserFormDialog):
         self.ui.le_password.setEchoMode(qtw.QLineEdit.Password)
         self.ui.le_password_2.setEchoMode(qtw.QLineEdit.Password)
     
+        # connect signals
         self.ui.pb_close_form.clicked.connect(self.close)
+        self.ui.cb_charge_account.currentTextChanged.connect(lambda checked: self.update_charge_options())
+        self.ui.chk_system_limit.toggled.connect(lambda checked: self.update_charge_options(0))
+        self.ui.chk_disable_limit.toggled.connect(lambda checked: self.update_charge_options(2))
+
+    # custom methods
+    def disable_charge_options(self):
+        for key, value in self.charge_options.items():
+            for widget in value:
+                widget.setDisabled(True)
+
+    def update_charge_options(self, sender_key=None):
+        is_checked = False
+        if sender_key is not None:
+            sender = self.charge_options[sender_key][1]
+            for key, value in self.charge_options.items():
+                if sender.isChecked():
+                    # disable the others
+                    if sender_key == key:
+                        pass
+                    else:
+                        for widget in value:
+                            widget.setDisabled(True)
+                else:
+                    for widget in value:
+                        widget.setDisabled(False)
+        else:
+            for key, value in self.charge_options.items():
+                for widget in value:
+                    if self.ui.cb_charge_account.currentText() == "Disabled":
+                        widget.setDisabled(True)
+                    else:
+                        widget.setDisabled(False)
 
 
 class CustomerFormDialog(qtw.QDialog,Ui_CustomerFormDialog):
@@ -75,6 +121,17 @@ class CustomerFormDialog(qtw.QDialog,Ui_CustomerFormDialog):
         super().__init__(parent)
         self.ui = Ui_CustomerFormDialog()
         self.ui.setupUi(self)
+
+        # set variable
+        self.charge_options = {
+            0: [self.ui.lb_system_limit, self.ui.chk_system_limit],
+            1: [self.ui.lb_custom_limit, self.ui.le_custom_limit],
+            2: [self.ui.lb_disable_limit, self.ui.chk_disable_limit],
+        }
+
+        # set default value
+        self.ui.le_custom_limit.setPlaceholderText("0.00")
+        self.disable_charge_options()
 
         # assign class property
         self.ui.lb_form_title.setProperty("class", "dialog-title")
@@ -94,29 +151,52 @@ class CustomerFormDialog(qtw.QDialog,Ui_CustomerFormDialog):
         self.ui.le_address.setProperty("class", "inline-lineEdit")
         self.ui.lb_charge_account.setProperty("class", "inline-label")
         self.ui.cb_charge_account.setProperty("class", "inline-combobox")
-        # self.ui.lb_system_limit.setProperty("class", "inline-label")
+        self.ui.lb_system_limit.setProperty("class", "checkbox-label")
         self.ui.chk_system_limit.setProperty("class", "inline-checkbox")
         self.ui.lb_custom_limit.setProperty("class", "inline-label")
         self.ui.le_custom_limit.setProperty("class", "inline-lineEdit")
-        # self.ui.lb_disable_limit.setProperty("class", "inline-label")
+        self.ui.lb_disable_limit.setProperty("class", "checkbox-label")
         self.ui.chk_disable_limit.setProperty("class", "inline-checkbox")
 
         # connect signal
         self.ui.pb_close_form.clicked.connect(self.close)
         # disable custom limit when system limit is checked
-        self.ui.chk_system_limit.stateChanged.connect(self.disable_other_limits)
+        self.ui.chk_system_limit.toggled.connect(lambda checked: self.update_charge_options(0))
+        self.ui.chk_disable_limit.toggled.connect(lambda checked: self.update_charge_options(2))
+        self.ui.cb_charge_account.currentTextChanged.connect(lambda checked: self.update_charge_options())
 
+    def disable_charge_options(self):
+        for key, value in self.charge_options.items():
+            for widget in value:
+                widget.setDisabled(True)
 
-    def disable_other_limits(self):
-        if self.ui.chk_system_limit.isChecked():
-            self.ui.lb_custom_limit.setDisabled(True)
-            self.ui.le_custom_limit.setDisabled(True)
-            self.ui.chk_disable_limit.setChecked(False)
-            self.ui.chk_disable_limit.setDisabled(True)
+    def update_charge_options(self, sender_key=None):
+        is_checked = False
+        if sender_key is not None:
+            sender = self.charge_options[sender_key][1]
+            for key, value in self.charge_options.items():
+                if sender.isChecked():
+                    # disable the others
+                    if sender_key == key:
+                        pass
+                    else:
+                        for widget in value:
+                            widget.setDisabled(True)
+                else:
+                    for widget in value:
+                        widget.setDisabled(False)
         else:
-            self.ui.lb_custom_limit.setDisabled(False)
-            self.ui.le_custom_limit.setDisabled(False)
-            self.ui.chk_disable_limit.setDisabled(False)
+            for key, value in self.charge_options.items():
+                for widget in value:
+                    if self.ui.cb_charge_account.currentText() == "Disabled":
+                        widget.setDisabled(True)
+                    else:
+                        widget.setDisabled(False)
+
+        # if self.ui.chk_system_limit.isChecked():
+        #     self.system_limit_enabled()
+        # else:
+        #     self.system_limit_disabled()
 
 
 class CustomerManager(qtw.QWidget, customer_manager_window_ui.Ui_CustomerManagerWindow):
