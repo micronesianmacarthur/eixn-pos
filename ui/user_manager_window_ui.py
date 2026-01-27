@@ -26,7 +26,7 @@ class Ui_UserManagerWindow(object):
         if not UserManagerWindow.objectName():
             UserManagerWindow.setObjectName(u"UserManagerWindow")
         UserManagerWindow.resize(980, 980)
-        UserManagerWindow.setMinimumSize(QSize(980, 980))
+        UserManagerWindow.setMinimumSize(QSize(940, 940))
         icon = QIcon()
         icon.addFile(u":/Icons/user.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         UserManagerWindow.setWindowIcon(icon)
@@ -50,7 +50,7 @@ class Ui_UserManagerWindow(object):
 
         self.pb_close_page = QPushButton(self.wd_page_header)
         self.pb_close_page.setObjectName(u"pb_close_page")
-        self.pb_close_page.setMinimumSize(QSize(0, 45))
+        self.pb_close_page.setMinimumSize(QSize(0, 35))
         self.pb_close_page.setMaximumSize(QSize(120, 16777215))
         icon1 = QIcon()
         icon1.addFile(u":/Icons/close_white.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)

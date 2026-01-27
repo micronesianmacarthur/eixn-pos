@@ -13,6 +13,7 @@ from ui import (main_app_window_ui, home_window_ui, customer_manager_window_ui, 
     vendor_manager_window_ui)
 from ui.user_form_dialog_ui import Ui_UserFormDialog
 from ui.customer_form_dialog_ui import Ui_CustomerFormDialog
+from ui.vender_form_dialog_ui import Ui_VendorFormDialog
 
 class HomeWindow(qtw.QWidget, home_window_ui.Ui_HomeWindow):
     def __init__(self):
@@ -198,11 +199,36 @@ class CustomerFormDialog(qtw.QDialog,Ui_CustomerFormDialog):
         # else:
         #     self.system_limit_disabled()
 
+class VendorFormDialog(qtw.QDialog, Ui_VendorFormDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = Ui_VendorFormDialog()
+        self.ui.setupUi(self)
+
+        # assign class
+        self.ui.lb_form_title.setProperty("class", "dialog-title")
+        self.ui.lb_company_name.setProperty("class", "inline-label")
+        self.ui.le_company_name.setProperty("class", "inline-lineEdit")
+        self.ui.lb_phone.setProperty("class", "inline-label")
+        self.ui.le_phone.setProperty("class", "inline-lineEdit")
+        self.ui.lb_email.setProperty("class", "inline-label")
+        self.ui.le_email.setProperty("class", "inline-lineEdit")
+        self.ui.lb_address.setProperty("class", "inline-label")
+        self.ui.le_address.setProperty("class", "inline-lineEdit")
+        self.ui.pb_save_vendor.setProperty("class", "create-button")
+        self.ui.pb_close.setProperty("class", "close-button")
+
+        # connect signal
+        self.ui.pb_close.clicked.connect(self.close)
+
 
 class CustomerManager(qtw.QWidget, customer_manager_window_ui.Ui_CustomerManagerWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
+        # set default
+        self.pb_make_payment.setText("Receive Payment")
         
         # assign class
         self.lb_page_title.setProperty("class", "page-title")
@@ -221,6 +247,9 @@ class UserManagerWindow(qtw.QWidget, user_manager_window_ui.Ui_UserManagerWindow
         super().__init__()
         self.setupUi(self)
 
+        # set default
+        self.pb_make_payment.setText("Receive Payment")
+
         self.lb_page_title.setProperty("class", "page-title")
         self.pb_close_page.setProperty("class", "close-button")
         self.le_search_user.setProperty("class", "line-search-input")
@@ -236,6 +265,9 @@ class VendorManagerWindow(qtw.QWidget, vendor_manager_window_ui.Ui_VendorManager
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
+        # set default value
+        self.pb_make_payment.setText("Make Payment")
         
         self.lb_page_title.setProperty("class", "page-title")
         self.pb_close_page.setProperty("class", "close-button")
@@ -281,6 +313,14 @@ class MainAppWindow(qtw.QMainWindow, main_app_window_ui.Ui_MainAppWindow):
         self.customer_manager.pb_create_customer.clicked.connect(
             lambda checked: self.show_dialog(CustomerFormDialog())
         )
+        # edit customer dialog
+        edit_customer_dialog = CustomerFormDialog()
+        edit_customer_dialog.setWindowTitle("Edit Customer Form")
+        edit_customer_dialog.ui.lb_form_title.setText("Edit Customer")
+        self.customer_manager.pb_edit_customer.clicked.connect(
+            lambda checked: self.show_dialog(edit_customer_dialog)
+        )
+
         #------------ End customer window -------------------
 
         #------------ User manager window --------------------
@@ -294,6 +334,13 @@ class MainAppWindow(qtw.QMainWindow, main_app_window_ui.Ui_MainAppWindow):
         self.user_manager.pb_create_user.clicked.connect(
             lambda checked: self.show_dialog(UserFormDialog())
         )
+        # edit user form
+        edit_user_dialog = UserFormDialog()
+        edit_user_dialog.setWindowTitle("Edit User Form")
+        edit_user_dialog.ui.lb_form_title.setText("Edit User")
+        self.user_manager.pb_edit_user.clicked.connect(
+            lambda checked: self.show_dialog(edit_user_dialog)
+        )
         #------------ End user window ------------------------
 
         #------------ Vendor manager window --------------------
@@ -302,6 +349,17 @@ class MainAppWindow(qtw.QMainWindow, main_app_window_ui.Ui_MainAppWindow):
         )
         self.vendor_manager.pb_close_page.clicked.connect(
             lambda checked: self.close_current_window(self.vendor_manager)
+        )
+        # create vendor dialog
+        self.vendor_manager.pb_create_vendor.clicked.connect(
+            lambda checked: self.show_dialog(VendorFormDialog())
+        )
+        # edit vendor dialog
+        edit_vendor_dialog = VendorFormDialog()
+        edit_vendor_dialog.setWindowTitle("Edit Vendor Form")
+        edit_vendor_dialog.ui.lb_form_title.setText("Edit Vendor")
+        self.vendor_manager.pb_edit_vendor.clicked.connect(
+            lambda checked: self.show_dialog(edit_vendor_dialog)
         )
         #------------ End vendor window ------------------------
 

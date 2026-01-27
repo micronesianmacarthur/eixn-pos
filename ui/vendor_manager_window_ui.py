@@ -26,7 +26,7 @@ class Ui_VendorManagerWindow(object):
         if not VendorManagerWindow.objectName():
             VendorManagerWindow.setObjectName(u"VendorManagerWindow")
         VendorManagerWindow.resize(980, 980)
-        VendorManagerWindow.setMinimumSize(QSize(980, 980))
+        VendorManagerWindow.setMinimumSize(QSize(940, 940))
         icon = QIcon()
         icon.addFile(u":/Icons/vendor.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         VendorManagerWindow.setWindowIcon(icon)
@@ -50,7 +50,7 @@ class Ui_VendorManagerWindow(object):
 
         self.pb_close_page = QPushButton(self.wd_page_header)
         self.pb_close_page.setObjectName(u"pb_close_page")
-        self.pb_close_page.setMinimumSize(QSize(0, 45))
+        self.pb_close_page.setMinimumSize(QSize(0, 35))
         self.pb_close_page.setMaximumSize(QSize(120, 16777215))
         icon1 = QIcon()
         icon1.addFile(u":/Icons/close_white.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)

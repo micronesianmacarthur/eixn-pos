@@ -26,7 +26,7 @@ class Ui_CustomerManagerWindow(object):
         if not CustomerManagerWindow.objectName():
             CustomerManagerWindow.setObjectName(u"CustomerManagerWindow")
         CustomerManagerWindow.resize(980, 980)
-        CustomerManagerWindow.setMinimumSize(QSize(980, 980))
+        CustomerManagerWindow.setMinimumSize(QSize(940, 940))
         icon = QIcon()
         icon.addFile(u":/Icons/customers.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         CustomerManagerWindow.setWindowIcon(icon)
@@ -50,7 +50,7 @@ class Ui_CustomerManagerWindow(object):
 
         self.pb_close_page = QPushButton(self.wd_page_header)
         self.pb_close_page.setObjectName(u"pb_close_page")
-        self.pb_close_page.setMinimumSize(QSize(0, 45))
+        self.pb_close_page.setMinimumSize(QSize(0, 35))
         self.pb_close_page.setMaximumSize(QSize(120, 16777215))
         icon1 = QIcon()
         icon1.addFile(u":/Icons/close_white.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
