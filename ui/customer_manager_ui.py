@@ -26,8 +26,7 @@ class Ui_CustomerManager(object):
             CustomerManager.setObjectName(u"CustomerManager")
         CustomerManager.resize(940, 940)
         CustomerManager.setMinimumSize(QSize(940, 940))
-        CustomerManager.setStyleSheet(u"QWidget {\n"
-"}")
+        CustomerManager.setStyleSheet(u"")
         self.verticalLayout_3 = QVBoxLayout(CustomerManager)
         self.verticalLayout_3.setSpacing(10)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
@@ -82,7 +81,9 @@ class Ui_CustomerManager(object):
         self.tab_sales = QWidget()
         self.tab_sales.setObjectName(u"tab_sales")
         self.gridLayout_3 = QGridLayout(self.tab_sales)
+        self.gridLayout_3.setSpacing(5)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.gridLayout_3.setContentsMargins(5, 5, 5, 5)
         self.tbl_customer_sales = QTableView(self.tab_sales)
         self.tbl_customer_sales.setObjectName(u"tbl_customer_sales")
 
@@ -92,7 +93,9 @@ class Ui_CustomerManager(object):
         self.tab_items = QWidget()
         self.tab_items.setObjectName(u"tab_items")
         self.gridLayout_2 = QGridLayout(self.tab_items)
+        self.gridLayout_2.setSpacing(5)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setContentsMargins(5, 5, 5, 5)
         self.tbl_customer_items = QTableView(self.tab_items)
         self.tbl_customer_items.setObjectName(u"tbl_customer_items")
 
@@ -102,7 +105,9 @@ class Ui_CustomerManager(object):
         self.tab_charges = QWidget()
         self.tab_charges.setObjectName(u"tab_charges")
         self.gridLayout = QGridLayout(self.tab_charges)
+        self.gridLayout.setSpacing(5)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setContentsMargins(5, 5, 5, 5)
         self.tbl_customer_charges = QTableView(self.tab_charges)
         self.tbl_customer_charges.setObjectName(u"tbl_customer_charges")
 

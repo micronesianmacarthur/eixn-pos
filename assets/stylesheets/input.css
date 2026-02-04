@@ -1,323 +1,150 @@
-/*======================================== WIDGETS ================================= */
-
-/* global widgets */
+/*=================================== GLOBAL ========================== */
+/* widgets */
 QWidget {
-    background-color: #1a1a1a;
-    color: #fff;
-    border: None;
+    background-color: --bg-primary;
+    color: --fg-primary;
+    border: none;
     font-family: "Lexend";
     font-size: 12px;
-}
-
-#lb_app_name {
-    font-size: 32px;
-    font-weight: bold;
 }
 
 #line {
-    background-color: #fff;
+    background-color: --fg-primary;
 }
 
-/*======================================== HEADER WIDGETS ================================= */
-
-/* title label */
-.page-title {
-    font-size: 24px;
-    font-weight: bold;
-}
-/* section titles */
-.section-title {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* dialog title */
-#lb_title_label {
-    background-color: #2b2b2b;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.dialog-title {
-    background-color: #2b2b2b;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-
-/*========================================= BUTTONS ================================== */
-
-/* general buttons */
+/* button */
 QPushButton {
-    background-color: #3f3f3f;
-    color: #fff;
-    border: None;
-    border-radius: 10px;
-    font-family: "Lexend";
-    font-size: 12px;
+    background-color: --btn-general;
+    border: none;
 }
+
 QPushButton:hover {
-    background-color: #6f6f6f;
+    background-color: --btn-general-hover;
 }
 
-/* search button with line edit */
-.line-search-button {
-    background-color: #9f9f9f;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-/* close buttons */
-.close-button {
-    background-color: #bf0000;
-    color: #fff;
-}
-.close-button:hover {
-    background-color: #ff0000;
-}
-
-/* create buttons */
-.create-button {
-    background: #23a2ff;
-    color: #fff;
-}
-.create-button:hover {
-    background-color: #0392cf;
-}
-
-/* menu buttons */
+/* toolbutton */
 QToolButton {
-    font-family: "Lexend";
-    font-size: 12px;
-    background-color: #2b2b2b;
-    color: #fff;
-    border: None;
+    background-color: --bg-secondary;
     border-radius: 2px;
     padding-top: 10px;
 }
 QToolButton:hover {
-    background-color: #9f9f9f;
-    color: #1a1a1a;
+    background-color: --fg-secondary;
+    color: --bg-primary;
 }
 QToolButton:pressed {
-    background-color: #f5f5f5;
-    color: #1a1a1a;}
-
-/* make payment button */
-#pb_make_payment {
-    background-color: #f9f9f9;
-    color: #1a1a1a;
-    font-weight: bold;
-    font-size: 20px;
-}
-#pb_make_payment:hover {
-    background-color: #c9c9c9;
+    background-color: --fg-primary;
+    color: --bg-primary;
 }
 
-.inline-button-icon {
-    border: none;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    background-color: #0050e4;
-}
-
-.inline-button-text {
-    text-align: left;
-    padding-left: 10px;
-}
-
-/*======================================== INPUT STYLES ================================= */
-.line-search-input {
-    background-color: #9f9f9f;
-    color: #1a1a1a;
-    border: None;
-    border-radius: 10px;
-    padding-left: 10px;
-}
-
-/* combobox */
-.inline-combobox {
-    border: none;
-    background-color: #9f9f9f;
-    color: #1a1a1a;
-    padding-left: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    selection-background-color: rgb(7, 128, 241);
-}
-
-.inline-combobox::down-arrow {
-    image: url(:/Icons/drop_arrow_white.svg);
-    width: 20px;
-    height: 20px;
-}
-
-.inline-combobox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 20px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: #9f9f9f;
-}
-
-.inline-combobox QAbstractItemView {
-    selection-background-color: rgb(7, 128, 241);
-    background-color: #9f9f9f;
-    color: #1a1a1a;
-}
-
-.inline-combobox QAbstractItemView::item {
-    padding: 5px;
-}
-
-.inline-combobox QAbstractItemView::item:hover {
-    background-color: #ADD8E6; /* LightBlue */
-}
-
-.inline-combobox QAbstractItemView::item:selected {
-    background-color: #0050e4; /* SteelBlue */
-    color: #fff;
-}
-
-.inline-label {
-    background-color: #9f9f9f;
-    color: #1a1a1a;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-.inline-label:disabled {
-    background-color: #6f6f6f;
-    color: #3a3a3a;
-}
-
-.inline-lineEdit {
-    border: none;
-    background-color: #9f9f9f;
-    color: #1a1a1a;
-    padding-left: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.inline-lineEdit:disabled {
-    background-color: #6f6f6f;
-    color: #3a3a3a;
-}
-
-.inline-checkbox {
-    padding-left: 10px;
-}
-
-.inline-checkbox::indicator {
-    image: url(:/Icons/checkbox_unchecked.svg);
-    width: 20px;
-    height: 20px;
-}
-
-.inline-checkbox::indicator:checked {
-    image: url(:/Icons/checkbox_checked.svg);
-    width: 20px;
-    height: 20px;
-}
-
-.inline-checkbox::indicator:disabled {
-    image: url(:Icons/check_disabled.svg);
-    width: 20px;
-    height: 20px;
-}
-
-.inline-checkbox:disabled {
-    color: #797979;
-}
-
-.checkbox-label {
-    color: #fff;
-}
-
-.checkbox-label:disabled {
-    color: #797979;
-}
-
-/*======================================== MENUBAR ================================= */
+/* menubar */
 QMenuBar, QMenu {
-    background-color: #2b2b2b;
-    font-family: "Lexend";
+    background-color: --bg-secondary;
     font-size: 14px;
 }
 QMenu::item:selected {
-    background-color: #f5f5f5;
-    color: #1a1a1a;
+    background-color: --fg-primary;
+    color: --bg-primary;
 }
 QMenu::item:hover {
-    background-color: #9f9f9f;
-    color: #1a1a1a;
+    background-color: --fg-secondary;
+    color: --bg-primary;
 }
 QMenuBar::item:selected {
-    background-color: #f1f1f1;
-    color: #1a1a1a;
+    background-color: --fg-primary;
+    color: --bg-primary;
 }
 QMenuBar::item:hover {
-    background-color: #9f9f9f;
-    color: #1a1a1a;
+    background-color: --fg-secondary;
+    color: --bg-primary;
 }
 
-/*======================================== WELCOME TEXT ================================= */
+/* dialog */
+QDialog {
+    background-color: --bg-secondary;
+}
+QDialog QWidget {
+    background-color: --bg-secondary;
+}
+QDialog QLineEdit {
+    background-color: --fg-primary;
+    color: --bg-primary;
+    border: none;
+    border-radius: 2px;
+}
+
+/* combobox */
+QComboBox QAbstractItemView {
+    selection-background-color: #4682B4;
+    background-color: --fg-secondary;
+    color: --bg-primary;
+}
+
+
+/*====================================== HEADERS ===============================*/
+/* general */
+.bold {
+    font-weight: bold;
+}
+.underlined {
+    border-bottom: 1px solid --fg-primary;
+}
+
+/* main app */
+#lb_app_name {
+    font-size: 32px;
+    font-weight: bold;
+    color: --fg-primary;
+}
+
+/* window */
+.window-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .welcome-text {
-    font-family: "Lexend";
     font-size: 36px;
     font-weight: bold;
 }
 
-
-/*======================================== FRAMES ================================= */
-/* detail view */
-.wd_detail_view {
-    border: None;
-    border-radius: 18px;
-    background-color: #f0f0f0;
-    color: #1a1a1a;
+/* dialog */
+.dialog-title {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: --fg-primary;
+    color: --bg-primary;
 }
 
-/* labels inside frame widget */
-.wd_detail_view QLabel {
-    background: None;
-    color: #1a1a1a;
-}
-
-/* tables & lists */
-.table, .list {
-    background-color: #222;
-    border-radius: 18px;
+#CashCounter .close-total {
+    font-size: 24px;
+    /* font-weight: bold; */
+    background-color: blueviolet;
 }
 
 
-QDialog {
-    background-color: #2b2b2b;
+/*===================================== BUTTONS =======================================*/
+.primary-button {
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    padding-left: 20px;
+}
+.primary-button:hover {
+    background-color: rgb(0, 49, 105);
+    color: --fg-primary;
 }
 
-QDialog QWidget {
-    background-color: #2b2b2b;
+#CustomerManager .close-button {
+    background-color: --btn-danger;
+    color: --fg-primary;
+}
+#CustomerManager .close-button:hover {
+    background-color: --btn-danger-hover;
+    color: --fg-primary;
 }
 
-/* ========================================================================== */
-/* Main QComboBox appearance when closed */
-            /* The popup list view (defaults to QListView) */
-            QComboBox QAbstractItemView {
-                selection-background-color: #4682B4; 
-                background-color: #9f9f9f;
-                color: #1a1a1a;
-            }
-
-            /* QComboBox QAbstractItemView::item {
-                padding: 5px;
-            }  */
-
-            /* QComboBox QAbstractItemView::item:hover {
-                background-color: #ADD8E6; 
-            }  */
-/* ==============================================================             */
+.calculate-button {
+    background-color: --fg-secondary;
+    color: --bg-secondary;
+}

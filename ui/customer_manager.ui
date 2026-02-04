@@ -20,8 +20,7 @@
    <string>Customer Manager</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget {
-}</string>
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <property name="spacing">
@@ -160,6 +159,21 @@
              <string>Sales</string>
             </attribute>
             <layout class="QGridLayout" name="gridLayout_3">
+             <property name="leftMargin">
+              <number>5</number>
+             </property>
+             <property name="topMargin">
+              <number>5</number>
+             </property>
+             <property name="rightMargin">
+              <number>5</number>
+             </property>
+             <property name="bottomMargin">
+              <number>5</number>
+             </property>
+             <property name="spacing">
+              <number>5</number>
+             </property>
              <item row="0" column="0">
               <widget class="QTableView" name="tbl_customer_sales"/>
              </item>
@@ -170,6 +184,21 @@
              <string>Items</string>
             </attribute>
             <layout class="QGridLayout" name="gridLayout_2">
+             <property name="leftMargin">
+              <number>5</number>
+             </property>
+             <property name="topMargin">
+              <number>5</number>
+             </property>
+             <property name="rightMargin">
+              <number>5</number>
+             </property>
+             <property name="bottomMargin">
+              <number>5</number>
+             </property>
+             <property name="spacing">
+              <number>5</number>
+             </property>
              <item row="0" column="0">
               <widget class="QTableView" name="tbl_customer_items"/>
              </item>
@@ -180,6 +209,21 @@
              <string>Charges</string>
             </attribute>
             <layout class="QGridLayout" name="gridLayout">
+             <property name="leftMargin">
+              <number>5</number>
+             </property>
+             <property name="topMargin">
+              <number>5</number>
+             </property>
+             <property name="rightMargin">
+              <number>5</number>
+             </property>
+             <property name="bottomMargin">
+              <number>5</number>
+             </property>
+             <property name="spacing">
+              <number>5</number>
+             </property>
              <item row="0" column="0">
               <widget class="QTableView" name="tbl_customer_charges"/>
              </item>
