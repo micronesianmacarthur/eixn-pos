@@ -1,5 +1,14 @@
 <RCC>
   <qresource prefix="Icons">
+    <file>plus.svg</file>
+    <file>down-arrow-dark.svg</file>
+    <file>down-arrow-light.svg</file>
+    <file>arrow-left.svg</file>
+    <file>arrow-right.svg</file>
+    <file>rotate-left.svg</file>
+    <file>rotate-right.svg</file>
+    <file>cross.svg</file>
+    <file>tick.svg</file>
     <file>calculator.svg</file>
     <file>next.svg</file>
     <file>previous.svg</file>

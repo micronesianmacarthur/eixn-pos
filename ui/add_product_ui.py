@@ -1,0 +1,705 @@
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'add_product.ui'
+##
+## Created by: Qt User Interface Compiler version 6.10.1
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QDoubleSpinBox,
+    QGroupBox, QHBoxLayout, QLabel, QLineEdit,
+    QPushButton, QSizePolicy, QSpacerItem, QSpinBox,
+    QVBoxLayout, QWidget)
+import icons_rc
+
+class Ui_AddProductDialog(object):
+    def setupUi(self, AddProductDialog):
+        if not AddProductDialog.objectName():
+            AddProductDialog.setObjectName(u"AddProductDialog")
+        AddProductDialog.setWindowModality(Qt.WindowModality.ApplicationModal)
+        AddProductDialog.resize(850, 690)
+        AddProductDialog.setMinimumSize(QSize(850, 690))
+        AddProductDialog.setMaximumSize(QSize(850, 690))
+        AddProductDialog.setStyleSheet(u"")
+        self.verticalLayout_4 = QVBoxLayout(AddProductDialog)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.widget = QWidget(AddProductDialog)
+        self.widget.setObjectName(u"widget")
+        self.widget.setMinimumSize(QSize(0, 35))
+        self.widget.setMaximumSize(QSize(16777215, 35))
+        self.horizontalLayout_10 = QHBoxLayout(self.widget)
+        self.horizontalLayout_10.setSpacing(0)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.lb_dialog_title = QLabel(self.widget)
+        self.lb_dialog_title.setObjectName(u"lb_dialog_title")
+        self.lb_dialog_title.setMinimumSize(QSize(0, 35))
+        self.lb_dialog_title.setMaximumSize(QSize(16777215, 35))
+        self.lb_dialog_title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_10.addWidget(self.lb_dialog_title)
+
+
+        self.verticalLayout_4.addWidget(self.widget)
+
+        self.widget_2 = QWidget(AddProductDialog)
+        self.widget_2.setObjectName(u"widget_2")
+        self.horizontalLayout_22 = QHBoxLayout(self.widget_2)
+        self.horizontalLayout_22.setSpacing(5)
+        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
+        self.dlg_main = QWidget(self.widget_2)
+        self.dlg_main.setObjectName(u"dlg_main")
+        self.verticalLayout_5 = QVBoxLayout(self.dlg_main)
+        self.verticalLayout_5.setSpacing(5)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setContentsMargins(5, 5, 5, 5)
+        self.grp_general = QGroupBox(self.dlg_main)
+        self.grp_general.setObjectName(u"grp_general")
+        self.grp_general.setMinimumSize(QSize(0, 250))
+        self.grp_general.setMaximumSize(QSize(16777215, 250))
+        self.verticalLayout = QVBoxLayout(self.grp_general)
+        self.verticalLayout.setSpacing(5)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(5, 20, 5, 5)
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setSpacing(5)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.lb_barcode = QLabel(self.grp_general)
+        self.lb_barcode.setObjectName(u"lb_barcode")
+        self.lb_barcode.setMinimumSize(QSize(80, 25))
+        self.lb_barcode.setMaximumSize(QSize(80, 25))
+
+        self.horizontalLayout.addWidget(self.lb_barcode)
+
+        self.le_barcode = QLineEdit(self.grp_general)
+        self.le_barcode.setObjectName(u"le_barcode")
+        self.le_barcode.setMinimumSize(QSize(0, 25))
+        self.le_barcode.setMaximumSize(QSize(16777215, 25))
+
+        self.horizontalLayout.addWidget(self.le_barcode)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setSpacing(5)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.lb_description = QLabel(self.grp_general)
+        self.lb_description.setObjectName(u"lb_description")
+        self.lb_description.setMinimumSize(QSize(80, 25))
+        self.lb_description.setMaximumSize(QSize(80, 25))
+
+        self.horizontalLayout_2.addWidget(self.lb_description)
+
+        self.le_description = QLineEdit(self.grp_general)
+        self.le_description.setObjectName(u"le_description")
+        self.le_description.setMinimumSize(QSize(0, 25))
+        self.le_description.setMaximumSize(QSize(16777215, 25))
+
+        self.horizontalLayout_2.addWidget(self.le_description)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
+
+        self.horizontalLayout_23 = QHBoxLayout()
+        self.horizontalLayout_23.setSpacing(20)
+        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setSpacing(5)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.lb_supplier = QLabel(self.grp_general)
+        self.lb_supplier.setObjectName(u"lb_supplier")
+        self.lb_supplier.setMinimumSize(QSize(80, 25))
+        self.lb_supplier.setMaximumSize(QSize(80, 25))
+
+        self.horizontalLayout_3.addWidget(self.lb_supplier)
+
+        self.cb_supplier = QComboBox(self.grp_general)
+        self.cb_supplier.addItem("")
+        self.cb_supplier.addItem("")
+        self.cb_supplier.setObjectName(u"cb_supplier")
+        self.cb_supplier.setMinimumSize(QSize(0, 25))
+        self.cb_supplier.setMaximumSize(QSize(16777215, 25))
+
+        self.horizontalLayout_3.addWidget(self.cb_supplier)
+
+
+        self.horizontalLayout_23.addLayout(self.horizontalLayout_3)
+
+        self.pb_supplier_add = QPushButton(self.grp_general)
+        self.pb_supplier_add.setObjectName(u"pb_supplier_add")
+        self.pb_supplier_add.setMinimumSize(QSize(140, 25))
+        self.pb_supplier_add.setMaximumSize(QSize(140, 25))
+        icon = QIcon()
+        icon.addFile(u":/Icons/plus.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pb_supplier_add.setIcon(icon)
+        self.pb_supplier_add.setIconSize(QSize(25, 25))
+
+        self.horizontalLayout_23.addWidget(self.pb_supplier_add)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_23)
+
+        self.horizontalLayout_24 = QHBoxLayout()
+        self.horizontalLayout_24.setSpacing(20)
+        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setSpacing(5)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.lb_category = QLabel(self.grp_general)
+        self.lb_category.setObjectName(u"lb_category")
+        self.lb_category.setMinimumSize(QSize(80, 25))
+        self.lb_category.setMaximumSize(QSize(80, 25))
+
+        self.horizontalLayout_4.addWidget(self.lb_category)
+
+        self.cb_category = QComboBox(self.grp_general)
+        self.cb_category.addItem("")
+        self.cb_category.addItem("")
+        self.cb_category.setObjectName(u"cb_category")
+        self.cb_category.setMinimumSize(QSize(0, 25))
+        self.cb_category.setMaximumSize(QSize(16777215, 25))
+
+        self.horizontalLayout_4.addWidget(self.cb_category)
+
+
+        self.horizontalLayout_24.addLayout(self.horizontalLayout_4)
+
+        self.pb_category_add = QPushButton(self.grp_general)
+        self.pb_category_add.setObjectName(u"pb_category_add")
+        self.pb_category_add.setMinimumSize(QSize(140, 25))
+        self.pb_category_add.setMaximumSize(QSize(140, 25))
+        self.pb_category_add.setIcon(icon)
+        self.pb_category_add.setIconSize(QSize(25, 25))
+
+        self.horizontalLayout_24.addWidget(self.pb_category_add)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_24)
+
+        self.horizontalLayout_25 = QHBoxLayout()
+        self.horizontalLayout_25.setSpacing(20)
+        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setSpacing(5)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.label_9 = QLabel(self.grp_general)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setMinimumSize(QSize(80, 25))
+        self.label_9.setMaximumSize(QSize(80, 25))
+
+        self.horizontalLayout_5.addWidget(self.label_9)
+
+        self.cb_stock_type = QComboBox(self.grp_general)
+        self.cb_stock_type.addItem("")
+        self.cb_stock_type.addItem("")
+        self.cb_stock_type.setObjectName(u"cb_stock_type")
+        self.cb_stock_type.setMinimumSize(QSize(0, 25))
+        self.cb_stock_type.setMaximumSize(QSize(16777215, 25))
+
+        self.horizontalLayout_5.addWidget(self.cb_stock_type)
+
+
+        self.horizontalLayout_25.addLayout(self.horizontalLayout_5)
+
+        self.pb_stock_type_add = QPushButton(self.grp_general)
+        self.pb_stock_type_add.setObjectName(u"pb_stock_type_add")
+        self.pb_stock_type_add.setMinimumSize(QSize(140, 25))
+        self.pb_stock_type_add.setMaximumSize(QSize(140, 25))
+        self.pb_stock_type_add.setIcon(icon)
+        self.pb_stock_type_add.setIconSize(QSize(25, 25))
+
+        self.horizontalLayout_25.addWidget(self.pb_stock_type_add)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_25)
+
+        self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setSpacing(5)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setSpacing(5)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.lb_quantity = QLabel(self.grp_general)
+        self.lb_quantity.setObjectName(u"lb_quantity")
+        self.lb_quantity.setMinimumSize(QSize(80, 25))
+        self.lb_quantity.setMaximumSize(QSize(80, 25))
+
+        self.horizontalLayout_7.addWidget(self.lb_quantity)
+
+        self.sb_quantity = QSpinBox(self.grp_general)
+        self.sb_quantity.setObjectName(u"sb_quantity")
+        self.sb_quantity.setMinimumSize(QSize(160, 25))
+        self.sb_quantity.setMaximumSize(QSize(160, 25))
+        self.sb_quantity.setMaximum(999999)
+
+        self.horizontalLayout_7.addWidget(self.sb_quantity)
+
+
+        self.horizontalLayout_8.addLayout(self.horizontalLayout_7)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_8.addItem(self.horizontalSpacer_3)
+
+        self.horizontalLayout_6 = QHBoxLayout()
+        self.horizontalLayout_6.setSpacing(5)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.lb_reorder_level = QLabel(self.grp_general)
+        self.lb_reorder_level.setObjectName(u"lb_reorder_level")
+        self.lb_reorder_level.setMinimumSize(QSize(100, 25))
+        self.lb_reorder_level.setMaximumSize(QSize(100, 25))
+
+        self.horizontalLayout_6.addWidget(self.lb_reorder_level)
+
+        self.sb_reorder_level = QSpinBox(self.grp_general)
+        self.sb_reorder_level.setObjectName(u"sb_reorder_level")
+        self.sb_reorder_level.setMinimumSize(QSize(160, 25))
+        self.sb_reorder_level.setMaximumSize(QSize(160, 25))
+        self.sb_reorder_level.setMaximum(999999)
+
+        self.horizontalLayout_6.addWidget(self.sb_reorder_level)
+
+
+        self.horizontalLayout_8.addLayout(self.horizontalLayout_6)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_8)
+
+        self.verticalSpacer = QSpacerItem(20, 2, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout.addItem(self.verticalSpacer)
+
+
+        self.verticalLayout_5.addWidget(self.grp_general)
+
+        self.grp_price = QGroupBox(self.dlg_main)
+        self.grp_price.setObjectName(u"grp_price")
+        self.grp_price.setMinimumSize(QSize(0, 135))
+        self.grp_price.setMaximumSize(QSize(16777215, 135))
+        self.verticalLayout_2 = QVBoxLayout(self.grp_price)
+        self.verticalLayout_2.setSpacing(5)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(5, 20, 5, 5)
+        self.horizontalLayout_14 = QHBoxLayout()
+        self.horizontalLayout_14.setSpacing(40)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_9 = QHBoxLayout()
+        self.horizontalLayout_9.setSpacing(5)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.lb_cost = QLabel(self.grp_price)
+        self.lb_cost.setObjectName(u"lb_cost")
+        self.lb_cost.setMinimumSize(QSize(110, 25))
+        self.lb_cost.setMaximumSize(QSize(110, 25))
+
+        self.horizontalLayout_9.addWidget(self.lb_cost)
+
+        self.label = QLabel(self.grp_price)
+        self.label.setObjectName(u"label")
+        self.label.setMinimumSize(QSize(0, 25))
+        self.label.setMaximumSize(QSize(16777215, 25))
+
+        self.horizontalLayout_9.addWidget(self.label)
+
+        self.dbl_cost = QDoubleSpinBox(self.grp_price)
+        self.dbl_cost.setObjectName(u"dbl_cost")
+        self.dbl_cost.setMinimumSize(QSize(160, 25))
+        self.dbl_cost.setMaximumSize(QSize(160, 25))
+        self.dbl_cost.setMaximum(999999.989999999990687)
+
+        self.horizontalLayout_9.addWidget(self.dbl_cost)
+
+
+        self.horizontalLayout_14.addLayout(self.horizontalLayout_9)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_14.addItem(self.horizontalSpacer)
+
+        self.horizontalLayout_11 = QHBoxLayout()
+        self.horizontalLayout_11.setSpacing(5)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.lb_markup_margin_label = QLabel(self.grp_price)
+        self.lb_markup_margin_label.setObjectName(u"lb_markup_margin_label")
+        self.lb_markup_margin_label.setMinimumSize(QSize(110, 25))
+        self.lb_markup_margin_label.setMaximumSize(QSize(110, 25))
+
+        self.horizontalLayout_11.addWidget(self.lb_markup_margin_label)
+
+        self.lb_markup_margin = QLabel(self.grp_price)
+        self.lb_markup_margin.setObjectName(u"lb_markup_margin")
+        self.lb_markup_margin.setMinimumSize(QSize(160, 25))
+        self.lb_markup_margin.setMaximumSize(QSize(160, 25))
+
+        self.horizontalLayout_11.addWidget(self.lb_markup_margin)
+
+
+        self.horizontalLayout_14.addLayout(self.horizontalLayout_11)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_14)
+
+        self.horizontalLayout_12 = QHBoxLayout()
+        self.horizontalLayout_12.setSpacing(5)
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.lb_suggested_price_label = QLabel(self.grp_price)
+        self.lb_suggested_price_label.setObjectName(u"lb_suggested_price_label")
+        self.lb_suggested_price_label.setMinimumSize(QSize(110, 25))
+        self.lb_suggested_price_label.setMaximumSize(QSize(110, 25))
+
+        self.horizontalLayout_12.addWidget(self.lb_suggested_price_label)
+
+        self.label_3 = QLabel(self.grp_price)
+        self.label_3.setObjectName(u"label_3")
+
+        self.horizontalLayout_12.addWidget(self.label_3)
+
+        self.lb_suggested_price = QLabel(self.grp_price)
+        self.lb_suggested_price.setObjectName(u"lb_suggested_price")
+        self.lb_suggested_price.setMinimumSize(QSize(160, 25))
+        self.lb_suggested_price.setMaximumSize(QSize(160, 25))
+
+        self.horizontalLayout_12.addWidget(self.lb_suggested_price)
+
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_12.addItem(self.horizontalSpacer_4)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_12)
+
+        self.horizontalLayout_13 = QHBoxLayout()
+        self.horizontalLayout_13.setSpacing(5)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.lb_price = QLabel(self.grp_price)
+        self.lb_price.setObjectName(u"lb_price")
+        self.lb_price.setMinimumSize(QSize(110, 25))
+        self.lb_price.setMaximumSize(QSize(110, 25))
+
+        self.horizontalLayout_13.addWidget(self.lb_price)
+
+        self.label_2 = QLabel(self.grp_price)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(0, 25))
+        self.label_2.setMaximumSize(QSize(16777215, 25))
+
+        self.horizontalLayout_13.addWidget(self.label_2)
+
+        self.dbl_price = QDoubleSpinBox(self.grp_price)
+        self.dbl_price.setObjectName(u"dbl_price")
+        self.dbl_price.setMinimumSize(QSize(160, 25))
+        self.dbl_price.setMaximumSize(QSize(160, 25))
+        self.dbl_price.setMaximum(999999.989999999990687)
+
+        self.horizontalLayout_13.addWidget(self.dbl_price)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_13.addItem(self.horizontalSpacer_2)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_13)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 7, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_2.addItem(self.verticalSpacer_2)
+
+
+        self.verticalLayout_5.addWidget(self.grp_price)
+
+        self.grp_image = QGroupBox(self.dlg_main)
+        self.grp_image.setObjectName(u"grp_image")
+        self.verticalLayout_3 = QVBoxLayout(self.grp_image)
+        self.verticalLayout_3.setSpacing(5)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(5, 20, 5, 5)
+        self.horizontalLayout_16 = QHBoxLayout()
+        self.horizontalLayout_16.setSpacing(10)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.lb_select_image = QLabel(self.grp_image)
+        self.lb_select_image.setObjectName(u"lb_select_image")
+        self.lb_select_image.setMinimumSize(QSize(110, 25))
+        self.lb_select_image.setMaximumSize(QSize(110, 25))
+
+        self.horizontalLayout_16.addWidget(self.lb_select_image)
+
+        self.horizontalLayout_15 = QHBoxLayout()
+        self.horizontalLayout_15.setSpacing(5)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.le_select_image = QLineEdit(self.grp_image)
+        self.le_select_image.setObjectName(u"le_select_image")
+        self.le_select_image.setMinimumSize(QSize(0, 25))
+        self.le_select_image.setMaximumSize(QSize(16777215, 25))
+
+        self.horizontalLayout_15.addWidget(self.le_select_image)
+
+        self.pb_browse = QPushButton(self.grp_image)
+        self.pb_browse.setObjectName(u"pb_browse")
+        self.pb_browse.setMinimumSize(QSize(100, 25))
+        self.pb_browse.setMaximumSize(QSize(100, 25))
+
+        self.horizontalLayout_15.addWidget(self.pb_browse)
+
+
+        self.horizontalLayout_16.addLayout(self.horizontalLayout_15)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_16)
+
+        self.frame_product_image = QWidget(self.grp_image)
+        self.frame_product_image.setObjectName(u"frame_product_image")
+        self.frame_product_image.setMinimumSize(QSize(150, 150))
+        self.frame_product_image.setMaximumSize(QSize(150, 150))
+        self.frame_product_image.setStyleSheet(u"#frame_product_image {\n"
+"	border: 1px solid white;\n"
+"}")
+        self.lb_no_image = QLabel(self.frame_product_image)
+        self.lb_no_image.setObjectName(u"lb_no_image")
+        self.lb_no_image.setGeometry(QRect(40, 60, 71, 51))
+        self.lb_no_image.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.lb_no_image.setWordWrap(True)
+
+        self.verticalLayout_3.addWidget(self.frame_product_image)
+
+        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_3.addItem(self.verticalSpacer_5)
+
+
+        self.verticalLayout_5.addWidget(self.grp_image)
+
+
+        self.horizontalLayout_22.addWidget(self.dlg_main)
+
+        self.dlg_menu = QWidget(self.widget_2)
+        self.dlg_menu.setObjectName(u"dlg_menu")
+        self.dlg_menu.setMinimumSize(QSize(150, 0))
+        self.dlg_menu.setMaximumSize(QSize(150, 16777215))
+        self.verticalLayout_7 = QVBoxLayout(self.dlg_menu)
+        self.verticalLayout_7.setSpacing(10)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.verticalLayout_7.setContentsMargins(0, 10, 0, 10)
+        self.pb_product_save = QPushButton(self.dlg_menu)
+        self.pb_product_save.setObjectName(u"pb_product_save")
+        self.pb_product_save.setMinimumSize(QSize(0, 35))
+        self.pb_product_save.setMaximumSize(QSize(16777215, 35))
+        icon1 = QIcon()
+        icon1.addFile(u":/Icons/tick.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pb_product_save.setIcon(icon1)
+        self.pb_product_save.setIconSize(QSize(25, 25))
+
+        self.verticalLayout_7.addWidget(self.pb_product_save)
+
+        self.pb_product_cancel = QPushButton(self.dlg_menu)
+        self.pb_product_cancel.setObjectName(u"pb_product_cancel")
+        self.pb_product_cancel.setMinimumSize(QSize(0, 35))
+        self.pb_product_cancel.setMaximumSize(QSize(16777215, 35))
+        icon2 = QIcon()
+        icon2.addFile(u":/Icons/cross.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pb_product_cancel.setIcon(icon2)
+        self.pb_product_cancel.setIconSize(QSize(25, 25))
+
+        self.verticalLayout_7.addWidget(self.pb_product_cancel)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_7.addItem(self.verticalSpacer_4)
+
+        self.wid_info = QWidget(self.dlg_menu)
+        self.wid_info.setObjectName(u"wid_info")
+        self.wid_info.setMinimumSize(QSize(0, 400))
+        self.wid_info.setMaximumSize(QSize(16777215, 400))
+        self.verticalLayout_6 = QVBoxLayout(self.wid_info)
+        self.verticalLayout_6.setSpacing(10)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.verticalLayout_6.setContentsMargins(5, 5, 5, 5)
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer_3)
+
+        self.lb_information = QLabel(self.wid_info)
+        self.lb_information.setObjectName(u"lb_information")
+        self.lb_information.setMinimumSize(QSize(0, 0))
+        self.lb_information.setMaximumSize(QSize(16777215, 20))
+
+        self.verticalLayout_6.addWidget(self.lb_information)
+
+        self.horizontalLayout_17 = QHBoxLayout()
+        self.horizontalLayout_17.setSpacing(0)
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.created_label = QLabel(self.wid_info)
+        self.created_label.setObjectName(u"created_label")
+        self.created_label.setMinimumSize(QSize(60, 0))
+        self.created_label.setMaximumSize(QSize(60, 20))
+
+        self.horizontalLayout_17.addWidget(self.created_label)
+
+        self.lb_created = QLabel(self.wid_info)
+        self.lb_created.setObjectName(u"lb_created")
+        self.lb_created.setMinimumSize(QSize(0, 0))
+        self.lb_created.setMaximumSize(QSize(16777215, 20))
+
+        self.horizontalLayout_17.addWidget(self.lb_created)
+
+
+        self.verticalLayout_6.addLayout(self.horizontalLayout_17)
+
+        self.horizontalLayout_18 = QHBoxLayout()
+        self.horizontalLayout_18.setSpacing(0)
+        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
+        self.updated_label = QLabel(self.wid_info)
+        self.updated_label.setObjectName(u"updated_label")
+        self.updated_label.setMinimumSize(QSize(60, 0))
+        self.updated_label.setMaximumSize(QSize(60, 20))
+
+        self.horizontalLayout_18.addWidget(self.updated_label)
+
+        self.lb_updated = QLabel(self.wid_info)
+        self.lb_updated.setObjectName(u"lb_updated")
+        self.lb_updated.setMinimumSize(QSize(0, 0))
+        self.lb_updated.setMaximumSize(QSize(16777215, 20))
+
+        self.horizontalLayout_18.addWidget(self.lb_updated)
+
+
+        self.verticalLayout_6.addLayout(self.horizontalLayout_18)
+
+        self.horizontalLayout_19 = QHBoxLayout()
+        self.horizontalLayout_19.setSpacing(0)
+        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
+        self.product_id_label = QLabel(self.wid_info)
+        self.product_id_label.setObjectName(u"product_id_label")
+        self.product_id_label.setMinimumSize(QSize(60, 0))
+        self.product_id_label.setMaximumSize(QSize(60, 20))
+
+        self.horizontalLayout_19.addWidget(self.product_id_label)
+
+        self.lb_product_id = QLabel(self.wid_info)
+        self.lb_product_id.setObjectName(u"lb_product_id")
+        self.lb_product_id.setMinimumSize(QSize(0, 0))
+        self.lb_product_id.setMaximumSize(QSize(16777215, 20))
+
+        self.horizontalLayout_19.addWidget(self.lb_product_id)
+
+
+        self.verticalLayout_6.addLayout(self.horizontalLayout_19)
+
+        self.horizontalLayout_20 = QHBoxLayout()
+        self.horizontalLayout_20.setSpacing(0)
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.qty_available_label = QLabel(self.wid_info)
+        self.qty_available_label.setObjectName(u"qty_available_label")
+        self.qty_available_label.setMinimumSize(QSize(60, 0))
+        self.qty_available_label.setMaximumSize(QSize(60, 20))
+
+        self.horizontalLayout_20.addWidget(self.qty_available_label)
+
+        self.lb_qty_available = QLabel(self.wid_info)
+        self.lb_qty_available.setObjectName(u"lb_qty_available")
+        self.lb_qty_available.setMinimumSize(QSize(0, 0))
+        self.lb_qty_available.setMaximumSize(QSize(16777215, 20))
+
+        self.horizontalLayout_20.addWidget(self.lb_qty_available)
+
+
+        self.verticalLayout_6.addLayout(self.horizontalLayout_20)
+
+        self.horizontalLayout_21 = QHBoxLayout()
+        self.horizontalLayout_21.setSpacing(0)
+        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
+        self.qty_on_order_label = QLabel(self.wid_info)
+        self.qty_on_order_label.setObjectName(u"qty_on_order_label")
+        self.qty_on_order_label.setMinimumSize(QSize(60, 0))
+        self.qty_on_order_label.setMaximumSize(QSize(60, 20))
+
+        self.horizontalLayout_21.addWidget(self.qty_on_order_label)
+
+        self.lb_qty_on_order = QLabel(self.wid_info)
+        self.lb_qty_on_order.setObjectName(u"lb_qty_on_order")
+        self.lb_qty_on_order.setMinimumSize(QSize(0, 0))
+        self.lb_qty_on_order.setMaximumSize(QSize(16777215, 20))
+
+        self.horizontalLayout_21.addWidget(self.lb_qty_on_order)
+
+
+        self.verticalLayout_6.addLayout(self.horizontalLayout_21)
+
+
+        self.verticalLayout_7.addWidget(self.wid_info)
+
+
+        self.horizontalLayout_22.addWidget(self.dlg_menu)
+
+
+        self.verticalLayout_4.addWidget(self.widget_2)
+
+
+        self.retranslateUi(AddProductDialog)
+
+        QMetaObject.connectSlotsByName(AddProductDialog)
+    # setupUi
+
+    def retranslateUi(self, AddProductDialog):
+        AddProductDialog.setWindowTitle(QCoreApplication.translate("AddProductDialog", u"Add Product", None))
+        self.lb_dialog_title.setText(QCoreApplication.translate("AddProductDialog", u"Add Product", None))
+        self.grp_general.setTitle(QCoreApplication.translate("AddProductDialog", u"General", None))
+        self.lb_barcode.setText(QCoreApplication.translate("AddProductDialog", u"Barcode:", None))
+        self.lb_description.setText(QCoreApplication.translate("AddProductDialog", u"Description:", None))
+        self.lb_supplier.setText(QCoreApplication.translate("AddProductDialog", u"Supplier:", None))
+        self.cb_supplier.setItemText(0, QCoreApplication.translate("AddProductDialog", u"Store 1", None))
+        self.cb_supplier.setItemText(1, QCoreApplication.translate("AddProductDialog", u"Store 2", None))
+
+        self.pb_supplier_add.setText(QCoreApplication.translate("AddProductDialog", u"New Supplier", None))
+        self.lb_category.setText(QCoreApplication.translate("AddProductDialog", u"Category:", None))
+        self.cb_category.setItemText(0, QCoreApplication.translate("AddProductDialog", u"Category 1", None))
+        self.cb_category.setItemText(1, QCoreApplication.translate("AddProductDialog", u"Category 2", None))
+
+        self.pb_category_add.setText(QCoreApplication.translate("AddProductDialog", u"New Category", None))
+        self.label_9.setText(QCoreApplication.translate("AddProductDialog", u"Stock Type:", None))
+        self.cb_stock_type.setItemText(0, QCoreApplication.translate("AddProductDialog", u"Type 1", None))
+        self.cb_stock_type.setItemText(1, QCoreApplication.translate("AddProductDialog", u"Type 2", None))
+
+        self.pb_stock_type_add.setText(QCoreApplication.translate("AddProductDialog", u"New Stock Type", None))
+        self.lb_quantity.setText(QCoreApplication.translate("AddProductDialog", u"Quantity:", None))
+        self.lb_reorder_level.setText(QCoreApplication.translate("AddProductDialog", u"Reorder Level:", None))
+        self.grp_price.setTitle(QCoreApplication.translate("AddProductDialog", u"Price", None))
+        self.lb_cost.setText(QCoreApplication.translate("AddProductDialog", u"Cost:", None))
+        self.label.setText(QCoreApplication.translate("AddProductDialog", u"$", None))
+        self.lb_markup_margin_label.setText(QCoreApplication.translate("AddProductDialog", u"Markup Margin:", None))
+        self.lb_markup_margin.setText(QCoreApplication.translate("AddProductDialog", u"15 %", None))
+        self.lb_suggested_price_label.setText(QCoreApplication.translate("AddProductDialog", u"Suggested Price:", None))
+        self.label_3.setText(QCoreApplication.translate("AddProductDialog", u"$", None))
+        self.lb_suggested_price.setText(QCoreApplication.translate("AddProductDialog", u"0.00", None))
+        self.lb_price.setText(QCoreApplication.translate("AddProductDialog", u"Price:", None))
+        self.label_2.setText(QCoreApplication.translate("AddProductDialog", u"$", None))
+        self.grp_image.setTitle(QCoreApplication.translate("AddProductDialog", u"Image", None))
+        self.lb_select_image.setText(QCoreApplication.translate("AddProductDialog", u"Select Image:", None))
+        self.pb_browse.setText(QCoreApplication.translate("AddProductDialog", u"Browse", None))
+        self.lb_no_image.setText(QCoreApplication.translate("AddProductDialog", u"No Image to Display", None))
+        self.pb_product_save.setText(QCoreApplication.translate("AddProductDialog", u"Save", None))
+        self.pb_product_cancel.setText(QCoreApplication.translate("AddProductDialog", u"Cancel", None))
+        self.lb_information.setText(QCoreApplication.translate("AddProductDialog", u"Information:", None))
+        self.created_label.setText(QCoreApplication.translate("AddProductDialog", u"Created:", None))
+        self.lb_created.setText(QCoreApplication.translate("AddProductDialog", u"N/A", None))
+        self.updated_label.setText(QCoreApplication.translate("AddProductDialog", u"Updated:", None))
+        self.lb_updated.setText(QCoreApplication.translate("AddProductDialog", u"N/A", None))
+        self.product_id_label.setText(QCoreApplication.translate("AddProductDialog", u"Product ID:", None))
+        self.lb_product_id.setText(QCoreApplication.translate("AddProductDialog", u"N/A", None))
+        self.qty_available_label.setText(QCoreApplication.translate("AddProductDialog", u"Qty Avail.:", None))
+        self.lb_qty_available.setText(QCoreApplication.translate("AddProductDialog", u"N/A", None))
+        self.qty_on_order_label.setText(QCoreApplication.translate("AddProductDialog", u"Qty on Order:", None))
+        self.lb_qty_on_order.setText(QCoreApplication.translate("AddProductDialog", u"N/A", None))
+    # retranslateUi
+

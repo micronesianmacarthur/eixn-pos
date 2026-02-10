@@ -1,23 +1,28 @@
-from decimal import Decimal, DecimalException
+from decimal import Decimal
 import sys
 from PySide6 import QtWidgets as qtw
 from PySide6 import QtCore as qtc
 from PySide6 import QtGui as qtg
 
-from assets.stylesheets.output_css import get_style
+from assets.stylesheets.output_qss import get_style
 
 from ui.main_app_window_ui import Ui_MainAppWindow
 from ui.home_window_ui import Ui_HomeWindow
 from ui.customer_manager_ui import Ui_CustomerManager
+from ui.inventory_manager_ui import Ui_InventoryManager
 
 # import dialogs
 from ui.cash_counter_ui import Ui_CashCounter
+from ui.add_product_ui import Ui_AddProductDialog
+from ui.categories_dialog_ui import Ui_CreateCategoryDialog
+from ui.create_customer_dialog_ui import Ui_CreateCustomerDialog
 
 # import config setup
 from src.config.ui_config import Styles
 
 
 #======================================= MAIN WINDOWS ===================================
+# customer manager
 class CustomerManager(qtw.QWidget, Ui_CustomerManager):
     def __init__(self):
         super().__init__()
@@ -26,7 +31,7 @@ class CustomerManager(qtw.QWidget, Ui_CustomerManager):
         styled_widgets= {
             "window-title": [self.lb_window_title],
             "close-button": [self.pb_window_close],
-            "inline-button-text": [
+            "primary-button": [
                 self.pb_add,
                 self.pb_modify,
                 self.pb_find,
@@ -51,232 +56,317 @@ class HomeWindow(qtw.QWidget, Ui_HomeWindow):
         self.lb_welcome.setProperty("class", "welcome-text")
 
 
+# inventory manager
+class InventoryManager(qtw.QWidget, Ui_InventoryManager):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+        
+        # assign class
+        widgets_to_style = {
+            "window-title": [self.lb_window_title],
+            "close-button": [self.pb_window_close],
+            "table": [
+                self.tbl_products, self.tbl_product_stock,
+                self.tbl_product_sales, self.tbl_product_receiving
+            ],
+            "primary-button": [
+                self.pb_add,
+                self.pb_modify,
+                self.pb_find,
+                self.pb_filter,
+                self.pb_receive,
+                self.pb_use_in_sale,
+                self.pb_delete,
+            ],
+        }
+
+        # connect signals
+
+        Styles(widgets_to_style).set_styles()
+
+
+
 #======================================= DIALOGS ======================================
 class CashCounterDialog(qtw.QDialog, Ui_CashCounter):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui = Ui_CashCounter()
-        self.ui.setupUi(self)      
-
+        self.ui.setupUi(self)
         self.ui.stackedWidget.setCurrentIndex(0)
 
-        # currency map
-        self.currency_map = {
-            "coins": [
-                (self.ui.le_pennies, self.ui.lb_pennies_amt, Decimal("0.01")),
-                (self.ui.le_nickels, self.ui.lb_nickels_amt, Decimal("0.05")),
-                (self.ui.le_dimes, self.ui.lb_dimes_amt, Decimal("0.10")),
-                (self.ui.le_quarters, self.ui.lb_quarters_amt, Decimal("0.25")),
-                (self.ui.le_half_dollars, self.ui.lb_half_dollars_amt, Decimal("0.50")),
-                (self.ui.le_dollars, self.ui.lb_dollars_amt, Decimal("1.00")),
-                (self.ui.le_two_dollars, self.ui.lb_two_dollars_amt, Decimal("2.00")),
-            ],
-            "bills": [
-                (self.ui.le_ones, self.ui.lb_ones_amt, Decimal("1.00")),
-                (self.ui.le_twos, self.ui.lb_twos_amt, Decimal("2.00")),
-                (self.ui.le_fives, self.ui.lb_fives_amt, Decimal("5.00")),
-                (self.ui.le_tens, self.ui.lb_tens_amt, Decimal("10.00")),
-                (self.ui.le_twenties, self.ui.lb_twenties_amt, Decimal("20.00")),
-                (self.ui.le_fifties, self.ui.lb_fifties_amt, Decimal("50.00")),
-                (self.ui.le_hundreds, self.ui.lb_hundreds_amt, Decimal("100.00")),
-            ]
-        }
+        # source of truth
+        # format: (value, keyName, category)
+        self.currency_defs = [
+            (Decimal("100.00"), "hundreds", "bills"),
+            (Decimal("50.00"), "fifties", "bills"),
+            (Decimal("20.00"), "twenties", "bills"),
+            (Decimal("10.00"), "tens", "bills"),
+            (Decimal("5.00"), "fives", "bills"),
+            (Decimal("2.00"), "twos", "bills"),
+            (Decimal("1.00"), "ones", "bills"),
+            (Decimal("2.00"), "two_dollars", "coins"),
+            (Decimal("1.00"), "dollars", "coins"),
+            (Decimal("0.50"), "half_dollars", "coins"),
+            (Decimal("0.25"), "quarters", "coins"),
+            (Decimal("0.10"), "dimes", "coins"),
+            (Decimal("0.05"), "nickels", "coins"),
+            (Decimal("0.01"), "pennies", "coins"),
+        ]
 
-        self.currency_map_remove = {
-            "coins": [
-                (self.ui.le_pennies_remove, self.ui.lb_pennies_amt_remove, Decimal("0.01")),
-                (self.ui.le_nickels_remove, self.ui.lb_nickels_amt_remove, Decimal("0.05")),
-                (self.ui.le_dimes_remove, self.ui.lb_dimes_amt_remove, Decimal("0.10")),
-                (self.ui.le_quarters_remove, self.ui.lb_quarters_amt_remove, Decimal("0.25")),
-                (self.ui.le_half_dollars_remove, self.ui.lb_half_dollars_amt_remove, Decimal("0.50")),
-                (self.ui.le_dollar_remove, self.ui.lb_dollar_amt_remove, Decimal("1.00")),
-                (self.ui.le_two_dollars_remove, self.ui.lb_two_dollars_amt_remove, Decimal("2.00")),
-            ],
-            "bills": [
-                (self.ui.le_ones_remove, self.ui.lb_ones_amt_remove, Decimal("1.00")),
-                (self.ui.le_twos_remove, self.ui.lb_twos_amt_remove, Decimal("2.00")),
-                (self.ui.le_fives_remove, self.ui.lb_fives_amt_remove, Decimal("5.00")),
-                (self.ui.le_tens_remove, self.ui.lb_tens_amt_remove, Decimal("10.00")),
-                (self.ui.le_twenties_remove, self.ui.lb_twenties_amt_remove, Decimal("20.00")),
-                (self.ui.le_fifties_remove, self.ui.lb_fifties_amt_remove, Decimal("50.00")),
-                (self.ui.le_hundreds_remove, self.ui.lb_hundreds_amt_remove, Decimal("100.00")),
-            ]
-        }
-
-        styled_widgets = {
+        # ui style mapping
+        widgets_to_style = {
             "dialog-title": [self.ui.lb_dialog_title],
             "bold underlined": [
                 self.ui.lb_coins_count, self.ui.lb_coins_amount,
-                self.ui.lb_bills_count, self.ui.lb_bills_amount,
                 self.ui.lb_coins_remove, self.ui.lb_coins_amount_remove,
+                self.ui.lb_bills_count, self.ui.lb_bills_amount,
                 self.ui.lb_bills_remove, self.ui.lb_bills_amount_remove,
             ],
             "underlined": [
                 self.ui.lb_two_dollars_amt, self.ui.lb_hundreds_amt,
                 self.ui.lb_two_dollars_amt_remove, self.ui.lb_hundreds_amt_remove,
             ],
-            "close-total": [self.ui.cash_drawer_total, self.ui.lb_cash_drawer_total_remove],
-            "primary-button": [
-                self.ui.pb_next_page, self.ui.pb_previous_page,
-                self.ui.pb_cancel
+            "close-total": [
+                self.ui.cash_drawer_total,
+                self.ui.lb_cash_drawer_total_remove,
+            ],
+            "dialog-menu": [self.ui.dlg_menu],
+            "dialog-button": [
+                self.ui.pb_next_page,
+                self.ui.pb_previous_page,
+                self.ui.pb_cancel,
             ],
             "calculate-button": [self.ui.pb_remove_cash],
+            "spinbox": [
+                self.ui.dbl_starting_cash,
+            ]
         }
 
-        Styles(styled_widgets).set_styles()
+        Styles(widgets_to_style).set_styles()
         self.connect_signals()
-        self.ui.pb_remove_cash.clicked.connect(self.remove_cash)
 
     def connect_signals(self):
-        """Connect UI element signals to their respective slots with lambda."""
         self.ui.pb_cancel.clicked.connect(self.close)
         self.ui.pb_next_page.clicked.connect(lambda: self.change_page(1))
         self.ui.pb_previous_page.clicked.connect(lambda: self.change_page(-1))
-        # self.ui.pb_remove_cash.clicked.connect(self.calculate_remove_cash)
+        self.ui.pb_remove_cash.clicked.connect(self.remove_cash)
 
-        # connect LineEdits using map
-        for category in self.currency_map.values():
-            for line_edit, label, value in category:
-                line_edit.editingFinished.connect(
-                    lambda le=line_edit, lb=label, val=value: self.sync_values()
-                )
-
+        # dynamic signal connection
+        for _, key, _ in self.currency_defs:
+            line_edit = getattr(self.ui, f"le_{key}")
+            line_edit.editingFinished.connect(self.sync_values)
 
     def sync_values(self):
-        """Syncs the values for category total and grand total."""
-        grand_total = Decimal("0.00")
+        totals = {"bills": Decimal("0"), "coins": Decimal("0")}
 
-        for category, items in self.currency_map.items():
-            category_total = Decimal("0.00")
+        for val, key, cat in self.currency_defs:
+            line_edit = getattr(self.ui, f"le_{key}")
+            label = getattr(self.ui, f"lb_{key}_amt")
 
-            for line_edit, label, value in items:
-                try:
-                    count = int(line_edit.text()) if line_edit.text() else 0
-                except ValueError:
-                    count = 0
+            try:
+                count = int(line_edit.text()) if line_edit.text() else 0
+            except ValueError:
+                count = 0
 
-                line_item_total = count * value
-                category_total += line_item_total
-                label.setText(f"$ {line_item_total:.02f}")
+            item_total = count * val
+            totals[cat] += item_total
+            label.setText(f"$ {item_total:.02f}")
 
-            # update specific category total label
-            target_label = self.ui.lb_coins_total if category == "coins" else self.ui.lb_bills_total
-            target_label.setText(f"$ {category_total:.02f}")
-            grand_total += category_total
+        # update category total
+        self.ui.lb_bills_total.setText(f"$ {totals['bills']:.02f}")
+        self.ui.lb_coins_total.setText(f"$ {totals['coins']:.02f}")
+        self.ui.cash_drawer_total.setText(f"$ {totals['bills'] + totals['coins']:.02f}")
 
-        # update grand total label
-        self.ui.cash_drawer_total.setText(f"$ {grand_total:.02f}")
-
-    def change_page(self, direction: int):
-        """Changes the current stackedWidget page according to direction."""
-        current_index = self.ui.stackedWidget.currentIndex()
-        new_index = current_index + direction
-        
+    def change_page(self, direction:int):
+        new_index = self.ui.stackedWidget.currentIndex() + direction
         if 0 <= new_index < self.ui.stackedWidget.count():
             self.ui.stackedWidget.setCurrentIndex(new_index)
-
-    # def calculate_remove_cash(self):
-    #     try:
-    #         grand_total = Decimal(self.ui.cash_drawer_total.text().replace("$ ", "").strip())
-    #         starting_cash = Decimal(self.ui.dbl_starting_cash.text())
-    #     except (ValueError, DecimalException):
-    #         return
-
-    #     amount_to_remove = grand_total - starting_cash
-
-    #     if amount_to_remove <= 0:
-    #         return
-
-    #     categories = ["bills", "coins"]
-    #     total_removed_calc = Decimal("0.00")
-
-    #     for category in categories:
-    #         drawer_items = self.currency_map[category]
-    #         remove_items = self.currency_map_remove[category]
-
-    #         for (src_le, _, value), (rem_le, rem_lb, _) in zip(drawer_items, remove_items):
-    #             try:
-    #                 available_count = int(src_le.text()) if src_le.text() else 0
-    #             except ValueError:
-    #                 available_count = 0
-
-    #             if amount_to_remove >= value and available_count > 0:
-    #                 needed_count = int(amount_to_remove / value)
-    #                 actual_to_take = min(needed_count, available_count)
-                    
-    #                 amount_to_remove -= (actual_to_take * value)
-    #                 total_removed_calc += (actual_to_take * value)
-
-    #                 rem_le.setText(str(actual_to_take))
-    #                 rem_lb.setText(f"$ {actual_to_take * value:.02f}")
-    #             else:
-    #                 rem_le.setText("")
-    #                 rem_lb.setText("$ 0.00")
-
-    #             print(f"{src_le.objectName()}: needed_count: {needed_count}, available_count: {available_count}, actual to take: {actual_to_take}, total_removed: {total_removed_calc}")
-
-    #     self.ui.lb_cash_drawer_total_remove.setText(f"$ {total_removed_calc:.02f}")
+            
+            if new_index == 1:
+                self.ui.dbl_starting_cash.setFocus()
+                self.ui.dbl_starting_cash.selectAll()
 
     def remove_cash(self):
-        grand_total = Decimal(self.ui.cash_drawer_total.text().replace("$", "").strip())
-        starting_cash = Decimal(self.ui.dbl_starting_cash.text())
+        try:
+            drawer_total = Decimal(self.ui.cash_drawer_total.text().replace("$", "").strip())
+            starting_cash = Decimal(self.ui.dbl_starting_cash.text())
+        except: return
 
-        remove_amount = grand_total - starting_cash
+        remove_amount = drawer_total - starting_cash
+        if remove_amount <= 0: return
+
+        category_removed = {"bills": Decimal("0"), "coins": Decimal("0")}
         total_removed = Decimal("0")
 
-        categories = ["bills", "coins"]
-        
-        if remove_amount > 0:
-            for category in categories:
-                drawer_items = self.currency_map[category]
-                remove_items = self.currency_map_remove[category]
-                
-                for (drw_le, drw_lb, drw_val), (rem_le, rem_lb, rem_val) in zip(reversed(drawer_items), reversed(remove_items)):
-                    if drw_le.text().isnumeric():
-                        need_to_remove = int(remove_amount / drw_val)
-                        actual_to_remove = min(need_to_remove, int(drw_le.text()))
-                        amount_removed = Decimal(f"{actual_to_remove * drw_val:.02f}")
-                        total_removed += amount_removed
-                        remove_amount -= amount_removed
+        for val, key, cat in self.currency_defs:
+            drw_le = getattr(self.ui, f"le_{key}")
+            rem_le = getattr(self.ui, f"le_{key}_remove")
+            rem_lb = getattr(self.ui, f"lb_{key}_amt_remove")
 
-                        if actual_to_remove <=0:
-                            rem_le.setText("")
-                        else:
-                            rem_le.setText(str(actual_to_remove))
+            available_count = int(drw_le.text()) if drw_le.text().isnumeric() else 0
 
-                        rem_lb.setText(str(amount_removed))
-                        
-            self.ui.lb_cash_drawer_total_remove.setText(str(total_removed))
-                
-        else:
-            return
-                    
+            # Greedy calculation
+            count_taken = min(int(remove_amount / val), available_count)
+            amount_taken = count_taken * val
 
-        
+            remove_amount -= amount_taken
+            total_removed += amount_taken
+            category_removed[cat] += amount_taken
+
+            rem_le.setText(str(count_taken) if count_taken > 0 else "")
+            rem_lb.setText(f"$ {amount_taken:.02f}")
+
+        # update ui
+        self.ui.lb_bills_total_remove.setText(f"$ {category_removed['bills']:.02f}")
+        self.ui.lb_coins_total_remove.setText(f"$ {category_removed['coins']:.02f}")
+        self.ui.lb_cash_drawer_total_remove.setText(f"$ {total_removed:.02f}")    
+
+
+class AddProductDialog(qtw.QDialog, Ui_AddProductDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = Ui_AddProductDialog()
+        self.ui.setupUi(self)
+
+        # assign class
+        widgets_to_style = {
+            "group-box bold": [self.ui.grp_general, self.ui.grp_price, self.ui.grp_image],
+            "dialog-title": [self.ui.lb_dialog_title],
+            "dialog-button": [self.ui.pb_product_save, self.ui.pb_product_cancel],
+            "dialog-menu": [self.ui.dlg_menu],
+            "small-text": [
+                self.ui.created_label, self.ui.updated_label, self.ui.product_id_label,
+                self.ui.qty_available_label, self.ui.qty_on_order_label,
+                self.ui.lb_created, self.ui.lb_updated, self.ui.lb_product_id,
+                self.ui.lb_qty_available, self.ui.lb_qty_on_order,
+            ],
+            "small-header": [self.ui.lb_information],
+            "combobox": [
+                self.ui.cb_category, self.ui.cb_supplier, self.ui.cb_stock_type,
+            ],
+            "spinbox": [
+                self.ui.sb_quantity, self.ui.sb_reorder_level,
+                self.ui.dbl_cost, self.ui.dbl_price,
+            ],
+            "secondary-button": [self.ui.pb_browse],
+            "new-button": [
+                self.ui.pb_supplier_add, self.ui.pb_category_add, self.ui.pb_stock_type_add
+            ],
+            "display-only": [self.ui.lb_markup_margin, self.ui.lb_suggested_price],
+        }
+
+        # connect signals
+        Styles(widgets_to_style).set_styles()
+        self.ui.pb_product_cancel.clicked.connect(self.close)
+        self.ui.pb_category_add.clicked.connect(lambda: self.open_second_dialog(CategoriesDialog))
+
+    def open_second_dialog(self, dialog_class):
+        second_dialog = dialog_class(parent=self)
+        second_dialog.exec()
+
+
+class CategoriesDialog(qtw.QDialog, Ui_CreateCategoryDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = Ui_CreateCategoryDialog()
+        self.ui.setupUi(self)
+
+        # assign class
+        widgets_to_style = {
+            "dialog-title": [self.ui.lb_dialog_title],
+            "section-header": [self.ui.lb_section_header],
+            "new-button": [self.ui.pb_category_save],
+            "dialog-button": [
+                self.ui.pb_category_modify, self.ui.pb_category_delete, self.ui.pb_category_cancel
+            ],
+            "table": [self.ui.tbl_categories],
+            "dialog-menu": [self.ui.dlg_menu],
+        }
+
+        # connect signals
+        Styles(widgets_to_style).set_styles()
+        self.ui.pb_category_cancel.clicked.connect(self.close)
+
+class CreateCustomerDialog(qtw.QDialog, Ui_CreateCustomerDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = Ui_CreateCustomerDialog()
+        self.ui.setupUi(self)
+
+        # assign class
+        widgets_to_style = {
+            "group-box bold": [self.ui.grp_bill_to, self.ui.grp_account],
+            "dialog-title": [self.ui.lb_dialog_title],
+            "dialog-button": [self.ui.pb_customer_save, self.ui.pb_customer_cancel],
+            "dialog-menu": [self.ui.dlg_menu],
+            "small-text": [
+                self.ui.lb_created_label, self.ui.lb_updated_label, self.ui.lb_customer_id_label,
+                self.ui.lb_charge_balance_label, self.ui.lb_store_credit_label,
+                self.ui.lb_created, self.ui.lb_updated, self.ui.lb_customer_id,
+                self.ui.lb_charge_balance, self.ui.lb_store_credit,
+            ],
+            "small-header": [self.ui.lb_information],
+            "combobox": [
+                self.ui.cb_country,
+            ],
+            "spinbox": [
+                self.ui.sb_zip_code, self.ui.dbl_custom_charge_limit,
+            ],
+            "display-only": [self.ui.lb_system_charge_limit],
+        }
+
+        Styles(widgets_to_style).set_styles()
+
 
 #======================================= MAIN APP ======================================
 class MainWindow(qtw.QMainWindow, Ui_MainAppWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.tb_vendors.setText("Suppliers")
 
         self.home = HomeWindow()
         customer_manager = CustomerManager()
+        inventory_manager = InventoryManager()
 
         self.wd_stacked.addWidget(self.home)
         self.wd_stacked.addWidget(customer_manager)
+        self.wd_stacked.addWidget(inventory_manager)
         self.wd_stacked.setCurrentWidget(self.home)
 
         self.current_window = self.home
 
         # connect signal
+        self.tb_exit.clicked.connect(self.close)
+        self.act_exit.triggered.connect(self.close)
+
+        #================= customer window =======================
         self.tb_customers.clicked.connect(
             lambda checked: self.open_window(customer_manager)
         )
         customer_manager.pb_window_close.clicked.connect(
             lambda checked: self.close_window(customer_manager)
         )
-        # cash count
+        customer_manager.pb_add.clicked.connect(
+            lambda checked: self.open_dialog(CreateCustomerDialog())
+        )
+
+        #================= inventory window =======================
+        self.tb_inventory.clicked.connect(
+            lambda checked: self.open_window(inventory_manager)
+        )
+        inventory_manager.pb_window_close.clicked.connect(
+            lambda checked: self.close_window(inventory_manager)
+        )
+        inventory_manager.pb_add.clicked.connect(
+            lambda checked: self.open_dialog(AddProductDialog())
+        )
+
+        #================= category dialog ========================
+        
+
+        #================= cash count =======================
         self.tb_cash_count.clicked.connect(
             lambda checked: self.open_dialog(CashCounterDialog())
         )

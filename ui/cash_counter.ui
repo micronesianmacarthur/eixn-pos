@@ -45,7 +45,7 @@
     <number>0</number>
    </property>
    <property name="bottomMargin">
-    <number>10</number>
+    <number>0</number>
    </property>
    <item>
     <widget class="QWidget" name="widget" native="true">
@@ -2218,7 +2218,7 @@
                    <number>5</number>
                   </property>
                   <item>
-                   <widget class="QLabel" name="lb_dollar_remove">
+                   <widget class="QLabel" name="lb_dollars_remove">
                     <property name="minimumSize">
                      <size>
                       <width>75</width>
@@ -2243,7 +2243,7 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="le_dollar_remove">
+                   <widget class="QLineEdit" name="le_dollars_remove">
                     <property name="minimumSize">
                      <size>
                       <width>60</width>
@@ -2268,7 +2268,7 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="lb_dollar_amt_remove">
+                   <widget class="QLabel" name="lb_dollars_amt_remove">
                     <property name="minimumSize">
                      <size>
                       <width>60</width>
@@ -3275,7 +3275,7 @@
               <widget class="QWidget" name="widget_11" native="true">
                <layout class="QVBoxLayout" name="verticalLayout_11">
                 <property name="spacing">
-                 <number>5</number>
+                 <number>0</number>
                 </property>
                 <property name="leftMargin">
                  <number>0</number>
@@ -3304,13 +3304,13 @@
                    <widget class="QLabel" name="lb_starting_cash">
                     <property name="minimumSize">
                      <size>
-                      <width>0</width>
+                      <width>85</width>
                       <height>35</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>16777215</width>
+                      <width>85</width>
                       <height>35</height>
                      </size>
                     </property>
@@ -3324,14 +3324,17 @@
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
-                      <height>35</height>
+                      <height>25</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>35</height>
+                      <height>25</height>
                      </size>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::FocusPolicy::WheelFocus</enum>
                     </property>
                    </widget>
                   </item>
@@ -3387,7 +3390,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QWidget" name="widget_3" native="true">
+       <widget class="QWidget" name="dlg_menu" native="true">
         <property name="minimumSize">
          <size>
           <width>150</width>
@@ -3429,7 +3432,7 @@
            </property>
            <property name="icon">
             <iconset resource="../assets/images/icons.qrc">
-             <normaloff>:/Icons/next.svg</normaloff>:/Icons/next.svg</iconset>
+             <normaloff>:/Icons/arrow-right.svg</normaloff>:/Icons/arrow-right.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -3458,7 +3461,7 @@
            </property>
            <property name="icon">
             <iconset resource="../assets/images/icons.qrc">
-             <normaloff>:/Icons/previous.svg</normaloff>:/Icons/previous.svg</iconset>
+             <normaloff>:/Icons/arrow-left.svg</normaloff>:/Icons/arrow-left.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -3500,7 +3503,7 @@
            </property>
            <property name="icon">
             <iconset resource="../assets/images/icons.qrc">
-             <normaloff>:/Icons/cancel.svg</normaloff>:/Icons/cancel.svg</iconset>
+             <normaloff>:/Icons/cross.svg</normaloff>:/Icons/cross.svg</iconset>
            </property>
            <property name="iconSize">
             <size>

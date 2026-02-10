@@ -1,0 +1,264 @@
+/* =================================== GLOBAL ==========================
+/* widgets */
+QWidget {
+    background-color: --bg-primary;
+    color: --fg-primary;
+    border: none;
+    font-family: "Lexend";
+    font-size: 12px;
+}
+
+#line {
+    background-color: --fg-primary;
+}
+
+/* toolbutton */
+QToolButton {
+    background-color: --bg-secondary;
+    border-radius: 2px;
+    padding-top: 10px;
+}
+QToolButton:hover {
+    background-color: --fg-secondary;
+    color: --bg-secondary;
+}
+QToolButton:pressed {
+    background-color: --fg-primary;
+    color: --bg-primary;
+}
+
+/* menubar */
+QMenuBar, QMenu {
+    background-color: --bg-secondary;
+    font-size: 14px;
+}
+QMenu::item:selected {
+    background-color: --fg-primary;
+    color: --bg-primary;
+}
+QMenu::item:hover {
+    background-color: --fg-secondary;
+    color: --bg-primary;
+}
+QMenuBar::item:selected {
+    background-color: --fg-primary;
+    color: --bg-primary;
+}
+QMenuBar::item:hover {
+    background-color: --fg-secondary;
+    color: --bg-primary;
+}
+
+/* dialog */
+QDialog {
+    background-color: --bg-secondary;
+}
+QDialog QWidget {
+    background-color: --bg-secondary;
+}
+QDialog QLineEdit {
+    background-color: --fg-primary;
+    color: --bg-primary;
+    border: none;
+    border-radius: 2px;
+}
+
+/* combobox */
+QComboBox QAbstractItemView {
+    selection-background-color: #4682B4;
+    background-color: --fg-secondary;
+    color: --bg-primary;
+}
+
+
+/*====================================== HEADERS ===============================*/
+/* general */
+.bold {
+    font-weight: bold;
+}
+.underlined {
+    border-bottom: 1px solid --fg-primary;
+}
+
+/* main app */
+#lb_app_name {
+    font-size: 32px;
+    font-weight: bold;
+    color: --fg-primary;
+}
+
+/* window */
+.window-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.welcome-text {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* dialog */
+.dialog-title {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: --fg-primary;
+    color: --bg-primary;
+}
+
+#CashCounter .close-total {
+    font-size: 24px;
+    /* font-weight: bold; */
+    /* background-color: blueviolet; */
+    background-color: --yellow-primary;
+    color: --bg-secondary;
+}
+
+.small-header {
+    background-color: transparent;
+    color: --bg-primary;
+    font-weight: bold;
+    font-size: 9px;
+}
+
+.section-header {
+    font-size: 14px;
+}
+
+
+/*===================================== BUTTONS =======================================*/
+.dialog-button {
+    border: none;
+    text-align: left;
+    padding-left: 20px;
+    background-color: --fg-secondary;
+    color: --bg-secondary;
+}
+.dialog-button:hover {
+    background-color: --bg-secondary;
+    color: --fg-secondary;
+}
+
+.calculate-button {
+    background-color: --fg-secondary;
+    color: --bg-secondary;
+    border-radius: 5px;
+}
+.calculate-button:hover {
+    background-color: --gray-primary;
+}
+
+.close-button {
+    /* background-color: --danger; */
+    background-color: --red-primary;
+    border-radius: 5px;
+}
+.close-button:hover {
+    /* background-color: --danger-hover; */
+    background-color: --red-secondary;
+}
+
+.primary-button {
+    background-color: --fg-primary;
+    color: bg-primary;
+    text-align: left;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.primary-button:hover {
+    background-color: --gray-primary;
+}
+
+.secondary-button {
+    background-color: --blue-primary;
+    color: --fg-secondary;
+    border-radius: 2px;
+}
+.secondary-button:hover {
+    background-color: --blue-secondary;
+}
+
+.new-button {
+    background-color: --green-primary;
+    color: --fg-primary;
+    border-radius: 2px;
+    text-align: left;
+}
+.new-button:hover {
+    background-color: --green-secondary;
+}
+
+/*================================ INPUT ============================================= */
+.spinbox {
+    background-color: --fg-primary;
+    color: --bg-primary;
+    border: none;
+    border-radius: 2px;
+    padding-left: 5px;
+}
+.spinbox::up-button, .spinbox::down-button {
+    width: 0px;
+    border: none;
+    background-color: transparent;
+    image: none;
+}
+
+
+
+
+.table {
+    border: 1px dashed white;
+}
+
+.combobox {
+    background-color: --fg-primary;
+    color: --bg-primary;
+    border: none;
+    border-radius: 2px;
+    padding-left: 5px;
+    selection-background-color: --blue-primary;
+}
+.combobox::down-arrow {
+    image: url(:/Icons/down-arrow-dark.svg);
+    width: 20px;
+    height: 20px;
+}
+.combobox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    background-color: --fg-primary;
+    border-radius: 2px;
+}
+
+/*================================= FRAMES ==============================================*/
+.group-box {
+    /* border: 1px solid --primary-gray;
+    border-radius: 10px; */
+    border-bottom: 1px solid --gray-primary;
+}
+
+#wid_info {
+    /* transparent background */
+    background-color: transparent;
+}
+
+.dialog-menu {
+    background-color: --fg-secondary;
+}
+
+
+/*=================================== TEXTS ===============================================*/
+.small-text {
+    font-size: 9px;
+    background-color: transparent;
+    color: --bg-secondary;
+}
+
+
+.display-only {
+    background-color: --yellow-primary;
+    color: --bg-primary;
+    padding-left: 5px;
+    border-radius: 2px;
+}
