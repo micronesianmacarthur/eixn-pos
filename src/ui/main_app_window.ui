@@ -6,54 +6,31 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>1020</height>
+    <width>1032</width>
+    <height>1000</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>0</width>
-    <height>1020</height>
+    <height>1000</height>
    </size>
   </property>
   <property name="font">
    <font>
     <family>Lexend</family>
-    <pointsize>10</pointsize>
+    <pointsize>12</pointsize>
    </font>
   </property>
   <property name="windowTitle">
    <string>Eixn Point of Sale</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../assets/images/icons.qrc">
+   <iconset resource="../assets/images/icons.qrc">
     <normaloff>:/Icons/register.svg</normaloff>:/Icons/register.svg</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">#centralwidget {
-	background-color: #1a1a1a;
-}
-#wd_menu {}
-#wd_content {}
-#container {}
-QToolButton {
-	background-color: #3f3f3f;
-	color: #fff;
-	border-radius: 0;
-}
-QToolButton:hover {
-	background-color: #cfcfcf;
-	color: #1b1b1b;
-}
-#wd_stacked {
-	background-color: #1a1a1a;
-}</string>
-  </property>
-  <property name="iconSize">
-   <size>
-    <width>25</width>
-    <height>25</height>
-   </size>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -77,7 +54,7 @@ QToolButton:hover {
       <property name="minimumSize">
        <size>
         <width>140</width>
-        <height>980</height>
+        <height>0</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -87,11 +64,14 @@ QToolButton:hover {
        </size>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>10</number>
+       </property>
        <property name="leftMargin">
         <number>0</number>
        </property>
        <property name="topMargin">
-        <number>5</number>
+        <number>0</number>
        </property>
        <property name="rightMargin">
         <number>0</number>
@@ -100,17 +80,17 @@ QToolButton:hover {
         <number>0</number>
        </property>
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="lb_app_name">
          <property name="minimumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>0</width>
+           <height>45</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>16777215</width>
+           <height>45</height>
           </size>
          </property>
          <property name="font">
@@ -126,7 +106,7 @@ QToolButton:hover {
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="wd_menu_button" native="true">
+        <widget class="QWidget" name="widget_3" native="true">
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <property name="spacing">
            <number>1</number>
@@ -148,26 +128,20 @@ QToolButton:hover {
             <property name="minimumSize">
              <size>
               <width>140</width>
-              <height>90</height>
+              <height>80</height>
              </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Lexend</family>
-              <pointsize>10</pointsize>
-             </font>
             </property>
             <property name="text">
              <string>New Sale</string>
             </property>
             <property name="icon">
-             <iconset resource="../../assets/images/icons.qrc">
+             <iconset resource="../assets/images/icons.qrc">
               <normaloff>:/Icons/shopping_basket.svg</normaloff>:/Icons/shopping_basket.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>35</width>
-              <height>35</height>
+              <width>30</width>
+              <height>30</height>
              </size>
             </property>
             <property name="toolButtonStyle">
@@ -180,26 +154,20 @@ QToolButton:hover {
             <property name="minimumSize">
              <size>
               <width>140</width>
-              <height>90</height>
+              <height>80</height>
              </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Lexend</family>
-              <pointsize>10</pointsize>
-             </font>
             </property>
             <property name="text">
              <string>Inventory</string>
             </property>
             <property name="icon">
-             <iconset resource="../../assets/images/icons.qrc">
+             <iconset resource="../assets/images/icons.qrc">
               <normaloff>:/Icons/inventory.svg</normaloff>:/Icons/inventory.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>35</width>
-              <height>35</height>
+              <width>30</width>
+              <height>30</height>
              </size>
             </property>
             <property name="toolButtonStyle">
@@ -212,26 +180,20 @@ QToolButton:hover {
             <property name="minimumSize">
              <size>
               <width>140</width>
-              <height>90</height>
+              <height>80</height>
              </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Lexend</family>
-              <pointsize>10</pointsize>
-             </font>
             </property>
             <property name="text">
              <string>Customers</string>
             </property>
             <property name="icon">
-             <iconset resource="../../assets/images/icons.qrc">
+             <iconset resource="../assets/images/icons.qrc">
               <normaloff>:/Icons/customers.svg</normaloff>:/Icons/customers.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>35</width>
-              <height>35</height>
+              <width>30</width>
+              <height>30</height>
              </size>
             </property>
             <property name="toolButtonStyle">
@@ -240,30 +202,24 @@ QToolButton:hover {
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="tb_sales">
+           <widget class="QToolButton" name="tb_sales_manager">
             <property name="minimumSize">
              <size>
               <width>140</width>
-              <height>90</height>
+              <height>80</height>
              </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Lexend</family>
-              <pointsize>10</pointsize>
-             </font>
             </property>
             <property name="text">
              <string>Sales Manager</string>
             </property>
             <property name="icon">
-             <iconset resource="../../assets/images/icons.qrc">
+             <iconset resource="../assets/images/icons.qrc">
               <normaloff>:/Icons/price_tag.svg</normaloff>:/Icons/price_tag.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>35</width>
-              <height>35</height>
+              <width>30</width>
+              <height>30</height>
              </size>
             </property>
             <property name="toolButtonStyle">
@@ -276,26 +232,20 @@ QToolButton:hover {
             <property name="minimumSize">
              <size>
               <width>140</width>
-              <height>90</height>
+              <height>80</height>
              </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Lexend</family>
-              <pointsize>10</pointsize>
-             </font>
             </property>
             <property name="text">
              <string>Vendors</string>
             </property>
             <property name="icon">
-             <iconset resource="../../assets/images/icons.qrc">
+             <iconset resource="../assets/images/icons.qrc">
               <normaloff>:/Icons/vendor.svg</normaloff>:/Icons/vendor.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>35</width>
-              <height>35</height>
+              <width>30</width>
+              <height>30</height>
              </size>
             </property>
             <property name="toolButtonStyle">
@@ -308,26 +258,20 @@ QToolButton:hover {
             <property name="minimumSize">
              <size>
               <width>140</width>
-              <height>90</height>
+              <height>80</height>
              </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Lexend</family>
-              <pointsize>10</pointsize>
-             </font>
             </property>
             <property name="text">
              <string>Cash Count</string>
             </property>
             <property name="icon">
-             <iconset resource="../../assets/images/icons.qrc">
+             <iconset resource="../assets/images/icons.qrc">
               <normaloff>:/Icons/performance.svg</normaloff>:/Icons/performance.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>35</width>
-              <height>35</height>
+              <width>30</width>
+              <height>30</height>
              </size>
             </property>
             <property name="toolButtonStyle">
@@ -340,26 +284,20 @@ QToolButton:hover {
             <property name="minimumSize">
              <size>
               <width>140</width>
-              <height>90</height>
+              <height>80</height>
              </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Lexend</family>
-              <pointsize>10</pointsize>
-             </font>
             </property>
             <property name="text">
              <string>Settings</string>
             </property>
             <property name="icon">
-             <iconset resource="../../assets/images/icons.qrc">
-              <normaloff>:/Icons/settings_2.svg</normaloff>:/Icons/settings_2.svg</iconset>
+             <iconset resource="../assets/images/icons.qrc">
+              <normaloff>:/Icons/settings.svg</normaloff>:/Icons/settings.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>35</width>
-              <height>35</height>
+              <width>30</width>
+              <height>30</height>
              </size>
             </property>
             <property name="toolButtonStyle">
@@ -371,9 +309,6 @@ QToolButton:hover {
            <spacer name="verticalSpacer">
             <property name="orientation">
              <enum>Qt::Orientation::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Policy::Expanding</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -388,26 +323,20 @@ QToolButton:hover {
             <property name="minimumSize">
              <size>
               <width>140</width>
-              <height>90</height>
+              <height>80</height>
              </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Lexend</family>
-              <pointsize>10</pointsize>
-             </font>
             </property>
             <property name="text">
              <string>Exit</string>
             </property>
             <property name="icon">
-             <iconset resource="../../assets/images/icons.qrc">
+             <iconset resource="../assets/images/icons.qrc">
               <normaloff>:/Icons/power.svg</normaloff>:/Icons/power.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>35</width>
-              <height>35</height>
+              <width>30</width>
+              <height>30</height>
              </size>
             </property>
             <property name="toolButtonStyle">
@@ -423,41 +352,8 @@ QToolButton:hover {
     </item>
     <item>
      <widget class="QStackedWidget" name="wd_stacked">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lexend</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <widget class="QWidget" name="home">
-       <layout class="QGridLayout" name="gridLayout">
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <property name="spacing">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="custom"/>
+      <widget class="QWidget" name="page"/>
+      <widget class="QWidget" name="page_2"/>
      </widget>
     </item>
    </layout>
@@ -467,29 +363,11 @@ QToolButton:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>720</width>
-     <height>22</height>
+     <width>1032</width>
+     <height>25</height>
     </rect>
    </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>16777215</width>
-     <height>16777215</height>
-    </size>
-   </property>
-   <widget class="QMenu" name="menu_file">
-    <property name="font">
-     <font>
-      <family>Lexend</family>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
+   <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
     </property>
@@ -497,8 +375,13 @@ QToolButton:hover {
     <addaction name="separator"/>
     <addaction name="act_exit"/>
    </widget>
-   <addaction name="menu_file"/>
+   <addaction name="menuFile"/>
   </widget>
+  <action name="actionSample">
+   <property name="text">
+    <string>Sample</string>
+   </property>
+  </action>
   <action name="act_user_manager">
    <property name="text">
     <string>User Manager</string>
@@ -511,7 +394,7 @@ QToolButton:hover {
   </action>
  </widget>
  <resources>
-  <include location="../../assets/images/icons.qrc"/>
+  <include location="../assets/images/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -1,13 +1,17 @@
-class Styles:
-    def __init__(self, styled_widgets:dict):
-        self.styled_widgets = styled_widgets
+from PySide6 import QtWidgets as qtw
 
-    def set_styles(self):
-        for css_class, widgets in self.styled_widgets.items():
+class Styles:
+    @staticmethod
+    def apply(styled_widgets: dict):
+        """
+        Static method to apply CSS classes to a dictionary of widgets.
+        Format: {"class-name": [widget1, widget2, ...]}
+        """
+        for css_class, widgets in styled_widgets.items():
             for widget in widgets:
-                widget.setProperty("class", css_class)
-                widget.style().polish(widget)
-                
+                if widget:
+                    widget.setProperty("class", css_class)
+                    widget.style().polish(widget)
 
 class Totals:
     def __init__(self, map:dict, coin_total:qtw.QLabel, bill_total:qtw.QLabel, grand_total_label:qtw.QLabel):
