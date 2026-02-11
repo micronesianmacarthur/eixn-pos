@@ -938,13 +938,13 @@
             <string>Save</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc">
+            <iconset resource="../assets/images/icons.qrc">
              <normaloff>:/Icons/tick.svg</normaloff>:/Icons/tick.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>25</width>
-             <height>25</height>
+             <width>16</width>
+             <height>16</height>
             </size>
            </property>
           </widget>
@@ -967,13 +967,13 @@
             <string>Cancel</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc">
+            <iconset resource="../assets/images/icons.qrc">
              <normaloff>:/Icons/cross.svg</normaloff>:/Icons/cross.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>25</width>
-             <height>25</height>
+             <width>16</width>
+             <height>16</height>
             </size>
            </property>
           </widget>
@@ -1188,7 +1188,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc"/>
+  <include location="../assets/images/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

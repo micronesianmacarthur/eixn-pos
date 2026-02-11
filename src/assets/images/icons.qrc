@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="Icons">
+    <file>tick-small.svg</file>
     <file>plus.svg</file>
     <file>down-arrow-dark.svg</file>
     <file>down-arrow-light.svg</file>

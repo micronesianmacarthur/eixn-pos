@@ -3,7 +3,7 @@ from src.ui.add_product_ui import Ui_AddProductDialog
 from src.config.ui_config import Styles
 from src.dialogs.categories_dialog import CategoriesDialog
 
-from src.logic.utils import open_dialog
+from src.logic.utils import open_dialog, dialog_connect
 
 class AddProductDialog(qtw.QDialog, Ui_AddProductDialog):
     def __init__(self, parent=None):
@@ -41,4 +41,26 @@ class AddProductDialog(qtw.QDialog, Ui_AddProductDialog):
         # connect signals
         Styles.apply(widgets_to_style)
         self.ui.pb_product_cancel.clicked.connect(self.close)
-        self.ui.pb_category_add.clicked.connect(lambda: open_dialog(CategoriesDialog, self))
+        dialog_connect(self.ui.pb_category_add, open_dialog, CategoriesDialog, self)
+        
+
+class EditProductDialog(AddProductDialog):
+    def __init__(self, parent=None, product_id=None):
+        super().__init__(parent)
+        self.product_id = product_id
+        # Customize for editing
+        self.ui.lb_dialog_title.setText("Edit Product")
+        self.ui.pb_product_save.setText("Save")
+        # Add logic to load existing product data using product_id
+        if product_id:
+            self.load_product_data(product_id)
+
+    def load_product_data(self, product_id):
+        # Implement loading logic from database or source
+        # Example: Fetch product details and populate fields
+        self.ui.lb_product_id.setText(product_id)
+
+    # Override save method if needed
+    def save_product(self):
+        # Update instead of add
+        pass

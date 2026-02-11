@@ -143,9 +143,9 @@ class Ui_AddProductDialog(object):
         self.pb_supplier_add.setMinimumSize(QSize(140, 25))
         self.pb_supplier_add.setMaximumSize(QSize(140, 25))
         icon = QIcon()
-        icon.addFile(u":/Icons/plus.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/Icons/add_white.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_supplier_add.setIcon(icon)
-        self.pb_supplier_add.setIconSize(QSize(25, 25))
+        self.pb_supplier_add.setIconSize(QSize(16, 16))
 
         self.horizontalLayout_23.addWidget(self.pb_supplier_add)
 
@@ -182,7 +182,7 @@ class Ui_AddProductDialog(object):
         self.pb_category_add.setMinimumSize(QSize(140, 25))
         self.pb_category_add.setMaximumSize(QSize(140, 25))
         self.pb_category_add.setIcon(icon)
-        self.pb_category_add.setIconSize(QSize(25, 25))
+        self.pb_category_add.setIconSize(QSize(16, 16))
 
         self.horizontalLayout_24.addWidget(self.pb_category_add)
 
@@ -219,7 +219,7 @@ class Ui_AddProductDialog(object):
         self.pb_stock_type_add.setMinimumSize(QSize(140, 25))
         self.pb_stock_type_add.setMaximumSize(QSize(140, 25))
         self.pb_stock_type_add.setIcon(icon)
-        self.pb_stock_type_add.setIconSize(QSize(25, 25))
+        self.pb_stock_type_add.setIconSize(QSize(16, 16))
 
         self.horizontalLayout_25.addWidget(self.pb_stock_type_add)
 
@@ -498,7 +498,7 @@ class Ui_AddProductDialog(object):
         icon1 = QIcon()
         icon1.addFile(u":/Icons/tick.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_product_save.setIcon(icon1)
-        self.pb_product_save.setIconSize(QSize(25, 25))
+        self.pb_product_save.setIconSize(QSize(16, 16))
 
         self.verticalLayout_7.addWidget(self.pb_product_save)
 
@@ -509,7 +509,7 @@ class Ui_AddProductDialog(object):
         icon2 = QIcon()
         icon2.addFile(u":/Icons/cross.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_product_cancel.setIcon(icon2)
-        self.pb_product_cancel.setIconSize(QSize(25, 25))
+        self.pb_product_cancel.setIconSize(QSize(16, 16))
 
         self.verticalLayout_7.addWidget(self.pb_product_cancel)
 

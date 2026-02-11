@@ -1,4 +1,9 @@
 from decimal import Decimal
+from src.views.home_window import HomeWindow
+from src.views.customer_manager import CustomerManager
+from src.views.inventory_manager import InventoryManager
+from src.dialogs.products import AddProductDialog
+from src.dialogs.create_customer import CreateCustomerDialog
 
 CURRENCY_DEFS = [
     (Decimal("100.00"), "hundreds", "bills"),
@@ -15,4 +20,11 @@ CURRENCY_DEFS = [
     (Decimal("0.10"), "dimes", "coins"),
     (Decimal("0.05"), "nickels", "coins"),
     (Decimal("0.01"), "pennies", "coins"),
+]
+
+# Configuration for windows: (attribute_name, Class)
+WINDOWS_CONFIG = [
+    ("home", HomeWindow),
+    ("customer_manager", CustomerManager),
+    ("inventory_manager", InventoryManager),
 ]

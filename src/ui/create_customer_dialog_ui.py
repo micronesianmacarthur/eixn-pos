@@ -426,7 +426,7 @@ class Ui_CreateCustomerDialog(object):
         icon = QIcon()
         icon.addFile(u":/Icons/tick.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_customer_save.setIcon(icon)
-        self.pb_customer_save.setIconSize(QSize(25, 25))
+        self.pb_customer_save.setIconSize(QSize(16, 16))
 
         self.verticalLayout_6.addWidget(self.pb_customer_save)
 
@@ -437,7 +437,7 @@ class Ui_CreateCustomerDialog(object):
         icon1 = QIcon()
         icon1.addFile(u":/Icons/cross.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_customer_cancel.setIcon(icon1)
-        self.pb_customer_cancel.setIconSize(QSize(25, 25))
+        self.pb_customer_cancel.setIconSize(QSize(16, 16))
 
         self.verticalLayout_6.addWidget(self.pb_customer_cancel)
 

@@ -4,6 +4,9 @@ from src.ui.cash_counter_ui import Ui_CashCounter
 from src.config.ui_config import Styles
 from src.config.constants import CURRENCY_DEFS
 
+from src.logic.cash_logic import calculate_totals, calculate_cash_removal
+from src.logic.utils import navigate_stacked_widget
+
 class CashCounterDialog(qtw.QDialog, Ui_CashCounter):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -58,34 +61,32 @@ class CashCounterDialog(qtw.QDialog, Ui_CashCounter):
             line_edit.editingFinished.connect(self.sync_values)
 
     def sync_values(self):
-        totals = {"bills": Decimal("0"), "coins": Decimal("0")}
-
-        for val, key, cat in self.currency_defs:
+        currency_counts = {}
+        for _, key, _ in self.currency_defs:
             line_edit = getattr(self.ui, f"le_{key}")
-            label = getattr(self.ui, f"lb_{key}_amt")
-
             try:
-                count = int(line_edit.text()) if line_edit.text() else 0
+                currency_counts[key] = int(line_edit.text()) if line_edit.text() else 0
             except ValueError:
-                count = 0
+                currency_counts[key] = 0
 
-            item_total = count * val
-            totals[cat] += item_total
+        results = calculate_totals(currency_counts, self.currency_defs)
+
+        # update UI labels
+        for val, key, cat in self.currency_defs:
+            label = getattr(self.ui, f"lb_{key}_amt")
+            item_total = currency_counts[key] * val
             label.setText(f"$ {item_total:.02f}")
 
-        # update category total
-        self.ui.lb_bills_total.setText(f"$ {totals['bills']:.02f}")
-        self.ui.lb_coins_total.setText(f"$ {totals['coins']:.02f}")
-        self.ui.cash_drawer_total.setText(f"$ {totals['bills'] + totals['coins']:.02f}")
+        self.ui.lb_bills_total.setText(f"$ {results['bills']:.02f}")
+        self.ui.lb_coins_total.setText(f"$ {results['coins']:.02f}")
+        self.ui.cash_drawer_total.setText(f"$ {results['grand_total']:.02f}")
 
     def change_page(self, direction:int):
-        new_index = self.ui.stackedWidget.currentIndex() + direction
-        if 0 <= new_index < self.ui.stackedWidget.count():
-            self.ui.stackedWidget.setCurrentIndex(new_index)
-            
-            if new_index == 1:
-                self.ui.dbl_starting_cash.setFocus()
-                self.ui.dbl_starting_cash.selectAll()
+        new_index = navigate_stacked_widget(self.ui.stackedWidget, direction)
+        
+        if new_index == 1:
+            self.ui.dbl_starting_cash.setFocus()
+            self.ui.dbl_starting_cash.selectAll()
 
     def remove_cash(self):
         try:
@@ -96,28 +97,24 @@ class CashCounterDialog(qtw.QDialog, Ui_CashCounter):
         remove_amount = drawer_total - starting_cash
         if remove_amount <= 0: return
 
-        category_removed = {"bills": Decimal("0"), "coins": Decimal("0")}
-        total_removed = Decimal("0")
-
-        for val, key, cat in self.currency_defs:
+        available_counts = {}
+        for _, key, _ in self.currency_defs:
             drw_le = getattr(self.ui, f"le_{key}")
+            available_counts[key] = int(drw_le.text()) if drw_le.text().isnumeric() else 0
+
+        results = calculate_cash_removal(remove_amount, available_counts, self.currency_defs)
+
+        # update UI
+        for _, key, _ in self.currency_defs:
             rem_le = getattr(self.ui, f"le_{key}_remove")
             rem_lb = getattr(self.ui, f"lb_{key}_amt_remove")
+            
+            count = results["counts"][key]
+            amount = results["amounts"][key]
+            
+            rem_le.setText(str(count) if count > 0 else "")
+            rem_lb.setText(f"$ {amount:.02f}")
 
-            available_count = int(drw_le.text()) if drw_le.text().isnumeric() else 0
-
-            # Greedy calculation
-            count_taken = min(int(remove_amount / val), available_count)
-            amount_taken = count_taken * val
-
-            remove_amount -= amount_taken
-            total_removed += amount_taken
-            category_removed[cat] += amount_taken
-
-            rem_le.setText(str(count_taken) if count_taken > 0 else "")
-            rem_lb.setText(f"$ {amount_taken:.02f}")
-
-        # update ui
-        self.ui.lb_bills_total_remove.setText(f"$ {category_removed['bills']:.02f}")
-        self.ui.lb_coins_total_remove.setText(f"$ {category_removed['coins']:.02f}")
-        self.ui.lb_cash_drawer_total_remove.setText(f"$ {total_removed:.02f}")
+        self.ui.lb_bills_total_remove.setText(f"$ {results['category_totals']['bills']:.02f}")
+        self.ui.lb_coins_total_remove.setText(f"$ {results['category_totals']['coins']:.02f}")
+        self.ui.lb_cash_drawer_total_remove.setText(f"$ {results['total_removed']:.02f}")
