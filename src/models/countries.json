@@ -1,0 +1,116 @@
+[
+  {
+    "country": "Fiji",
+    "iso_code": "FJ",
+    "divisions": [
+      {
+        "name": "Central Division",
+        "cities": ["Suva", "Nausori", "Lami"]
+      },
+      {
+        "name": "Western Division",
+        "cities": ["Nadi", "Lautoka", "Ba", "Sigatoka"]
+      },
+      {
+        "name": "Northern Division",
+        "cities": ["Labasa", "Savusavu"]
+      }
+    ]
+  },
+  {
+    "country": "Papua New Guinea",
+    "iso_code": "PG",
+    "provinces": [
+      {
+        "name": "National Capital District",
+        "cities": ["Port Moresby"]
+      },
+      {
+        "name": "Morobe",
+        "cities": ["Lae"]
+      },
+      {
+        "name": "Western Highlands",
+        "cities": ["Mount Hagen"]
+      }
+    ]
+  },
+  {
+    "country": "Federated States of Micronesia",
+    "iso_code": "FM",
+    "states": [
+      {
+        "name": "Pohnpei",
+        "cities": ["Palikir", "Kolonia"]
+      },
+      {
+        "name": "Chuuk",
+        "cities": ["Weno"]
+      },
+      {
+        "name": "Yap",
+        "cities": ["Colonia"]
+      },
+      {
+        "name": "Kosrae",
+        "cities": ["Tofol"]
+      }
+    ]
+  },
+  {
+    "country": "Samoa",
+    "iso_code": "WS",
+    "districts": [
+      {
+        "name": "Tuamasaga",
+        "cities": ["Apia"]
+      },
+      {
+        "name": "Aana",
+        "cities": ["Leulumoega"]
+      }
+    ]
+  },
+  {
+    "country": "Vanuatu",
+    "iso_code": "VU",
+    "provinces": [
+      {
+        "name": "Shefa",
+        "cities": ["Port Vila"]
+      },
+      {
+        "name": "Sanma",
+        "cities": ["Luganville"]
+      }
+    ]
+  },
+  {
+    "country": "Solomon Islands",
+    "iso_code": "SB",
+    "provinces": [
+      {
+        "name": "Guadalcanal",
+        "cities": ["Honiara"]
+      },
+      {
+        "name": "Western Province",
+        "cities": ["Gizo"]
+      }
+    ]
+  },
+  {
+    "country": "Tonga",
+    "iso_code": "TO",
+    "divisions": [
+      {
+        "name": "Tongatapu",
+        "cities": ["Nuku'alofa"]
+      },
+      {
+        "name": "Vava'u",
+        "cities": ["Neiafu"]
+      }
+    ]
+  }
+]

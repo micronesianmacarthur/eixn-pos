@@ -178,9 +178,9 @@ class Ui_CreateCustomerDialog(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout_5)
 
-        self.horizontalLayout_14 = QHBoxLayout()
-        self.horizontalLayout_14.setSpacing(20)
-        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_25 = QHBoxLayout()
+        self.horizontalLayout_25.setSpacing(20)
+        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setSpacing(5)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
@@ -199,10 +199,9 @@ class Ui_CreateCustomerDialog(object):
         self.horizontalLayout_6.addWidget(self.le_city)
 
 
-        self.horizontalLayout_14.addLayout(self.horizontalLayout_6)
+        self.horizontalLayout_25.addLayout(self.horizontalLayout_6)
 
         self.horizontalLayout_7 = QHBoxLayout()
-        self.horizontalLayout_7.setSpacing(5)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.lb_state = QLabel(self.grp_bill_to)
         self.lb_state.setObjectName(u"lb_state")
@@ -211,15 +210,45 @@ class Ui_CreateCustomerDialog(object):
 
         self.horizontalLayout_7.addWidget(self.lb_state)
 
-        self.le_state = QLineEdit(self.grp_bill_to)
-        self.le_state.setObjectName(u"le_state")
-        self.le_state.setMinimumSize(QSize(0, 25))
-        self.le_state.setMaximumSize(QSize(16777215, 25))
+        self.cb_state = QComboBox(self.grp_bill_to)
+        self.cb_state.setObjectName(u"cb_state")
+        self.cb_state.setMinimumSize(QSize(235, 25))
+        self.cb_state.setMaximumSize(QSize(16777215, 25))
 
-        self.horizontalLayout_7.addWidget(self.le_state)
+        self.horizontalLayout_7.addWidget(self.cb_state)
 
 
-        self.horizontalLayout_14.addLayout(self.horizontalLayout_7)
+        self.horizontalLayout_25.addLayout(self.horizontalLayout_7)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_25)
+
+        self.horizontalLayout_14 = QHBoxLayout()
+        self.horizontalLayout_14.setSpacing(20)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_9 = QHBoxLayout()
+        self.horizontalLayout_9.setSpacing(5)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.lb_country = QLabel(self.grp_bill_to)
+        self.lb_country.setObjectName(u"lb_country")
+        self.lb_country.setMinimumSize(QSize(75, 25))
+        self.lb_country.setMaximumSize(QSize(75, 25))
+
+        self.horizontalLayout_9.addWidget(self.lb_country)
+
+        self.cb_country = QComboBox(self.grp_bill_to)
+        self.cb_country.setObjectName(u"cb_country")
+        self.cb_country.setMinimumSize(QSize(300, 25))
+        self.cb_country.setMaximumSize(QSize(16777215, 25))
+
+        self.horizontalLayout_9.addWidget(self.cb_country)
+
+
+        self.horizontalLayout_14.addLayout(self.horizontalLayout_9)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_14.addItem(self.horizontalSpacer_3)
 
         self.horizontalLayout_8 = QHBoxLayout()
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
@@ -234,6 +263,7 @@ class Ui_CreateCustomerDialog(object):
         self.sb_zip_code.setObjectName(u"sb_zip_code")
         self.sb_zip_code.setMinimumSize(QSize(100, 25))
         self.sb_zip_code.setMaximumSize(QSize(100, 25))
+        self.sb_zip_code.setMaximum(999999999)
 
         self.horizontalLayout_8.addWidget(self.sb_zip_code)
 
@@ -242,26 +272,6 @@ class Ui_CreateCustomerDialog(object):
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_14)
-
-        self.horizontalLayout_9 = QHBoxLayout()
-        self.horizontalLayout_9.setSpacing(5)
-        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.lb_country = QLabel(self.grp_bill_to)
-        self.lb_country.setObjectName(u"lb_country")
-        self.lb_country.setMinimumSize(QSize(75, 25))
-        self.lb_country.setMaximumSize(QSize(75, 25))
-
-        self.horizontalLayout_9.addWidget(self.lb_country)
-
-        self.cb_country = QComboBox(self.grp_bill_to)
-        self.cb_country.setObjectName(u"cb_country")
-        self.cb_country.setMinimumSize(QSize(0, 25))
-        self.cb_country.setMaximumSize(QSize(16777215, 25))
-
-        self.horizontalLayout_9.addWidget(self.cb_country)
-
-
-        self.verticalLayout.addLayout(self.horizontalLayout_9)
 
         self.horizontalLayout_11 = QHBoxLayout()
         self.horizontalLayout_11.setSpacing(5)
@@ -333,12 +343,12 @@ class Ui_CreateCustomerDialog(object):
         self.horizontalLayout_15 = QHBoxLayout()
         self.horizontalLayout_15.setSpacing(5)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
-        self.label_3 = QLabel(self.grp_account)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setMinimumSize(QSize(0, 25))
-        self.label_3.setMaximumSize(QSize(16777215, 25))
+        self.system_charge_limit_dollar_label = QLabel(self.grp_account)
+        self.system_charge_limit_dollar_label.setObjectName(u"system_charge_limit_dollar_label")
+        self.system_charge_limit_dollar_label.setMinimumSize(QSize(0, 25))
+        self.system_charge_limit_dollar_label.setMaximumSize(QSize(16777215, 25))
 
-        self.horizontalLayout_15.addWidget(self.label_3)
+        self.horizontalLayout_15.addWidget(self.system_charge_limit_dollar_label)
 
         self.lb_system_charge_limit = QLabel(self.grp_account)
         self.lb_system_charge_limit.setObjectName(u"lb_system_charge_limit")
@@ -370,12 +380,12 @@ class Ui_CreateCustomerDialog(object):
         self.horizontalLayout_16 = QHBoxLayout()
         self.horizontalLayout_16.setSpacing(5)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.label_4 = QLabel(self.grp_account)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setMinimumSize(QSize(0, 25))
-        self.label_4.setMaximumSize(QSize(16777215, 25))
+        self.custom_charge_limit_dollar_label = QLabel(self.grp_account)
+        self.custom_charge_limit_dollar_label.setObjectName(u"custom_charge_limit_dollar_label")
+        self.custom_charge_limit_dollar_label.setMinimumSize(QSize(0, 25))
+        self.custom_charge_limit_dollar_label.setMaximumSize(QSize(16777215, 25))
 
-        self.horizontalLayout_16.addWidget(self.label_4)
+        self.horizontalLayout_16.addWidget(self.custom_charge_limit_dollar_label)
 
         self.dbl_custom_charge_limit = QDoubleSpinBox(self.grp_account)
         self.dbl_custom_charge_limit.setObjectName(u"dbl_custom_charge_limit")
@@ -394,12 +404,12 @@ class Ui_CreateCustomerDialog(object):
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_18)
 
-        self.chk_no_charge_limit = QCheckBox(self.grp_account)
-        self.chk_no_charge_limit.setObjectName(u"chk_no_charge_limit")
-        self.chk_no_charge_limit.setMinimumSize(QSize(180, 25))
-        self.chk_no_charge_limit.setMaximumSize(QSize(180, 25))
+        self.chk_disable_charge_limit = QCheckBox(self.grp_account)
+        self.chk_disable_charge_limit.setObjectName(u"chk_disable_charge_limit")
+        self.chk_disable_charge_limit.setMinimumSize(QSize(180, 25))
+        self.chk_disable_charge_limit.setMaximumSize(QSize(180, 25))
 
-        self.verticalLayout_2.addWidget(self.chk_no_charge_limit)
+        self.verticalLayout_2.addWidget(self.chk_disable_charge_limit)
 
 
         self.verticalLayout_3.addWidget(self.grp_account)
@@ -571,18 +581,18 @@ class Ui_CreateCustomerDialog(object):
         self.lb_street_2.setText(QCoreApplication.translate("CreateCustomerDialog", u"Street 2:", None))
         self.lb_city.setText(QCoreApplication.translate("CreateCustomerDialog", u"City:", None))
         self.lb_state.setText(QCoreApplication.translate("CreateCustomerDialog", u"State:", None))
-        self.lb_zip_code.setText(QCoreApplication.translate("CreateCustomerDialog", u"Zip Code:", None))
         self.lb_country.setText(QCoreApplication.translate("CreateCustomerDialog", u"Country:", None))
+        self.lb_zip_code.setText(QCoreApplication.translate("CreateCustomerDialog", u"Zip Code:", None))
         self.lb_phone.setText(QCoreApplication.translate("CreateCustomerDialog", u"Phone:", None))
         self.lb_email.setText(QCoreApplication.translate("CreateCustomerDialog", u"Email:", None))
         self.grp_account.setTitle(QCoreApplication.translate("CreateCustomerDialog", u"Account", None))
         self.chk_allow_account_charge.setText(QCoreApplication.translate("CreateCustomerDialog", u"Allow Charge to Account", None))
         self.lb_system_charge_limit_label.setText(QCoreApplication.translate("CreateCustomerDialog", u"Use System Charge Limit:", None))
-        self.label_3.setText(QCoreApplication.translate("CreateCustomerDialog", u"$", None))
+        self.system_charge_limit_dollar_label.setText(QCoreApplication.translate("CreateCustomerDialog", u"$", None))
         self.lb_system_charge_limit.setText(QCoreApplication.translate("CreateCustomerDialog", u"0.00", None))
         self.lb_custom_charge_limit_label.setText(QCoreApplication.translate("CreateCustomerDialog", u"Custom Charge Limit:", None))
-        self.label_4.setText(QCoreApplication.translate("CreateCustomerDialog", u"$", None))
-        self.chk_no_charge_limit.setText(QCoreApplication.translate("CreateCustomerDialog", u"No Charge Limit", None))
+        self.custom_charge_limit_dollar_label.setText(QCoreApplication.translate("CreateCustomerDialog", u"$", None))
+        self.chk_disable_charge_limit.setText(QCoreApplication.translate("CreateCustomerDialog", u"No Charge Limit", None))
         self.pb_customer_save.setText(QCoreApplication.translate("CreateCustomerDialog", u"Save", None))
         self.pb_customer_cancel.setText(QCoreApplication.translate("CreateCustomerDialog", u"Cancel", None))
         self.lb_information.setText(QCoreApplication.translate("CreateCustomerDialog", u"Information:", None))

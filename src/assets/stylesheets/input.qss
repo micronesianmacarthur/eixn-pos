@@ -12,6 +12,16 @@ QWidget {
     background-color: --fg-primary;
 }
 
+/* text */
+QLabel {
+    background-color: transparent;
+    color: --fg-primary;
+    font-size: 12px;
+}
+QLabel::disabled {
+    color: --gray-primary;
+}
+
 /* toolbutton */
 QToolButton {
     background-color: --bg-secondary;
@@ -191,6 +201,11 @@ QComboBox QAbstractItemView {
     border-radius: 2px;
     padding-left: 5px;
 }
+.spinbox:disabled {
+    background-color: --gray-primary;
+    color: --gray-secondary;
+}
+
 .spinbox::up-button, .spinbox::down-button {
     width: 0px;
     border: none;
@@ -223,6 +238,12 @@ QComboBox QAbstractItemView {
     border-radius: 2px;
 }
 
+.checkbox {
+}
+.checkbox:disabled {
+    color: --gray-primary;
+}
+
 /*================================= FRAMES ==============================================*/
 .group-box {
     border-bottom: 1px solid --gray-primary;
@@ -248,4 +269,7 @@ QComboBox QAbstractItemView {
     color: --bg-primary;
     padding-left: 5px;
     border-radius: 2px;
+}
+.display-only::disabled {
+    background-color: --yellow-disabled;
 }

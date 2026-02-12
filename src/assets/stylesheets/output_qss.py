@@ -15,6 +15,7 @@ DARK_THEME = {
     "--green-primary": "#018e42",
     "--green-secondary": "#01682c",
     "--yellow-primary": "#f2c14e",
+    "--yellow-disabled": "#dec790"
 }
 
 

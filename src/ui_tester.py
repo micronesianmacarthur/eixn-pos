@@ -12,6 +12,7 @@ from src.dialogs.cash_counter import CashCounterDialog
 from src.dialogs.products import AddProductDialog, EditProductDialog
 from src.dialogs.create_customer import CreateCustomerDialog
 from src.dialogs.categories_dialog import CategoriesDialog
+from src.dialogs.find import FindDialog
 
 def test_dialog():
     app = qtw.QApplication(sys.argv)
@@ -20,9 +21,10 @@ def test_dialog():
     app.setStyleSheet(get_style())
     
     # Instantiate the dialog
-    dialog = AddProductDialog()
+    # dialog = FindDialog()
+    # dialog = AddProductDialog()
     # dialog = CashCounterDialog()
-    # dialog = CreateCustomerDialog()
+    dialog = CreateCustomerDialog()
     # dialog = CategoriesDialog()
     # dialog = EditProductDialog(product_id="12335654")
     

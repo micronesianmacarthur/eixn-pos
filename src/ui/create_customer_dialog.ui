@@ -383,7 +383,7 @@
              </layout>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_14">
+             <layout class="QHBoxLayout" name="horizontalLayout_25">
               <property name="spacing">
                <number>20</number>
               </property>
@@ -431,9 +431,6 @@
               </item>
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_7">
-                <property name="spacing">
-                 <number>5</number>
-                </property>
                 <item>
                  <widget class="QLabel" name="lb_state">
                   <property name="minimumSize">
@@ -454,10 +451,10 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="le_state">
+                 <widget class="QComboBox" name="cb_state">
                   <property name="minimumSize">
                    <size>
-                    <width>0</width>
+                    <width>235</width>
                     <height>25</height>
                    </size>
                   </property>
@@ -470,6 +467,68 @@
                  </widget>
                 </item>
                </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_14">
+              <property name="spacing">
+               <number>20</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_9">
+                <property name="spacing">
+                 <number>5</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="lb_country">
+                  <property name="minimumSize">
+                   <size>
+                    <width>75</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>75</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Country:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="cb_country">
+                  <property name="minimumSize">
+                   <size>
+                    <width>300</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_8">
@@ -506,51 +565,12 @@
                     <height>25</height>
                    </size>
                   </property>
+                  <property name="maximum">
+                   <number>999999999</number>
+                  </property>
                  </widget>
                 </item>
                </layout>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_9">
-              <property name="spacing">
-               <number>5</number>
-              </property>
-              <item>
-               <widget class="QLabel" name="lb_country">
-                <property name="minimumSize">
-                 <size>
-                  <width>75</width>
-                  <height>25</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>75</width>
-                  <height>25</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>Country:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QComboBox" name="cb_country">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>25</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>25</height>
-                 </size>
-                </property>
-               </widget>
               </item>
              </layout>
             </item>
@@ -717,7 +737,7 @@
                  <number>5</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_3">
+                 <widget class="QLabel" name="system_charge_limit_dollar_label">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -801,7 +821,7 @@
                  <number>5</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_4">
+                 <widget class="QLabel" name="custom_charge_limit_dollar_label">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -853,7 +873,7 @@
              </layout>
             </item>
             <item>
-             <widget class="QCheckBox" name="chk_no_charge_limit">
+             <widget class="QCheckBox" name="chk_disable_charge_limit">
               <property name="minimumSize">
                <size>
                 <width>180</width>
