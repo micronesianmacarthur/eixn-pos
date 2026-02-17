@@ -391,6 +391,7 @@ class Ui_CreateCustomerDialog(object):
         self.dbl_custom_charge_limit.setObjectName(u"dbl_custom_charge_limit")
         self.dbl_custom_charge_limit.setMinimumSize(QSize(100, 25))
         self.dbl_custom_charge_limit.setMaximumSize(QSize(16777215, 25))
+        self.dbl_custom_charge_limit.setMaximum(999.990000000000009)
 
         self.horizontalLayout_16.addWidget(self.dbl_custom_charge_limit)
 

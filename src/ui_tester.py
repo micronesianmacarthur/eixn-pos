@@ -13,6 +13,7 @@ from src.dialogs.products import AddProductDialog, EditProductDialog
 from src.dialogs.create_customer import CreateCustomerDialog
 from src.dialogs.categories_dialog import CategoriesDialog
 from src.dialogs.find import FindDialog
+from src.dialogs.stock_types_dialog import StockTypesDialog
 
 def test_dialog():
     app = qtw.QApplication(sys.argv)
@@ -24,9 +25,10 @@ def test_dialog():
     # dialog = FindDialog()
     # dialog = AddProductDialog()
     # dialog = CashCounterDialog()
-    dialog = CreateCustomerDialog()
+    # dialog = CreateCustomerDialog()
     # dialog = CategoriesDialog()
     # dialog = EditProductDialog(product_id="12335654")
+    dialog = StockTypesDialog()
     
     # Show it and exit
     dialog.show()

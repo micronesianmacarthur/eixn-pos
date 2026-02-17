@@ -37,10 +37,13 @@ class CreateCustomerDialog(qtw.QDialog, Ui_CreateCustomerDialog):
         Styles.apply(widgets_to_style)
 
         # Load countries into combo box
+        self.ui.pb_customer_cancel.clicked.connect(self.close)
         self.ui.cb_country.addItems(load_countries())
         self.ui.cb_state.addItems(load_states_for_country(self.ui.cb_country.currentText()))
+        self.ui.cb_state.setCurrentText("Pohnpei")
         self.ui.cb_country.currentTextChanged.connect(self.on_country_changed)
         self.ui.chk_allow_account_charge.stateChanged.connect(self.toggle_charge_widgets)
+        self.ui.chk_disable_charge_limit.stateChanged.connect(self.toggle_charge_widgets)
         self.toggle_charge_widgets()
 
     def on_country_changed(self):
@@ -51,6 +54,14 @@ class CreateCustomerDialog(qtw.QDialog, Ui_CreateCustomerDialog):
 
     def toggle_charge_widgets(self):
         enabled = self.ui.chk_allow_account_charge.isChecked()
+        disable_widgets = [
+            self.ui.lb_system_charge_limit_label,
+            self.ui.lb_system_charge_limit,
+            self.ui.system_charge_limit_dollar_label,
+            self.ui.lb_custom_charge_limit_label,
+            self.ui.dbl_custom_charge_limit,
+            self.ui.custom_charge_limit_dollar_label,
+        ]
         widgets_to_toggle = [
             self.ui.lb_system_charge_limit_label,
             self.ui.lb_system_charge_limit,
@@ -61,4 +72,5 @@ class CreateCustomerDialog(qtw.QDialog, Ui_CreateCustomerDialog):
             self.ui.custom_charge_limit_dollar_label,
         ]
         for widget in widgets_to_toggle:
-            widget.setEnabled(enabled)
+            widget_enabled = enabled and not (widget in disable_widgets and self.ui.chk_disable_charge_limit.isChecked())
+            widget.setEnabled(widget_enabled)

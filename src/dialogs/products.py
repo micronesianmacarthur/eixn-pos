@@ -1,7 +1,10 @@
 from PySide6 import QtWidgets as qtw
+
 from src.ui.add_product_ui import Ui_AddProductDialog
 from src.config.ui_config import Styles
 from src.dialogs.categories_dialog import CategoriesDialog
+from src.dialogs.stock_types_dialog import StockTypesDialog
+from src.dialogs.image_browser import ImageBrowser
 
 from src.logic.utils import open_dialog, dialog_connect
 
@@ -10,6 +13,7 @@ class AddProductDialog(qtw.QDialog, Ui_AddProductDialog):
         super().__init__(parent)
         self.ui = Ui_AddProductDialog()
         self.ui.setupUi(self)
+        self.image_browser = ImageBrowser(self)
 
         # assign class
         widgets_to_style = {
@@ -39,10 +43,15 @@ class AddProductDialog(qtw.QDialog, Ui_AddProductDialog):
         }
 
         # connect signals
-        Styles.apply(widgets_to_style)
+        self.apply_widget_styles(widgets_to_style)
         self.ui.pb_product_cancel.clicked.connect(self.close)
         dialog_connect(self.ui.pb_category_add, open_dialog, CategoriesDialog, self)
-        
+        dialog_connect(self.ui.pb_stock_type_add, open_dialog, StockTypesDialog, self)
+        self.ui.pb_browse.clicked.connect(lambda: self.image_browser.browse_image(self.ui.le_select_image))
+
+    def apply_widget_styles(self, widgets_dict):
+        Styles.apply(widgets_dict)
+
 
 class EditProductDialog(AddProductDialog):
     def __init__(self, parent=None, product_id=None):
