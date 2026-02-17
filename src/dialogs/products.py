@@ -1,4 +1,5 @@
 from PySide6 import QtWidgets as qtw
+from PySide6.QtGui import QPixmap
 
 from src.ui.add_product_ui import Ui_AddProductDialog
 from src.config.ui_config import Styles
@@ -8,6 +9,10 @@ from src.dialogs.image_browser import ImageBrowser
 
 from src.logic.utils import open_dialog, dialog_connect
 
+import os
+from PIL import Image
+from io import BytesIO
+
 
 class AddProductDialog(qtw.QDialog, Ui_AddProductDialog):
     def __init__(self, parent=None):
@@ -15,6 +20,11 @@ class AddProductDialog(qtw.QDialog, Ui_AddProductDialog):
         self.ui = Ui_AddProductDialog()
         self.ui.setupUi(self)
         self.image_browser = ImageBrowser(self)
+
+        self.image_label = qtw.QLabel(self.ui.frame_product_image)
+        self.image_label.setGeometry(25, 25, 100, 100)
+        self.image_label.setScaledContents(True)
+        self.image_label.hide()
 
         # assign class
         widgets_to_style = {
@@ -68,8 +78,27 @@ class AddProductDialog(qtw.QDialog, Ui_AddProductDialog):
             lambda: self.image_browser.browse_image(self.ui.le_select_image)
         )
 
+        self.ui.le_select_image.textChanged.connect(self.update_image_display)
+
     def apply_widget_styles(self, widgets_dict):
         Styles.apply(widgets_dict)
+
+    def update_image_display(self):
+        path = self.ui.le_select_image.text()
+        if os.path.isfile(path) and path.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
+            img = Image.open(path)
+            img = img.resize((100, 100), Image.Resampling.LANCZOS)
+            buffer = BytesIO()
+            img.save(buffer, format='PNG')
+            pixmap = QPixmap()
+            pixmap.loadFromData(buffer.getvalue())
+            self.image_label.setPixmap(pixmap)
+            self.image_label.show()
+            self.ui.lb_no_image.hide()
+        else:
+            self.image_label.clear()
+            self.image_label.hide()
+            self.ui.lb_no_image.show()
 
 
 class EditProductDialog(AddProductDialog):

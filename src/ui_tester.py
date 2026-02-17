@@ -23,12 +23,12 @@ def test_dialog():
     
     # Instantiate the dialog
     # dialog = FindDialog()
-    # dialog = AddProductDialog()
+    dialog = AddProductDialog()
     # dialog = CashCounterDialog()
     # dialog = CreateCustomerDialog()
     # dialog = CategoriesDialog()
     # dialog = EditProductDialog(product_id="12335654")
-    dialog = StockTypesDialog()
+    # dialog = StockTypesDialog()
     
     # Show it and exit
     dialog.show()
