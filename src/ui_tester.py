@@ -14,6 +14,7 @@ from src.dialogs.create_customer import CreateCustomerDialog
 from src.dialogs.categories_dialog import CategoriesDialog
 from src.dialogs.find import FindDialog
 from src.dialogs.stock_types_dialog import StockTypesDialog
+from src.dialogs.receiving_dialog import ReceivingDialog
 
 def test_dialog():
     app = qtw.QApplication(sys.argv)
@@ -23,7 +24,8 @@ def test_dialog():
     
     # Instantiate the dialog
     # dialog = FindDialog()
-    dialog = AddProductDialog()
+    # dialog = AddProductDialog()
+    dialog = ReceivingDialog()
     # dialog = CashCounterDialog()
     # dialog = CreateCustomerDialog()
     # dialog = CategoriesDialog()

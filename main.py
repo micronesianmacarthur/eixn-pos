@@ -10,6 +10,7 @@ from src.dialogs.cash_counter import CashCounterDialog
 from src.dialogs.products import AddProductDialog, EditProductDialog
 from src.dialogs.create_customer import CreateCustomerDialog
 from src.dialogs.find import FindDialog
+from src.dialogs.receiving_dialog import ReceivingDialog
 
 from src.logic.utils import open_dialog, dialog_connect, window_connect
 from src.config.constants import WINDOWS_CONFIG
@@ -27,6 +28,7 @@ WINDOW_CONNECTIONS = {
             ("pb_add", AddProductDialog),
             ("pb_modify", EditProductDialog),
             ("pb_find", FindDialog, "Find Product"),
+            ("pb_receive", ReceivingDialog),
         ]
     },
 }

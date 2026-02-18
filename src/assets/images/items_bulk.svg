@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="800mm"
+   height="800mm"
+   viewBox="0 0 800 800"
+   version="1.1"
+   id="svg5"
+   xml:space="preserve"
+   inkscape:export-filename="items_bulk.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false" /><defs
+     id="defs2" /><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"><g
+       id="g1263"
+       transform="matrix(0.88104174,0,0,0.88104174,363.03075,331.05267)"><polygon
+         style="fill:#e0b76e"
+         points="256,512 28.996,384.006 28.996,127.994 376.808,187.877 "
+         id="polygon1222" /><polygon
+         style="fill:#f4ce8f"
+         points="256,0 261.586,3.146 483.004,127.994 483.004,384.006 256,512 256,256 250.414,252.854 28.996,127.994 250.414,3.146 "
+         id="polygon1224" /><polygon
+         style="fill:#f2ca7f"
+         points="256,512 483.004,384.006 483.004,127.994 256,256 "
+         id="polygon1226" /><g
+         id="g1244">
+	<polygon
+   style="fill:#898686"
+   points="80.899,359.101 65.349,350.333 65.349,195.675 80.899,204.444 "
+   id="polygon1228" />
+	<polygon
+   style="fill:#898686"
+   points="114.082,347.39 98.531,338.622 98.531,214.384 114.082,223.152 "
+   id="polygon1230" />
+	<polygon
+   style="fill:#898686"
+   points="213.606,433.936 198.056,425.167 198.056,270.51 213.606,279.278 "
+   id="polygon1232" />
+	<polygon
+   style="fill:#898686"
+   points="147.253,366.099 131.702,357.331 131.702,233.093 147.253,241.861 "
+   id="polygon1234" />
+	<polygon
+   style="fill:#898686"
+   points="180.436,384.819 164.885,376.051 164.885,251.813 180.436,260.581 "
+   id="polygon1236" />
+	<polygon
+   style="fill:#898686"
+   points="114.082,379.289 98.531,370.521 98.531,356.804 114.082,365.572 "
+   id="polygon1238" />
+	<polygon
+   style="fill:#898686"
+   points="147.253,397.998 131.702,389.23 131.702,375.513 147.253,384.281 "
+   id="polygon1240" />
+	<polygon
+   style="fill:#898686"
+   points="180.436,416.719 164.885,407.95 164.885,394.234 180.436,403.002 "
+   id="polygon1242" />
+</g></g><g
+       id="g1195"
+       transform="matrix(0.88104174,0,0,0.88104174,-9.6198536,345.94307)"><polygon
+         style="fill:#e0b76e"
+         points="256,512 28.996,384.006 28.996,127.994 376.808,187.877 "
+         id="polygon1163" /><polygon
+         style="fill:#f4ce8f"
+         points="256,512 483.004,384.006 483.004,127.994 256,0 28.996,127.994 256,256 "
+         id="polygon1165" /><polygon
+         style="fill:#f2ca7f"
+         points="256,512 483.004,384.006 483.004,127.994 256,256 "
+         id="polygon1167" /><polyline
+         style="fill:#8cc1ea"
+         points="174.431,466.018 174.431,210.006 268.189,157.134 268.201,157.134 268.199,157.134   191.405,157.134 191.794,121.013 191.8,121.008 104.201,170.4 104.201,425.526 "
+         id="polyline1169" /><polyline
+         style="fill:#79b1d6"
+         points="174.431,466.018 174.431,210.006 104.201,170.4 104.201,425.526 "
+         id="polyline1171" /><polyline
+         style="fill:#8cc1ea"
+         points="331.708,42.166 237.949,95.039 237.937,95.039 237.94,95.039 314.734,95.039   314.345,131.16 314.339,131.164 401.937,81.773 "
+         id="polyline1173" /><g
+         id="g1179">
+	<polygon
+   style="fill:#898686"
+   points="374.872,292.189 340.931,268.603 305.907,330.967 331.691,316.469 331.691,422.122 349.634,412.002 349.634,306.381 "
+   id="polygon1175" />
+	<polygon
+   style="fill:#898686"
+   points="370.318,361.73 404.259,385.316 439.283,322.952 413.498,337.45 413.498,231.797 395.555,241.917 395.555,347.54 "
+   id="polygon1177" />
+</g></g><g
+       id="g1220"
+       transform="matrix(0.88103786,0,0,0.88103786,190.32387,8.4575012)"><polygon
+         style="fill:#e0b76e"
+         points="29.001,127.997 376.811,187.88 256.003,512 29.001,384.007 "
+         id="polygon1197" /><polygon
+         style="fill:#a38251"
+         points="256.003,256.002 256.003,512 483.005,127.997 256.003,0.004 29.001,127.997 "
+         id="polygon1199" /><polygon
+         style="fill:#f2ca7f"
+         points="483.005,127.997 256.003,256.002 256.003,512 483.005,384.007 "
+         id="polygon1201" /><polygon
+         style="fill:#898686"
+         points="333.995,309.437 359.779,294.939 359.779,400.591 377.722,390.471 377.722,284.849 402.959,270.659 369.019,247.073 "
+         id="polygon1203" /><polygon
+         style="fill:#e0b76e"
+         points="255.998,256.003 321.283,159.537 94.281,31.535 28.995,128.001 "
+         id="polygon1205" /><polygon
+         style="fill:#f2ca7f"
+         points="483.002,128.001 378.72,130.136 151.716,2.134 255.998,0 "
+         id="polygon1207" /></g></g></svg>

@@ -139,7 +139,7 @@ class Ui_InventoryManager(object):
         icon1 = QIcon()
         icon1.addFile(u":/Icons/add.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_add.setIcon(icon1)
-        self.pb_add.setIconSize(QSize(25, 25))
+        self.pb_add.setIconSize(QSize(20, 20))
 
         self.verticalLayout_2.addWidget(self.pb_add)
 
@@ -150,7 +150,7 @@ class Ui_InventoryManager(object):
         icon2 = QIcon()
         icon2.addFile(u":/Icons/edit.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_modify.setIcon(icon2)
-        self.pb_modify.setIconSize(QSize(25, 25))
+        self.pb_modify.setIconSize(QSize(20, 20))
 
         self.verticalLayout_2.addWidget(self.pb_modify)
 
@@ -161,7 +161,7 @@ class Ui_InventoryManager(object):
         icon3 = QIcon()
         icon3.addFile(u":/Icons/search.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_find.setIcon(icon3)
-        self.pb_find.setIconSize(QSize(25, 25))
+        self.pb_find.setIconSize(QSize(20, 20))
 
         self.verticalLayout_2.addWidget(self.pb_find)
 
@@ -172,7 +172,7 @@ class Ui_InventoryManager(object):
         icon4 = QIcon()
         icon4.addFile(u":/Icons/filter.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_filter.setIcon(icon4)
-        self.pb_filter.setIconSize(QSize(25, 25))
+        self.pb_filter.setIconSize(QSize(20, 20))
 
         self.verticalLayout_2.addWidget(self.pb_filter)
 
@@ -181,9 +181,9 @@ class Ui_InventoryManager(object):
         self.pb_receive.setMinimumSize(QSize(0, 35))
         self.pb_receive.setMaximumSize(QSize(16777215, 35))
         icon5 = QIcon()
-        icon5.addFile(u":/Icons/receive.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u":/Icons/items_bulk.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_receive.setIcon(icon5)
-        self.pb_receive.setIconSize(QSize(25, 25))
+        self.pb_receive.setIconSize(QSize(20, 20))
 
         self.verticalLayout_2.addWidget(self.pb_receive)
 
@@ -194,7 +194,7 @@ class Ui_InventoryManager(object):
         icon6 = QIcon()
         icon6.addFile(u":/Icons/shopping_cart.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_use_in_sale.setIcon(icon6)
-        self.pb_use_in_sale.setIconSize(QSize(25, 25))
+        self.pb_use_in_sale.setIconSize(QSize(20, 20))
 
         self.verticalLayout_2.addWidget(self.pb_use_in_sale)
 
@@ -205,7 +205,7 @@ class Ui_InventoryManager(object):
         icon7 = QIcon()
         icon7.addFile(u":/Icons/trash.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pb_delete.setIcon(icon7)
-        self.pb_delete.setIconSize(QSize(25, 25))
+        self.pb_delete.setIconSize(QSize(20, 20))
 
         self.verticalLayout_2.addWidget(self.pb_delete)
 

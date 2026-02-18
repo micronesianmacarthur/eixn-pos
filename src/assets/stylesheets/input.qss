@@ -273,3 +273,9 @@ QComboBox QAbstractItemView {
 .display-only::disabled {
     background-color: --yellow-disabled;
 }
+
+.non-shift-display {
+    background-color: --yellow-primary;
+    color: --bg-primary;
+    border-radius: 2px;
+}

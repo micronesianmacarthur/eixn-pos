@@ -102,7 +102,7 @@
          <string>Close</string>
         </property>
         <property name="icon">
-         <iconset resource="../../../../../../../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc">
+         <iconset resource="../assets/images/icons.qrc">
           <normaloff>:/Icons/close_white.svg</normaloff>:/Icons/close_white.svg</iconset>
         </property>
         <property name="iconSize">
@@ -303,13 +303,13 @@
             <string>Add</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../../../../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc">
+            <iconset resource="../assets/images/icons.qrc">
              <normaloff>:/Icons/add.svg</normaloff>:/Icons/add.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>25</width>
-             <height>25</height>
+             <width>20</width>
+             <height>20</height>
             </size>
            </property>
           </widget>
@@ -332,13 +332,13 @@
             <string>Modify</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../../../../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc">
+            <iconset resource="../assets/images/icons.qrc">
              <normaloff>:/Icons/edit.svg</normaloff>:/Icons/edit.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>25</width>
-             <height>25</height>
+             <width>20</width>
+             <height>20</height>
             </size>
            </property>
           </widget>
@@ -361,13 +361,13 @@
             <string>Find</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../../../../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc">
+            <iconset resource="../assets/images/icons.qrc">
              <normaloff>:/Icons/search.svg</normaloff>:/Icons/search.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>25</width>
-             <height>25</height>
+             <width>20</width>
+             <height>20</height>
             </size>
            </property>
           </widget>
@@ -390,13 +390,13 @@
             <string>Filter</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../../../../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc">
+            <iconset resource="../assets/images/icons.qrc">
              <normaloff>:/Icons/filter.svg</normaloff>:/Icons/filter.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>25</width>
-             <height>25</height>
+             <width>20</width>
+             <height>20</height>
             </size>
            </property>
           </widget>
@@ -419,13 +419,13 @@
             <string>Receive</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../../../../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc">
-             <normaloff>:/Icons/receive.svg</normaloff>:/Icons/receive.svg</iconset>
+            <iconset resource="../assets/images/icons.qrc">
+             <normaloff>:/Icons/items_bulk.svg</normaloff>:/Icons/items_bulk.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>25</width>
-             <height>25</height>
+             <width>20</width>
+             <height>20</height>
             </size>
            </property>
           </widget>
@@ -448,13 +448,13 @@
             <string>Use in New Sale</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../../../../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc">
+            <iconset resource="../assets/images/icons.qrc">
              <normaloff>:/Icons/shopping_cart.svg</normaloff>:/Icons/shopping_cart.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>25</width>
-             <height>25</height>
+             <width>20</width>
+             <height>20</height>
             </size>
            </property>
           </widget>
@@ -477,13 +477,13 @@
             <string>Delete</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../../../../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc">
+            <iconset resource="../assets/images/icons.qrc">
              <normaloff>:/Icons/trash.svg</normaloff>:/Icons/trash.svg</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>25</width>
-             <height>25</height>
+             <width>20</width>
+             <height>20</height>
             </size>
            </property>
           </widget>
@@ -510,7 +510,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../../../../../../../../../../../../mnt/hdd/PYTHON_LAB/eixn-pos/assets/images/icons.qrc"/>
+  <include location="../assets/images/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

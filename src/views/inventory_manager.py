@@ -6,6 +6,11 @@ class InventoryManager(qtw.QWidget, Ui_InventoryManager):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.pb_receive.setText("Receive Items")
+
+        ## --- remove this line to show 'Add' button
+        self.pb_add.hide()
+        ## --- end
         
         # assign class
         widgets_to_style = {
